@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.willemmartinot.nl/sitemap.xml
+LLMs: https://www.willemmartinot.nl/llms.txt
