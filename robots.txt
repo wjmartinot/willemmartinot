@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /partials/
 
 Sitemap: https://www.willemmartinot.nl/sitemap.xml
 LLMs: https://www.willemmartinot.nl/llms.txt
