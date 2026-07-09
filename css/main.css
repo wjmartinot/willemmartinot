@@ -462,7 +462,8 @@ p {
 }
 
 /* Hero crop: zet --hero-pos (desktop) en/of --hero-pos-mobile op section of img.
-   Voorbeeld: style="--hero-pos-mobile: 50% 25%;" op <img> of <section class="hero-section"> */
+   Waarde = object-position, bv. "72% center" (rechts) of "35% center" (links).
+   Lager % = beeld verschuift naar links; hoger % = naar rechts. */
 
 .hero-section--portrait {
   --hero-pos: 50% 12%;
