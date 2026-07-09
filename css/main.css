@@ -465,6 +465,22 @@ p {
    Waarde = object-position, bv. "72% center" (rechts) of "35% center" (links).
    Lager % = beeld verschuift naar links; hoger % = naar rechts. */
 
+/* Mobiele hero-crops per beeld — geldt op homepage en landingpages */
+.hero-slide img[src*="zakelijk-fotograaf-"] {
+  --hero-pos-mobile: 72% center;
+}
+
+.hero-slide img[src*="congres-fotograaf-rotterdam"]:not([src*="overzicht"]),
+.hero-slide img[src*="congres-fotograaf-amsterdam"]:not([src*="overzicht"]),
+.hero-slide img[src*="congres-fotograaf-den-haag-world-forum"]:not([src*="overzicht"]) {
+  --hero-pos-mobile: 30% center;
+}
+
+.hero-slide img[src*="event-fotograaf-"][src*="eventlocatie"],
+.hero-slide img[src*="AERO-2341"] {
+  --hero-pos-mobile: 65% center;
+}
+
 .hero-section--portrait {
   --hero-pos: 50% 12%;
   --hero-pos-mobile: 50% 18%;
