@@ -353,7 +353,7 @@ Hero (volle breedte bovenaan) en portfolio-grid (meerdere foto's) zijn **verschi
 | `partials/footer-nl.html` | Footer NL |
 | `partials/footer-en.html` | Footer EN |
 
-Contactformulier: `action="/mail.php"` op `/contact/` en `/en/contact/` — verwerking via `mail.php` (Strato PHP).
+Contactformulier: Formspree (`xykqqpgj`) op `/contact/`, `/en/contact/`, `/tarieven/` en `/en/rates/`.
 
 ---
 

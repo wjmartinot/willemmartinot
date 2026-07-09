@@ -1,6 +1,9 @@
 # Cloudflare Pages redirects (vervangt .htaccess op Strato)
 # Docs: https://developers.cloudflare.com/pages/configuration/redirects/
 
+# Apex → www (werkt zodra beide domeinen aan Pages hangen)
+https://willemmartinot.nl/* https://www.willemmartinot.nl/:splat 301
+
 # Blokkeer directe toegang tot HTML-partials (footer/header)
 /partials/* / 404
 
