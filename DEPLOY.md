@@ -8,7 +8,7 @@ Repo: https://github.com/wjmartinot/willemmartinot
 - [ ] Alle lokale wijzigingen committen en pushen naar `main`
 - [x] Contactformulier — Formspree (`xykqqpgj`) op `/contact/`, `/en/contact/`, `/tarieven/`, `/en/rates/`
 - [x] `sitemap.xml` toegevoegd (40 pagina's)
-- [ ] Redirects controleren in `_redirects` (vervangt `.htaccess`)
+- [x] Redirects controleren in `_redirects` (vervangt `.htaccess`)
 
 ## Eenmalige Cloudflare-setup (~30 min)
 
