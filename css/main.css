@@ -1390,6 +1390,16 @@ details[open] .faq__question {
   border-bottom-color: rgba(26, 26, 26, 0.6);
 }
 
+.page-header .hero-header__toggle {
+  color: var(--color-text);
+}
+
+.page-header .hero-header__toggle-icon,
+.page-header .hero-header__toggle-icon::before,
+.page-header .hero-header__toggle-icon::after {
+  background: var(--color-text);
+}
+
 .page-header .portrait-showcase {
   padding-top: clamp(24px, 4vw, 48px);
 }
