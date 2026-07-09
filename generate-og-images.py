@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Generate 1200×630 Open Graph images from images/source/."""
+"""Generate 1200×630 Open Graph images from source/."""
 
 from pathlib import Path
 
 from PIL import Image
 
 ROOT = Path(__file__).parent
-SOURCE = ROOT / "images" / "source"
+SOURCE = ROOT / "source"
 OUT = ROOT / "images" / "site" / "og"
 TARGET = (1200, 630)
 

@@ -254,7 +254,7 @@ Hero (volle breedte bovenaan) en portfolio-grid (meerdere foto's) zijn **verschi
 ```
 
 ### Workflow
-1. Jij zet bronbestanden in **`images/source/`**
+1. Jij zet bronbestanden in **`source/`** (repo-root, niet in git)
 2. Cursor hernoemt + schaalt via `resize-images.sh`
 3. NL → `images/nl/{800,1200,1920}/`, EN → `images/en/{800,1200,1920}/`
 4. **Alt-teksten:** eerst Wix live-site checken → bestaande alt overnemen (eventueel licht opschonen). Alleen zelf schrijven als de foto **niet op Wix staat** (nieuwe projecten: FS-ISAC, AeroDelft, enz.)
@@ -269,7 +269,7 @@ Hero (volle breedte bovenaan) en portfolio-grid (meerdere foto's) zijn **verschi
 | `/images/site/` | footer-portret, og-image, klantenstrip | ✅ |
 | `/images/homepage/hero/` | 7 slideshow-beelden × 3 formaten | ✅ |
 | `/images/homepage/services/` | 6 dienst-thumbnails | ✅ |
-| `/images/source/` | Aanlevermap high-res | 📥 klaar voor jou |
+| `source/` | Aanlevermap high-res (lokaal, niet in git) | 📥 klaar voor jou |
 | `/images/nl/` en `/images/en/` | Event/congres/portret SEO-beelden | ⬜ wacht op foto's |
 
 ---
@@ -372,7 +372,7 @@ Contactformulier: `action="/mail.php"` op `/contact/` en `/en/contact/` — verw
 
 | # | Onderwerp | Actie |
 |---|-----------|-------|
-| 1 | Eventpagina foto's | 9 high-res bronbestanden in `images/source/` |
+| 1 | Eventpagina foto's | 9 high-res bronbestanden in `source/` |
 | 2 | Event FAQ | 3 Wix-vragen terugzetten vóór livegang |
 | 3 | `sitemap.xml` | Aanmaken vóór livegang |
 | 4 | Blog | Sectie verborgen tot blogpagina's bestaan |

@@ -529,12 +529,12 @@ document.addEventListener('keydown', (e) => {
 
 ### Mappenstructuur
 ```
+/source/                   ← JIJ levert hier high-res bronbestanden aan (lokaal, niet in git)
 /images/
   /site/                   ← sitewide: footer-portret, og-image, klantenstrip, logo's
   /homepage/
     /hero/                 ← homepage slideshow (800/1200/1920 in bestandsnaam)
     /services/             ← diensten-grid thumbnails
-  /source/                 ← JIJ levert hier high-res bronbestanden aan
   /nl/
     /800/                  ← SEO-beelden NL, mobile
     /1200/                 ← SEO-beelden NL, tablet/desktop

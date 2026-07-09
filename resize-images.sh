@@ -1,10 +1,10 @@
 #!/bin/bash
 # SEO-beelden (nl/en mappen, formaat in map):
-#   ./resize-images.sh images/source/RAW.jpg nl 1V3A9556-eventfotograaf-den-haag-keynote
-#   ./resize-images.sh images/source/RAW.jpg en 1V3A9556-event-photographer-the-hague-keynote
+#   ./resize-images.sh source/RAW.jpg nl 1V3A9556-eventfotograaf-den-haag-keynote
+#   ./resize-images.sh source/RAW.jpg en 1V3A9556-event-photographer-the-hague-keynote
 #
 # Homepage hero (formaat in bestandsnaam):
-#   ./resize-images.sh images/source/RAW.jpg homepage hero zakelijk-fotograaf-den-haag
+#   ./resize-images.sh source/RAW.jpg homepage hero zakelijk-fotograaf-den-haag
 
 set -euo pipefail
 
