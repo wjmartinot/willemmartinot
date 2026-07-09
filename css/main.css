@@ -344,10 +344,11 @@ p {
 
 .hero-header__toggle-icon {
   position: relative;
-  width: 18px;
-  height: 12px;
+  display: block;
+  width: 20px;
+  height: 2px;
   background: #ffffff;
-  margin-top: 5px;
+  flex-shrink: 0;
   transition: background var(--transition);
 }
 
@@ -356,18 +357,18 @@ p {
   content: "";
   position: absolute;
   left: 0;
-  width: 18px;
+  width: 20px;
   height: 2px;
   background: #ffffff;
   transition: transform var(--transition), top var(--transition);
 }
 
 .hero-header__toggle-icon::before {
-  top: 0;
+  top: -7px;
 }
 
 .hero-header__toggle-icon::after {
-  top: 10px;
+  top: 7px;
 }
 
 .hero-header.is-nav-open .hero-header__toggle-icon {
@@ -375,12 +376,12 @@ p {
 }
 
 .hero-header.is-nav-open .hero-header__toggle-icon::before {
-  top: 5px;
+  top: 0;
   transform: rotate(45deg);
 }
 
 .hero-header.is-nav-open .hero-header__toggle-icon::after {
-  top: 5px;
+  top: 0;
   transform: rotate(-45deg);
 }
 
@@ -1790,6 +1791,13 @@ details[open] .faq__question {
 
   .footer__center {
     grid-column: span 1;
+    order: -1;
+  }
+
+  .footer-col--right,
+  .footer-col--right .footer-heading,
+  .footer-col--right a {
+    text-align: left;
   }
 
   .portrait-grid,
