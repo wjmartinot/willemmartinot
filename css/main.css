@@ -617,12 +617,19 @@ p {
   border-bottom: 1px solid var(--color-border);
 }
 
+.clients picture,
 .clients img {
   width: 100%;
   height: auto;
   max-height: 80px;
   object-fit: contain;
   opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+  .clients img {
+    max-height: none;
+  }
 }
 
 .btn-outline {
