@@ -11,6 +11,31 @@
     history.replaceState(null, "", window.location.pathname);
   }
 
+  function initHeroNav() {
+    const header = document.querySelector(".hero-header");
+    const toggle = header?.querySelector(".hero-header__toggle");
+    const nav = header?.querySelector(".hero-header__nav");
+    if (!header || !toggle || !nav) return;
+
+    function closeNav() {
+      header.classList.remove("is-nav-open");
+      toggle.setAttribute("aria-expanded", "false");
+    }
+
+    toggle.addEventListener("click", () => {
+      const open = header.classList.toggle("is-nav-open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+
+    nav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeNav);
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeNav();
+    });
+  }
+
   function initCopyright() {
     const yearEl = document.getElementById("copyright-year");
     if (yearEl) {
@@ -82,6 +107,7 @@
           header.innerHTML = html;
           initNavActive();
           initLangSwitch();
+          initHeroNav();
         })
         .catch(() => {});
     }

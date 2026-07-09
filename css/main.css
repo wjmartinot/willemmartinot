@@ -318,6 +318,72 @@ p {
   padding-bottom: 2px;
 }
 
+.hero-header__toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  font-family: "Jost", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.hero-header__toggle:hover {
+  background: rgba(0, 0, 0, 0.35);
+  border-color: rgba(255, 255, 255, 0.85);
+}
+
+.hero-header__toggle-icon {
+  position: relative;
+  width: 18px;
+  height: 12px;
+  background: #ffffff;
+  margin-top: 5px;
+  transition: background var(--transition);
+}
+
+.hero-header__toggle-icon::before,
+.hero-header__toggle-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 18px;
+  height: 2px;
+  background: #ffffff;
+  transition: transform var(--transition), top var(--transition);
+}
+
+.hero-header__toggle-icon::before {
+  top: 0;
+}
+
+.hero-header__toggle-icon::after {
+  top: 10px;
+}
+
+.hero-header.is-nav-open .hero-header__toggle-icon {
+  background: transparent;
+}
+
+.hero-header.is-nav-open .hero-header__toggle-icon::before {
+  top: 5px;
+  transform: rotate(45deg);
+}
+
+.hero-header.is-nav-open .hero-header__toggle-icon::after {
+  top: 5px;
+  transform: rotate(-45deg);
+}
+
 .lang-active {
   opacity: 0.45;
   cursor: default;
@@ -346,6 +412,7 @@ p {
 
 .hero-single img {
   object-fit: cover;
+  object-position: var(--hero-pos, center center);
   background: var(--color-placeholder);
 }
 
@@ -389,17 +456,42 @@ p {
 
 .hero-slide img {
   object-fit: cover;
+  object-position: var(--hero-pos, center center);
   background: var(--color-placeholder);
 }
 
-.hero-section--portrait .hero-slide img {
-  object-position: 50% 12%;
+/* Hero crop: zet --hero-pos (desktop) en/of --hero-pos-mobile op section of img.
+   Voorbeeld: style="--hero-pos-mobile: 50% 25%;" op <img> of <section class="hero-section"> */
+
+.hero-section--portrait {
+  --hero-pos: 50% 12%;
+  --hero-pos-mobile: 50% 18%;
 }
 
 @media (min-width: 1600px) {
-  .hero-section--portrait .hero-slide img {
-    object-position: 50% 14%;
+  .hero-section--portrait {
+    --hero-pos: 50% 14%;
   }
+}
+
+.hero-section--short {
+  --hero-pos: center 78%;
+  --hero-pos-mobile: center 65%;
+}
+
+.hero-section--aero.hero-section--short {
+  --hero-pos: center 28%;
+  --hero-pos-mobile: center 35%;
+}
+
+.hero-section--fsisac.hero-section--short {
+  --hero-pos: 32% 28%;
+  --hero-pos-mobile: center 30%;
+}
+
+.hero-section--about {
+  --hero-pos: center center;
+  --hero-pos-mobile: center 40%;
 }
 
 .hero-slider__btn {
@@ -1501,22 +1593,6 @@ details[open] .faq__question {
   min-height: 320px;
 }
 
-.hero-section--short .hero-single img {
-  object-position: center 78%;
-}
-
-.hero-section--aero.hero-section--short .hero-single img {
-  object-position: center 28%;
-}
-
-.hero-section--fsisac.hero-section--short .hero-single img {
-  object-position: 32% 28%;
-}
-
-.hero-section--about .hero-single img {
-  object-position: center center;
-}
-
 .about-banner {
   width: 100%;
   overflow: hidden;
@@ -1724,6 +1800,56 @@ details[open] .faq__question {
   .hero-section,
   .hero-wrapper {
     min-height: 100svh;
+  }
+
+  .hero-slide img,
+  .hero-single img {
+    object-position: var(--hero-pos-mobile, var(--hero-pos, center center));
+  }
+
+  .hero-header__toggle {
+    display: inline-flex;
+  }
+
+  .hero-header__nav {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: min(100%, 320px);
+    margin-top: 0.75rem;
+    padding: 0.5rem 0;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .hero-header.is-nav-open .hero-header__nav {
+    display: flex;
+  }
+
+  .hero-header__nav a,
+  .hero-header__nav .lang-sep,
+  .hero-header__nav .lang-active {
+    padding: 0.65rem 1rem;
+    text-align: center;
+    border-bottom: none;
+  }
+
+  .hero-header__nav a.is-active {
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .hero-header__nav .lang-sep {
+    display: none;
+  }
+
+  .hero-header__nav .lang-link,
+  .hero-header__nav .lang-active {
+    display: inline-block;
+  }
+
+  #hero-header-placeholder:has(.hero-header.is-nav-open)::before {
+    height: clamp(280px, 55vh, 520px);
   }
 }
 
