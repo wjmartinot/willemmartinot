@@ -9,6 +9,10 @@
   <link rel="alternate" hreflang="nl" href="https://www.willemmartinot.nl/contact/">
   <link rel="alternate" hreflang="en" href="https://www.willemmartinot.nl/en/contact/">
   <link rel="alternate" hreflang="x-default" href="https://www.willemmartinot.nl/contact/">
+  <meta property="og:image" content="https://www.willemmartinot.nl/images/site/og/og-contact.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700&family=Epilogue:wght@300;400&family=Jost:wght@300&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
@@ -19,9 +23,13 @@
   <section class="hero-section hero-section--short">
     <div id="hero-header-placeholder"></div>
     <div class="hero hero-single">
-      <img src="/images/fotograaf-den-haag-footer.jpg"
-           alt="Portret van Willem Martinot — zakelijk fotograaf Den Haag"
-           width="320" height="480"
+      <img src="/images/site/N77A1532-contact-willem-martinot-fotograaf-1920.jpg"
+           srcset="/images/site/N77A1532-contact-willem-martinot-fotograaf-1200.jpg 1200w,
+                   /images/site/N77A1532-contact-willem-martinot-fotograaf-1920.jpg 1920w,
+                   /images/site/N77A1532-contact-willem-martinot-fotograaf-2560.jpg 2560w"
+           sizes="100vw"
+           alt="Willem Martinot — zakelijk fotograaf Den Haag"
+           width="3998" height="2684"
            fetchpriority="high"
            decoding="async">
     </div>
@@ -41,9 +49,12 @@
 
     <section class="section section--alt">
       <div class="container">
-        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
-          <input type="hidden" name="form-name" value="contact">
-          <p hidden><label>Laat dit veld leeg: <input name="bot-field"></label></p>
+        <form action="https://formspree.io/f/xykqqpgj" method="POST" class="contact-form">
+          <input type="hidden" name="_next" value="https://www.willemmartinot.nl/contact/?sent=1">
+          <input type="hidden" name="_subject" value="Contactformulier willemmartinot.nl">
+          <input type="hidden" name="pagina" value="Contact">
+          <p class="contact-form__notice contact-form__notice--success" id="form-notice" hidden role="status">Bedankt, je bericht is verstuurd. Ik neem zo snel mogelijk contact met je op.</p>
+          <p hidden aria-hidden="true"><label>Laat dit veld leeg: <input name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
 
           <div class="contact-form__row">
             <label class="contact-form__field">
@@ -70,11 +81,9 @@
             <span>Dienst</span>
             <select name="dienst">
               <option value="Eventfotografie">Eventfotografie</option>
-              <option value="Congresfotografie">Congresfotografie</option>
               <option value="Portretfotografie">Portretfotografie</option>
               <option value="LinkedIn portret">LinkedIn portret</option>
               <option value="Bedrijfsfotografie">Bedrijfsfotografie</option>
-              <option value="Videoproductie">Videoproductie</option>
               <option value="Anders">Anders</option>
             </select>
           </label>
@@ -90,72 +99,7 @@
     </section>
   </main>
 
-  <footer class="footer" id="footer-placeholder" role="contentinfo">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer-col">
-          <p class="footer-heading">Events</p>
-          <a href="/event-fotograaf-den-haag/">Den Haag</a>
-          <a href="/eventfotograaf-amsterdam/">Amsterdam</a>
-          <a href="/eventfotograaf-rotterdam/">Rotterdam</a>
-          <p class="footer-heading">Portret</p>
-          <a href="/portretfotograaf-den-haag/">Den Haag</a>
-          <a href="/portretfotograaf-amsterdam/">Amsterdam</a>
-          <a href="/portretfotograaf-rotterdam/">Rotterdam</a>
-          <p class="footer-heading">LinkedIn Portret</p>
-          <a href="/linkedin-profielfoto-den-haag/">Den Haag</a>
-          <a href="/portretfotograaf-amsterdam/">Amsterdam</a>
-          <a href="/portretfotograaf-rotterdam/">Rotterdam</a>
-          <p class="footer-heading">Bedrijfsfotograaf</p>
-          <a href="/bedrijfsfotograaf-den-haag/">Den Haag</a>
-          <p class="footer-heading">Congresfotograaf</p>
-          <a href="/congresfotograaf-den-haag/">Den Haag</a>
-        </div>
-
-        <div class="footer__center">
-          <a href="/" class="logo footer-logo" aria-label="Willem Martinot home">
-            <span class="logo__name">Willem Martinot</span>
-            <span class="logo-sub">Fotografie</span>
-          </a>
-          <div class="lang-switch" style="justify-content: center;">
-            <span class="lang-active">NL</span>
-            <span class="lang-sep">/</span>
-            <a href="/en/contact/" hreflang="en" class="lang-link">EN</a>
-          </div>
-          <div class="footer__portrait">
-            <img src="/images/fotograaf-den-haag-footer.jpg"
-                 alt="Portret van de fotograaf — zakelijk fotograaf Den Haag"
-                 width="320" height="480"
-                 loading="lazy">
-          </div>
-          <div class="footer__contact">
-            <a href="tel:+31611303070">+31 06 11 30 30 70</a><br>
-            <a href="mailto:me@willemmartinot.nl">me@willemmartinot.nl</a>
-          </div>
-          <div class="footer__social">
-            <a href="https://www.instagram.com/willemmartinot" rel="noopener noreferrer">Instagram</a>
-            <a href="https://www.linkedin.com/in/willemmartinot/" rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://www.facebook.com/WillemMartinotPhotographer/" rel="noopener noreferrer">Facebook</a>
-            <a href="https://www.yelp.com/biz/willem-martinot-fotograaf-den-haag" rel="noopener noreferrer">Yelp</a>
-            <a href="https://www.behance.net/WillemMartinot" rel="noopener noreferrer">Behance</a>
-          </div>
-        </div>
-
-        <div class="footer-col footer-col--right">
-          <p class="footer-heading">Info</p>
-          <a href="/about-fotograaf-den-haag/">About</a>
-          <a href="/contact/">Contact</a>
-          <a href="/tarieven/">Tarieven</a>
-          <a href="/blog-fotograaf-den-haag/">Blog</a>
-          <p class="footer-heading">Diensten</p>
-          <a href="/mode-fotograaf-den-haag/">Fashion &amp; Editorial</a>
-          <a href="/concertfotograaf-den-haag/">Concertfotografie</a>
-          <a href="/bedrijfsfilms/">Videoproductie</a>
-        </div>
-      </div>
-      <p class="footer__copyright">© <span id="copyright-year">2026</span> Willem Martinot</p>
-    </div>
-  </footer>
+  <footer class="footer" id="footer-placeholder" role="contentinfo"></footer>
 
   <script src="/js/main.js"></script>
 </body>

@@ -78,16 +78,16 @@ Nooit JavaScript i18n op één URL — Google crawlt dan alleen NL.
 |--------|--------|--------|
 | Homepage | / | /en/ |
 | Eventfotograaf DH | /event-fotograaf-den-haag | /en/event-photographer-the-hague |
-| Eventfotograaf AMS | /eventfotograaf-amsterdam | /en/eventfotograaf-amsterdam |
-| Eventfotograaf RTD | /eventfotograaf-rotterdam | /en/eventfotograaf-rotterdam |
+| Eventfotograaf AMS | /eventfotograaf-amsterdam | /en/event-photographer-amsterdam |
+| Eventfotograaf RTD | /eventfotograaf-rotterdam | /en/event-photographer-rotterdam |
 | Congresfotograaf DH | /congresfotograaf-den-haag | /en/conference-photographer-the-hague |
-| Portretfotograaf DH | /portretfotograaf-den-haag | /en/portretfotograaf-den-haag |
-| Portretfotograaf AMS | /portretfotograaf-amsterdam | /en/portretfotograaf-amsterdam |
-| Portretfotograaf RTD | /portretfotograaf-rotterdam | /en/portretfotograaf-rotterdam |
-| Fotograaf AMS | /fotograaf-amsterdam | /en/fotograaf-amsterdam |
-| Fotograaf RTD | /fotograaf-rotterdam | /en/fotograaf-rotterdam |
+| Portretfotograaf DH | /portretfotograaf-den-haag | /en/corporate-portrait-photographer-the-hague |
+| Portretfotograaf AMS | /portretfotograaf-amsterdam | /en/corporate-portrait-photographer-amsterdam |
+| Portretfotograaf RTD | /portretfotograaf-rotterdam | /en/corporate-portrait-photographer-rotterdam |
+| Fotograaf AMS | /fotograaf-amsterdam | /en/corporate-photographer-amsterdam |
+| Fotograaf RTD | /fotograaf-rotterdam | /en/corporate-photographer-rotterdam |
 | LinkedIn DH | /linkedin-profielfoto-den-haag | /en/linkedin-portrait-the-hague |
-| Bedrijfsfotograaf DH | /bedrijfsfotograaf-den-haag | /en/corporate-photographer-the-hague |
+| Bedrijfsfotograaf DH | /bedrijfsfotograaf-den-haag | /en/commercial-photographer-the-hague |
 | Concertfotograaf | /concertfotograaf-den-haag | /en/concert-photographer-the-hague |
 | Fashion | /mode-fotograaf-den-haag | /en/fashion-photographer-the-hague |
 | About | /about-fotograaf-den-haag | /en/about |
@@ -122,7 +122,7 @@ Nooit JavaScript i18n op één URL — Google crawlt dan alleen NL.
 | LinkedIn DH | LinkedIn profielfoto Den Haag \| Willem Martinot | Professionele LinkedIn profielfoto in Den Haag voor ondernemers, professionals en expats. Natuurlijke uitstraling, efficiënte sessie, snelle levering. |
 | LinkedIn DH EN | LinkedIn Portrait Photographer The Hague \| Willem Martinot | Professional LinkedIn portrait photographer in The Hague for executives, professionals and expats. Natural results, efficient session, fast delivery. |
 | Bedrijfsfotograaf DH | Bedrijfsfotograaf Den Haag \| Willem Martinot | Bedrijfsfotograaf in Den Haag voor reportages, werksituaties en brandingbeelden. Visuele content voor websites, jaarverslagen en campagnes. |
-| Bedrijfsfotograaf DH EN | Corporate Photographer The Hague \| Willem Martinot | Corporate photographer in The Hague for business reportages, workplace photography and branding images. Visual content for websites and campaigns. |
+| Bedrijfsfotograaf DH EN | Commercial Photographer The Hague \| Willem Martinot | Commercial photographer in The Hague for branding, annual reports and corporate communication. Experienced, reliable, with an eye for detail. |
 | Concert DH | Concertfotograaf Den Haag \| Willem Martinot | Concertfotograaf in Den Haag voor festivals en livemuziek. Ervaring bij North Sea Jazz en andere grote productie. Scherp oog voor het cruciale moment. |
 | Concert DH EN | Concert Photographer The Hague \| Willem Martinot | Concert photographer in The Hague for festivals and live music events. Experience at North Sea Jazz and major productions. |
 | Fashion DH | Modefotograaf Den Haag \| Willem Martinot | Modefotograaf in Den Haag voor fashion editorial, lookbooks en persoonlijke stijlprojecten. Filmische aanpak, hoogwaardige beeldkwaliteit. |
@@ -527,21 +527,26 @@ document.addEventListener('keydown', (e) => {
 
 ## 10. AFBEELDINGEN — VOLLEDIG SYSTEEM
 
-### Mappenstructuur op Strato
+### Mappenstructuur
 ```
 /images/
+  /site/                   ← sitewide: footer-portret, og-image, klantenstrip, logo's
+  /homepage/
+    /hero/                 ← homepage slideshow (800/1200/1920 in bestandsnaam)
+    /services/             ← diensten-grid thumbnails
+  /source/                 ← JIJ levert hier high-res bronbestanden aan
   /nl/
-    /800/     ← mobile
-    /1200/    ← tablet/desktop
-    /1920/    ← groot desktop / retina
+    /800/                  ← SEO-beelden NL, mobile
+    /1200/                 ← SEO-beelden NL, tablet/desktop
+    /1920/                 ← SEO-beelden NL, retina
   /en/
     /800/
     /1200/
     /1920/
-  /placeholder-800.jpg
-  /placeholder-1200.jpg
-  /placeholder-1920.jpg
 ```
+
+Pagina-identiteit (event, congres, portret) zit in de **bestandsnaam**, niet in extra submappen.
+Voorbeeld: `/images/nl/1200/1V3A9556-eventfotograaf-den-haag-keynote-world-forum.jpg`
 
 ### Bestandsnaamconventie
 Format: `[cameranummer]-[seo-beschrijving].jpg`

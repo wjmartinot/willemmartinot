@@ -1,0 +1,3 @@
+# Redirect old EN city landing URLs (corporate → commercial)
+RedirectMatch 301 ^/en/corporate-photographer-amsterdam/?$ /en/commercial-photographer-amsterdam/
+RedirectMatch 301 ^/en/corporate-photographer-rotterdam/?$ /en/commercial-photographer-rotterdam/
