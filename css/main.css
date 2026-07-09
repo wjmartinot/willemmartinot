@@ -481,6 +481,10 @@ p {
   --hero-pos-mobile: 65% center;
 }
 
+.hero-slide img[src*="portret-fotograaf-"][src*="-zakenman"] {
+  --hero-pos-mobile: 72% center;
+}
+
 .hero-section--portrait {
   --hero-pos: 50% 12%;
   --hero-pos-mobile: 50% 18%;
