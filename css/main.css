@@ -825,6 +825,15 @@ details[open] .faq__question {
 
 /* blog-section visible when blog posts exist */
 
+.blog-section__cta {
+  margin: clamp(32px, 5vw, 48px) 0 0;
+  text-align: center;
+}
+
+.blog-section__cta .btn-outline {
+  display: inline-block;
+}
+
 /* --- Services grid --- */
 .services-grid {
   display: grid;
