@@ -212,8 +212,65 @@
     return slides;
   }
 
+  function initImageProtection() {
+    const isEn = document.documentElement.lang === "en";
+    const message = isEn
+      ? "© Willem Martinot — this image is protected by copyright."
+      : "© Willem Martinot — deze afbeelding is auteursrechtelijk beschermd.";
+
+    let tooltip = document.getElementById("image-copyright-tooltip");
+    if (!tooltip) {
+      tooltip = document.createElement("div");
+      tooltip.id = "image-copyright-tooltip";
+      tooltip.setAttribute("role", "status");
+      tooltip.setAttribute("aria-live", "polite");
+      tooltip.hidden = true;
+      document.body.appendChild(tooltip);
+    }
+
+    let hideTimer;
+
+    function isProtectedImage(img) {
+      const src = img.currentSrc || img.src || "";
+      if (src.includes("/images/nl/") || src.includes("/images/en/") || src.includes("/images/homepage/")) {
+        return true;
+      }
+      if (src.includes("/images/site/")) {
+        return !src.includes("clients-strip") && !src.includes("/og/");
+      }
+      return false;
+    }
+
+    function showTooltip(x, y) {
+      tooltip.textContent = message;
+      tooltip.hidden = false;
+      const maxLeft = Math.max(12, window.innerWidth - tooltip.offsetWidth - 12);
+      const maxTop = Math.max(12, window.innerHeight - tooltip.offsetHeight - 12);
+      tooltip.style.left = `${Math.min(x + 12, maxLeft)}px`;
+      tooltip.style.top = `${Math.min(y + 12, maxTop)}px`;
+      clearTimeout(hideTimer);
+      hideTimer = setTimeout(() => {
+        tooltip.hidden = true;
+      }, 2500);
+    }
+
+    document.addEventListener("contextmenu", (e) => {
+      const img = e.target.closest("img");
+      if (!img || !isProtectedImage(img)) return;
+      e.preventDefault();
+      showTooltip(e.clientX, e.clientY);
+    });
+
+    document.addEventListener("dragstart", (e) => {
+      const img = e.target.closest("img");
+      if (!img || !isProtectedImage(img)) return;
+      e.preventDefault();
+    });
+  }
+
   loadPartials();
   initFormNotice();
+  initImageProtection();
   initHeroSlider();
   initReviewsCarousel();
 
