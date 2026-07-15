@@ -177,11 +177,6 @@
 
     startTimer();
 
-    hero.addEventListener("mouseenter", () =>
-      clearInterval(timer));
-    hero.addEventListener("mouseleave", () =>
-      startTimer());
-
     let touchStartX = 0;
     hero.addEventListener("touchstart", (e) => {
       touchStartX = e.touches[0].clientX;
