@@ -224,7 +224,7 @@ p {
 .hero-header {
   position: relative;
   text-align: center;
-  padding: clamp(24px, 4vw, 48px) clamp(16px, 4vw, 80px) clamp(16px, 2vw, 24px);
+  padding: clamp(12px, 2.5vw, 32px) clamp(16px, 4vw, 80px) clamp(16px, 2vw, 24px);
   color: #ffffff;
 }
 
