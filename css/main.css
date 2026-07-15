@@ -942,6 +942,28 @@ details[open] .faq__question {
   margin-bottom: 20px;
 }
 
+.testimonial__brand {
+  margin: 0 0 20px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+}
+
+.testimonials--extended {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .testimonials--extended {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .testimonial__quote {
   margin: 0;
 }
