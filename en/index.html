@@ -21,13 +21,28 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "WebSite",
     "name": "Willem Martinot Photographer",
-    "url": "https://www.willemmartinot.nl/",
+    "alternateName": "Willem Martinot Fotograaf",
+    "url": "https://www.willemmartinot.nl/en/",
+    "inLanguage": "en"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["ProfessionalService", "LocalBusiness"],
+    "name": "Willem Martinot Photographer",
+    "alternateName": "Willem Martinot Fotograaf",
+    "url": "https://www.willemmartinot.nl/en/",
     "logo": "https://www.willemmartinot.nl/images/logo-willem-martinot-photographer.jpg",
+    "image": "https://www.willemmartinot.nl/images/site/og-image.jpg",
     "telephone": "+31611303070",
     "email": "me@willemmartinot.nl",
-    "description": "Business photographer in The Hague for corporate events, conferences and business portraits. Experienced, reliable, with an eye for detail.",
+    "description": "Corporate and commercial photographer in The Hague for events, portraits and conferences. Experienced, reliable, with an eye for detail.",
+    "priceRange": "€€",
+    "currenciesAccepted": "EUR",
+    "paymentAccepted": "Bank transfer, Invoice",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Gentsestraat 121B",
@@ -40,15 +55,32 @@
       "latitude": 52.1093,
       "longitude": 4.2965
     },
+    "areaServed": [
+      { "@type": "City", "name": "The Hague" },
+      { "@type": "City", "name": "Amsterdam" },
+      { "@type": "City", "name": "Rotterdam" },
+      { "@type": "AdministrativeArea", "name": "South Holland" }
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ],
     "sameAs": [
       "https://www.instagram.com/willemmartinot",
-      "https://www.linkedin.com/in/willemmartinot/"
+      "https://www.linkedin.com/in/willemmartinot/",
+      "https://www.facebook.com/WillemMartinotPhotographer/"
     ],
     "knowsAbout": [
       "Event photography",
+      "Conference photography",
       "Corporate portrait photography",
       "LinkedIn portrait photography",
       "Corporate photography",
+      "Fashion photography",
       "Concert photography"
     ],
     "hasOfferCatalog": {
@@ -59,14 +91,48 @@
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Event photography The Hague"
+            "name": "Event photography The Hague",
+            "url": "https://www.willemmartinot.nl/en/event-photographer-the-hague/"
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Portrait photography The Hague"
+            "name": "Portrait photography The Hague",
+            "url": "https://www.willemmartinot.nl/en/corporate-portrait-photographer-the-hague/"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "LinkedIn portrait photography The Hague",
+            "url": "https://www.willemmartinot.nl/en/linkedin-portrait-the-hague/"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Commercial photography The Hague",
+            "url": "https://www.willemmartinot.nl/en/commercial-photographer-the-hague/"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Fashion photography The Hague",
+            "url": "https://www.willemmartinot.nl/en/fashion-photographer-the-hague/"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Concert photography",
+            "url": "https://www.willemmartinot.nl/en/concertfotograaf/"
           }
         }
       ]

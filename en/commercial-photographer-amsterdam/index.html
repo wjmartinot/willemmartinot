@@ -21,12 +21,22 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["ProfessionalService", "LocalBusiness"],
     "name": "Willem Martinot Photographer",
     "url": "https://www.willemmartinot.nl/en/commercial-photographer-amsterdam/",
     "logo": "https://www.willemmartinot.nl/images/logo-willem-martinot-photographer.jpg",
     "telephone": "+31611303070",
     "email": "me@willemmartinot.nl",
+    "priceRange": "€€",
+    "currenciesAccepted": "EUR",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ],
     "description": "Commercial photographer in Amsterdam for business events, conference photography and portraits. Experienced, reliable, with style and an eye for detail.",
     "address": {
       "@type": "PostalAddress",
@@ -46,7 +56,8 @@
     },
     "sameAs": [
       "https://www.instagram.com/willemmartinot",
-      "https://www.linkedin.com/in/willemmartinot/"
+      "https://www.linkedin.com/in/willemmartinot/",
+      "https://www.facebook.com/WillemMartinotPhotographer/"
     ],
     "knowsAbout": [
       "Event photography",

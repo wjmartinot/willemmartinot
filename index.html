@@ -30,13 +30,18 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["ProfessionalService", "LocalBusiness"],
     "name": "Willem Martinot Fotograaf",
+    "alternateName": "Willem Martinot Photographer",
     "url": "https://www.willemmartinot.nl/",
     "logo": "https://www.willemmartinot.nl/images/logo-willem-martinot-fotograaf.jpg",
+    "image": "https://www.willemmartinot.nl/images/site/og-image.jpg",
     "telephone": "+31611303070",
     "email": "me@willemmartinot.nl",
     "description": "Zakelijk fotograaf in Den Haag en Randstad. Events, congressen, portretten en LinkedIn. Klanten o.a. North Sea Jazz, FS-ISAC en DP World. Offerte aanvragen.",
+    "priceRange": "€€",
+    "currenciesAccepted": "EUR",
+    "paymentAccepted": "Bank transfer, Invoice",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Gentsestraat 121B",
@@ -49,15 +54,32 @@
       "latitude": 52.1093,
       "longitude": 4.2965
     },
+    "areaServed": [
+      { "@type": "City", "name": "Den Haag" },
+      { "@type": "City", "name": "Amsterdam" },
+      { "@type": "City", "name": "Rotterdam" },
+      { "@type": "AdministrativeArea", "name": "Zuid-Holland" }
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ],
     "sameAs": [
       "https://www.instagram.com/willemmartinot",
-      "https://www.linkedin.com/in/willemmartinot/"
+      "https://www.linkedin.com/in/willemmartinot/",
+      "https://www.facebook.com/WillemMartinotPhotographer/"
     ],
     "knowsAbout": [
       "Eventfotografie",
+      "Congresfotografie",
       "Zakelijk portretfotografie",
       "LinkedIn profielfotografie",
       "Bedrijfsfotografie",
+      "Modefotografie",
       "Concertfotografie"
     ],
     "hasOfferCatalog": {
@@ -68,14 +90,48 @@
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Eventfotografie Den Haag"
+            "name": "Eventfotografie Den Haag",
+            "url": "https://www.willemmartinot.nl/event-fotograaf-den-haag/"
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Portretfotografie Den Haag"
+            "name": "Portretfotografie Den Haag",
+            "url": "https://www.willemmartinot.nl/portretfotograaf-den-haag/"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "LinkedIn profielfotografie Den Haag",
+            "url": "https://www.willemmartinot.nl/linkedin-profielfoto-den-haag/"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Bedrijfsfotografie Den Haag",
+            "url": "https://www.willemmartinot.nl/bedrijfsfotograaf-den-haag/"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Modefotografie Den Haag",
+            "url": "https://www.willemmartinot.nl/mode-fotograaf-den-haag/"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Concertfotografie",
+            "url": "https://www.willemmartinot.nl/concertfotograaf/"
           }
         }
       ]
