@@ -13,6 +13,7 @@ TARGET = (1200, 630)
 # crop: center (default) or top — top keeps faces in tall portrait photos
 OG_SOURCES = {
     "og-event.jpg": ("059A3642-eventfotograaf-den-haag-societeit-de-witte-hero.jpg", "center"),
+    "og-home.jpg": ("images/homepage/hero/zakelijk-fotograaf-den-haag-1920.jpg", "center"),
     "og-event-den-haag.jpg": ("AERO-2341-event-fotograaf-den-haag-fokker-terminal-hero.jpg", "center"),
     "og-portrait.jpg": ("5I2A3152-zakelijk-portret-fotograaf-den-haag-world-forum.jpg", "top"),
     "og-commercial.jpg": ("2C5A1603-bedrijfsfotograaf-den-haag.jpg", "center"),
