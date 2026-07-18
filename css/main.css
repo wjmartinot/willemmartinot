@@ -758,20 +758,24 @@ p {
   margin-bottom: 1rem;
 }
 
-/* LinkedIn: center prose like intro; frame lists like outline button */
-.content-section--prose:has(.linkedin-inline-row) {
+/* Framed centered lists: LinkedIn + bedrijfsfotografie */
+.content-section--prose:has(.linkedin-inline-row),
+.content-section--prose:has(.corporate-inline-row) {
   text-align: center;
 }
 
-.content-section--prose:has(.linkedin-inline-row) .content-blocks {
+.content-section--prose:has(.linkedin-inline-row) .content-blocks,
+.content-section--prose:has(.corporate-inline-row) .content-blocks {
   text-align: center;
 }
 
-.content-section--prose:has(.linkedin-inline-row) h2 {
+.content-section--prose:has(.linkedin-inline-row) h2,
+.content-section--prose:has(.corporate-inline-row) h2 {
   text-align: center;
 }
 
-.content-section--prose:has(.linkedin-inline-row) ul {
+.content-section--prose:has(.linkedin-inline-row) ul,
+.content-section--prose:has(.corporate-inline-row) ul {
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -785,7 +789,8 @@ p {
   text-align: center;
 }
 
-.content-section--prose:has(.linkedin-inline-row) li {
+.content-section--prose:has(.linkedin-inline-row) li,
+.content-section--prose:has(.corporate-inline-row) li {
   display: block;
   width: auto;
   max-width: 100%;
@@ -796,8 +801,13 @@ p {
   box-sizing: border-box;
 }
 
-.content-section--prose:has(.linkedin-inline-row) li:last-child {
+.content-section--prose:has(.linkedin-inline-row) li:last-child,
+.content-section--prose:has(.corporate-inline-row) li:last-child {
   margin-bottom: 0;
+}
+
+.content-section--prose:has(.corporate-inline-row) li strong {
+  font-weight: 600;
 }
 
 /* LinkedIn: extra regel tussen content-blocks (H2 staat anders te dicht op vorige alinea) */
