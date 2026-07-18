@@ -2,7 +2,7 @@
    Willem Martinot — shared styles
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700&family=Epilogue:wght@300;400&family=Jost:wght@300;400;500&family=Roboto:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700&family=Epilogue:wght@300;400;600&family=Jost:wght@300;400;500&family=Roboto:wght@300;400&display=swap');
 
 @font-face {
   font-family: "Bozon";
@@ -761,6 +761,40 @@ p {
 /* LinkedIn: extra regel tussen content-blocks (H2 staat anders te dicht op vorige alinea) */
 .content-section--prose:has(.linkedin-inline-row) .content-block + .content-block {
   margin-top: 1.75rem;
+}
+
+/* LinkedIn: body copy matches intro paragraphs; only key labels are bold */
+.content-section--prose:has(.linkedin-inline-row) p,
+.content-section--prose:has(.linkedin-inline-row) li {
+  font-family: var(--font-body);
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+.content-section--prose:has(.linkedin-inline-row) .content-block__intro {
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  color: var(--color-text);
+  margin-bottom: 1em;
+}
+
+.content-section--prose:has(.linkedin-inline-row) .content-aside,
+.content-section--prose:has(.linkedin-inline-row) .content-aside p {
+  font-family: var(--font-body);
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+.content-section--prose:has(.linkedin-inline-row) li strong {
+  font-weight: 600;
+}
+
+.content-section--prose:has(.linkedin-inline-row) p a,
+.content-section--prose:has(.linkedin-inline-row) li a {
+  font-weight: 300;
 }
 
 .content-section--prose p,
