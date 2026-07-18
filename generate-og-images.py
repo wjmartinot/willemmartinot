@@ -20,7 +20,7 @@ OG_SOURCES = {
     "og-linkedin.jpg": ("linkedin-profielfoto-den-haag-man-geruit-jasje-zwart.jpg", "top"),
     "og-fashion.jpg": ("2C5A2547-modefotograaf-den-haag.jpg", "center"),
     "og-concert.jpg": ("concert-fotograaf-hero.jpg", "center"),
-    "og-contact.jpg": ("N77A1532-contact-willem-martinot-fotograaf.jpg", "top"),
+    "og-contact.jpg": ("AERO-1528-event-fotograaf-den-haag-fokker-terminal.jpg", "center"),
     "og-about.jpg": ("Willem-Martinot-Fotograaf-Den-Haag.jpeg", "top"),
     "og-blog.jpg": ("2C5A0213-event-fotograaf-den-haag-beeld-en-geluid.jpg", "center"),
     "og-blog-fsisac.jpg": ("images/homepage/hero/congres-fotograaf-den-haag-world-forum-overzicht-1920.jpg", "center"),
