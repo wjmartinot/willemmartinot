@@ -758,6 +758,11 @@ p {
   margin-bottom: 1rem;
 }
 
+/* LinkedIn: extra regel tussen content-blocks (H2 staat anders te dicht op vorige alinea) */
+.content-section--prose:has(.linkedin-inline-row) .content-block + .content-block {
+  margin-top: 1.75rem;
+}
+
 .content-section--prose p,
 .content-section--prose li {
   max-width: none;
