@@ -318,6 +318,12 @@ p {
   padding-bottom: 0;
 }
 
+.hero-header__nav .lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2em;
+}
+
 .hero-header__toggle {
   display: none;
   align-items: center;
