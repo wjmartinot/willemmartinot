@@ -7,11 +7,13 @@ https://willemmartinot.nl/* https://www.willemmartinot.nl/:splat 301
 # Blokkeer directe toegang tot HTML-partials (footer/header)
 /partials/* / 404
 
-# EN slug-rename (corporate → commercial)
+# EN slug-rename (corporate → commercial, concertfotograaf → concert-photographer)
 /en/corporate-photographer-amsterdam /en/commercial-photographer-amsterdam/ 301
 /en/corporate-photographer-amsterdam/ /en/commercial-photographer-amsterdam/ 301
 /en/corporate-photographer-rotterdam /en/commercial-photographer-rotterdam/ 301
 /en/corporate-photographer-rotterdam/ /en/commercial-photographer-rotterdam/ 301
+/en/concertfotograaf /en/concert-photographer/ 301
+/en/concertfotograaf/ /en/concert-photographer/ 301
 
 # Oude Wix EN-URLs → nieuwe Engelse slugs (zie sitestructuur.md)
 /en/bedrijfsfotograaf-den-haag /en/commercial-photographer-the-hague/ 301
@@ -50,10 +52,10 @@ https://willemmartinot.nl/* https://www.willemmartinot.nl/:splat 301
 /en/congresfotograaf-den-haag/ /en/event-photographer-the-hague/ 301
 /en/mode-fotograaf-den-haag /en/fashion-photographer-the-hague/ 301
 /en/mode-fotograaf-den-haag/ /en/fashion-photographer-the-hague/ 301
-/en/concertfotograaf-den-haag /en/concertfotograaf/ 301
-/en/concertfotograaf-den-haag/ /en/concertfotograaf/ 301
-/en/concert-photographer-the-hague /en/concertfotograaf/ 301
-/en/concert-photographer-the-hague/ /en/concertfotograaf/ 301
+/en/concertfotograaf-den-haag /en/concert-photographer/ 301
+/en/concertfotograaf-den-haag/ /en/concert-photographer/ 301
+/en/concert-photographer-the-hague /en/concert-photographer/ 301
+/en/concert-photographer-the-hague/ /en/concert-photographer/ 301
 /en/about-fotograaf-den-haag /en/about/ 301
 /en/about-fotograaf-den-haag/ /en/about/ 301
 /en/tarieven /en/rates/ 301
