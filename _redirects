@@ -7,17 +7,19 @@ https://willemmartinot.nl/* https://www.willemmartinot.nl/:splat 301
 # Blokkeer directe toegang tot HTML-partials (footer/header)
 /partials/* / 404
 
-# EN slug-rename (corporate → commercial, concertfotograaf → concert-photographer)
+# EN slug-rename (corporate → commercial, concertfotograaf → concert-photographer, commercial Hague → business Hague)
 /en/corporate-photographer-amsterdam /en/commercial-photographer-amsterdam/ 301
 /en/corporate-photographer-amsterdam/ /en/commercial-photographer-amsterdam/ 301
 /en/corporate-photographer-rotterdam /en/commercial-photographer-rotterdam/ 301
 /en/corporate-photographer-rotterdam/ /en/commercial-photographer-rotterdam/ 301
 /en/concertfotograaf /en/concert-photographer/ 301
 /en/concertfotograaf/ /en/concert-photographer/ 301
+/en/commercial-photographer-the-hague /en/business-photographer-the-hague/ 301
+/en/commercial-photographer-the-hague/ /en/business-photographer-the-hague/ 301
 
 # Oude Wix EN-URLs → nieuwe Engelse slugs (zie sitestructuur.md)
-/en/bedrijfsfotograaf-den-haag /en/commercial-photographer-the-hague/ 301
-/en/bedrijfsfotograaf-den-haag/ /en/commercial-photographer-the-hague/ 301
+/en/bedrijfsfotograaf-den-haag /en/business-photographer-the-hague/ 301
+/en/bedrijfsfotograaf-den-haag/ /en/business-photographer-the-hague/ 301
 /en/portretfotograaf-den-haag /en/corporate-portrait-photographer-the-hague/ 301
 /en/portretfotograaf-den-haag/ /en/corporate-portrait-photographer-the-hague/ 301
 /en/portretfotograaf-amsterdam /en/corporate-portrait-photographer-amsterdam/ 301
@@ -64,8 +66,8 @@ https://willemmartinot.nl/* https://www.willemmartinot.nl/:splat 301
 /en/blog-fotograaf-den-haag/ /en/blog/ 301
 /en/bedrijfsfilms https://www.limestonepictures.nl 301
 /en/bedrijfsfilms/ https://www.limestonepictures.nl 301
-/en/corporate-photographer-the-hague /en/commercial-photographer-the-hague/ 301
-/en/corporate-photographer-the-hague/ /en/commercial-photographer-the-hague/ 301
+/en/corporate-photographer-the-hague /en/business-photographer-the-hague/ 301
+/en/corporate-photographer-the-hague/ /en/business-photographer-the-hague/ 301
 /en/conference-photographer-the-hague /en/event-photographer-the-hague/ 301
 /en/conference-photographer-the-hague/ /en/event-photographer-the-hague/ 301
 /en/corporate-films https://www.limestonepictures.nl 301
