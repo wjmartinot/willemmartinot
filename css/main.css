@@ -521,6 +521,11 @@ p {
   --hero-pos-mobile: center 30%;
 }
 
+.hero-section--short.hero-section--short-portrait {
+  --hero-pos: 50% 18%;
+  --hero-pos-mobile: 50% 22%;
+}
+
 .hero-section--about {
   --hero-pos: center center;
   --hero-pos-mobile: center 40%;
@@ -1335,6 +1340,16 @@ details[open] .faq__question {
   aspect-ratio: 3 / 2;
   object-fit: cover;
   display: block;
+}
+
+.corporate-inline-row--portrait img {
+  aspect-ratio: 3 / 4;
+  object-position: center 15%;
+}
+
+.blog-card__image--portrait {
+  aspect-ratio: 3 / 4;
+  object-position: center 15%;
 }
 
 .content-section--prose .corporate-inline-row {
