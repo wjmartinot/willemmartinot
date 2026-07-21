@@ -43,6 +43,30 @@ https://willemmartinot.nl/* https://www.willemmartinot.nl/:splat 301
 /bedrijfsfilms https://www.limestonepictures.nl 301
 /bedrijfsfilms/ https://www.limestonepictures.nl 301
 
+# Oude Wix-pagina's die soft-404 (homepage 200) gaven — GSC Valid 2026-07-21
+/contact-fotograaf-den-haag /contact/ 301
+/contact-fotograaf-den-haag/ /contact/ 301
+/cases / 301
+/cases/ / 301
+/partners / 301
+/partners/ / 301
+/post/portretfotografie-willem-martinot-den-haag /portretfotograaf-den-haag/ 301
+/post/portretfotografie-willem-martinot-den-haag/ /portretfotograaf-den-haag/ 301
+/post/actrice-eva-heijnen-in-beeld-up-close /mode-fotograaf-den-haag/ 301
+/post/actrice-eva-heijnen-in-beeld-up-close/ /mode-fotograaf-den-haag/ 301
+/post/food-photography-voor-mr-crab-amsterdam /fotograaf-amsterdam/ 301
+/post/food-photography-voor-mr-crab-amsterdam/ /fotograaf-amsterdam/ 301
+/post/evenementen-fotograaf-vergelijking /event-fotograaf-den-haag/ 301
+/post/evenementen-fotograaf-vergelijking/ /event-fotograaf-den-haag/ 301
+/post/* /blog-fotograaf-den-haag/ 301
+/en/cases /en/ 301
+/en/cases/ /en/ 301
+/en/partners /en/ 301
+/en/partners/ /en/ 301
+/en/contact-fotograaf-den-haag /en/contact/ 301
+/en/contact-fotograaf-den-haag/ /en/contact/ 301
+/en/post/* /en/blog/ 301
+
 # Overige oude Wix EN-URLs (Nederlandse slugs onder /en/)
 /en/event-fotograaf-den-haag /en/event-photographer-the-hague/ 301
 /en/event-fotograaf-den-haag/ /en/event-photographer-the-hague/ 301
