@@ -21,6 +21,8 @@
   --color-text-secondary: #767676;
   --color-border: #e8e8e5;
   --color-accent: #314f77;
+  --color-accent-light: #3d6496;
+  --color-accent-dark: #263e5e;
   --color-placeholder: #e8e8e5;
   --font-body: "Epilogue", sans-serif;
   --font-heading: 'Hanken Grotesk', sans-serif;
@@ -806,14 +808,14 @@ p {
   text-align: center;
   box-sizing: border-box;
   cursor: default;
-  transition: background-color var(--transition), border-color var(--transition), color var(--transition);
+  transition: background var(--transition), border-color var(--transition), color var(--transition);
 }
 
 @media (hover: hover) {
   .content-section--prose:has(.linkedin-inline-row) li:hover,
   .content-section--prose:has(.corporate-inline-row) li:hover {
-    background-color: var(--color-accent);
-    border-color: var(--color-accent);
+    background: linear-gradient(to top right, var(--color-accent-light), var(--color-accent-dark));
+    border-color: var(--color-accent-dark);
     color: #fff;
   }
 
