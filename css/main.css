@@ -20,6 +20,7 @@
   --color-text: #1a1a1a;
   --color-text-secondary: #767676;
   --color-border: #e8e8e5;
+  --color-accent: #314f77;
   --color-placeholder: #e8e8e5;
   --font-body: "Epilogue", sans-serif;
   --font-heading: 'Hanken Grotesk', sans-serif;
@@ -804,6 +805,22 @@ p {
   border: 1px solid var(--color-text);
   text-align: center;
   box-sizing: border-box;
+  cursor: default;
+  transition: background-color var(--transition), border-color var(--transition), color var(--transition);
+}
+
+@media (hover: hover) {
+  .content-section--prose:has(.linkedin-inline-row) li:hover,
+  .content-section--prose:has(.corporate-inline-row) li:hover {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #fff;
+  }
+
+  .content-section--prose:has(.linkedin-inline-row) li:hover strong,
+  .content-section--prose:has(.corporate-inline-row) li:hover strong {
+    color: #fff;
+  }
 }
 
 .content-section--prose:has(.linkedin-inline-row) li:last-child,
