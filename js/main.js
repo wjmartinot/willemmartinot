@@ -286,12 +286,10 @@
     const copy = lang === "en"
       ? {
           fromGoogle: "Review from Google",
-          viewAll: "View all Google reviews →",
           ratingLabel: "Google rating",
         }
       : {
           fromGoogle: "Review van Google",
-          viewAll: "Bekijk alle Google-reviews →",
           ratingLabel: "Google-beoordeling",
         };
 
@@ -336,7 +334,6 @@
           <span class="reviews-header__stars" aria-hidden="true">${stars(data.rating)}</span>
           <span class="reviews-header__source">Google</span>
         </div>
-        <a class="text-link reviews-header__link" href="${escapeHtml(data.mapsUrl)}" target="_blank" rel="noopener noreferrer">${copy.viewAll}</a>
       `;
 
       if (label?.nextSibling) {
