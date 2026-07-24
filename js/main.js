@@ -270,46 +270,125 @@
   initReviewsCarousel();
 
   function initReviewsCarousel() {
-    const carousel = document.querySelector(".reviews-carousel");
-    if (!carousel || carousel.dataset.bound) return;
+    const section = document.querySelector(".section.reviews");
+    const carousel = section?.querySelector(".reviews-carousel");
+    if (!section || !carousel || carousel.dataset.bound) return;
 
     const viewport = carousel.querySelector(".reviews-carousel__viewport");
+    const track = carousel.querySelector(".reviews-carousel__track");
     const prevBtn = carousel.querySelector(".reviews-carousel__btn--prev");
     const nextBtn = carousel.querySelector(".reviews-carousel__btn--next");
-    if (!viewport) return;
+    if (!viewport || !track) return;
 
-    function getTrack() {
-      return viewport.querySelector(".es-list-layout");
+    carousel.dataset.bound = "true";
+
+    const lang = document.documentElement.lang === "en" ? "en" : "nl";
+    const copy = lang === "en"
+      ? {
+          fromGoogle: "Review from Google",
+          viewAll: "View all Google reviews →",
+          ratingLabel: "Google rating",
+        }
+      : {
+          fromGoogle: "Review van Google",
+          viewAll: "Bekijk alle Google-reviews →",
+          ratingLabel: "Google-beoordeling",
+        };
+
+    const googleIcon = `
+      <svg class="reviews-carousel__google-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/>
+        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/>
+        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+      </svg>`;
+
+    function stars(count) {
+      return "★".repeat(Math.max(0, Math.min(5, Number(count) || 0)));
+    }
+
+    function formatDate(iso) {
+      const date = new Date(`${iso}T12:00:00`);
+      if (Number.isNaN(date.getTime())) return "";
+      return new Intl.DateTimeFormat(lang === "en" ? "en-GB" : "nl-NL", {
+        month: "long",
+        year: "numeric",
+      }).format(date);
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function renderHeader(data) {
+      if (section.querySelector(".reviews-header")) return;
+
+      const label = section.querySelector(".label");
+      const header = document.createElement("div");
+      header.className = "reviews-header";
+      header.innerHTML = `
+        <div class="reviews-header__rating" aria-label="${copy.ratingLabel} ${data.rating} van 5">
+          <span class="reviews-header__score">${escapeHtml(String(data.rating))}</span>
+          <span class="reviews-header__stars" aria-hidden="true">${stars(data.rating)}</span>
+          <span class="reviews-header__source">Google</span>
+        </div>
+        <a class="text-link reviews-header__link" href="${escapeHtml(data.mapsUrl)}" target="_blank" rel="noopener noreferrer">${copy.viewAll}</a>
+      `;
+
+      if (label?.nextSibling) {
+        label.parentNode.insertBefore(header, label.nextSibling);
+      } else {
+        label?.after(header);
+      }
+    }
+
+    function renderCards(reviews) {
+      track.innerHTML = reviews.map((review) => {
+        const initial = (review.author || "?").trim().charAt(0) || "?";
+        return `
+          <article class="reviews-carousel__card">
+            <div class="reviews-carousel__author">
+              <span class="reviews-carousel__avatar" style="background:${escapeHtml(review.avatarColor || "#314f77")}" aria-hidden="true">${escapeHtml(initial)}</span>
+              <div class="reviews-carousel__meta">
+                <span class="reviews-carousel__name">${escapeHtml(review.author)}</span>
+                <span class="reviews-carousel__from">${googleIcon}<span>${copy.fromGoogle}</span></span>
+              </div>
+            </div>
+            <div class="reviews-carousel__rating-row">
+              <span class="reviews-carousel__stars" aria-label="${review.rating} / 5">${stars(review.rating)}</span>
+              <time class="reviews-carousel__date" datetime="${escapeHtml(review.date)}">${escapeHtml(formatDate(review.date))}</time>
+            </div>
+            <p class="reviews-carousel__text">${escapeHtml(review.text)}</p>
+          </article>
+        `;
+      }).join("");
     }
 
     function scrollByCards(direction) {
-      const track = getTrack();
-      if (!track) return;
-      const card = track.querySelector(".es-review-container");
+      const card = track.querySelector(".reviews-carousel__card");
       const gap = parseFloat(getComputedStyle(track).gap) || 16;
       const amount = (card?.offsetWidth || track.clientWidth / 4) + gap;
       track.scrollBy({ left: direction * amount, behavior: "smooth" });
     }
 
-    function bind() {
-      const track = getTrack();
-      if (!track || track.dataset.bound) return Boolean(track);
+    prevBtn?.addEventListener("click", () => scrollByCards(-1));
+    nextBtn?.addEventListener("click", () => scrollByCards(1));
 
-      track.dataset.bound = "true";
-      carousel.dataset.bound = "true";
-
-      prevBtn?.addEventListener("click", () => scrollByCards(-1));
-      nextBtn?.addEventListener("click", () => scrollByCards(1));
-      return true;
-    }
-
-    if (bind()) return;
-
-    const observer = new MutationObserver(() => {
-      if (bind()) observer.disconnect();
-    });
-    observer.observe(viewport, { childList: true, subtree: true });
-    setTimeout(() => observer.disconnect(), 15000);
+    fetch("/data/google-reviews.json")
+      .then((response) => {
+        if (!response.ok) throw new Error("Reviews fetch failed");
+        return response.json();
+      })
+      .then((data) => {
+        if (!Array.isArray(data.reviews) || !data.reviews.length) return;
+        renderHeader(data);
+        renderCards(data.reviews);
+      })
+      .catch(() => {});
   }
 
   const lightbox = document.getElementById("lightbox");

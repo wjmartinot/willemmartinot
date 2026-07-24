@@ -1138,6 +1138,48 @@ details[open] .faq__question {
 }
 
 /* --- Google Reviews carousel --- */
+.reviews-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  margin-bottom: clamp(20px, 3vw, 32px);
+}
+
+.reviews-header__rating {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+}
+
+.reviews-header__score {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-text);
+}
+
+.reviews-header__stars {
+  display: inline-flex;
+  gap: 2px;
+  color: #fbbc04;
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.reviews-header__source {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.reviews-header__link {
+  font-size: 0.875rem;
+}
+
 .reviews-carousel {
   position: relative;
 }
@@ -1146,10 +1188,9 @@ details[open] .faq__question {
   overflow: hidden;
 }
 
-.reviews-carousel__viewport .es-list-layout {
-  display: flex !important;
-  flex-wrap: nowrap !important;
-  grid-template-columns: none !important;
+.reviews-carousel__track {
+  display: flex;
+  flex-wrap: nowrap;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
@@ -1159,15 +1200,107 @@ details[open] .faq__question {
   scrollbar-width: thin;
 }
 
-.reviews-carousel__viewport .es-review-container {
+.reviews-carousel__card {
   flex: 0 0 calc((100% - 3 * clamp(12px, 2vw, 20px)) / 4);
   min-width: calc((100% - 3 * clamp(12px, 2vw, 20px)) / 4);
   scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background: var(--color-bg-section);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+.reviews-carousel__author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.reviews-carousel__avatar {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.reviews-carousel__meta {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.reviews-carousel__name {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.reviews-carousel__from {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+
+.reviews-carousel__google-icon {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+}
+
+.reviews-carousel__rating-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+}
+
+.reviews-carousel__stars {
+  display: inline-flex;
+  gap: 1px;
+  color: #fbbc04;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.reviews-carousel__date {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+
+.reviews-carousel__text {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--color-text);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  overflow: hidden;
 }
 
 .reviews-carousel__btn {
   position: absolute;
-  top: 58%;
+  top: 50%;
   z-index: 2;
   transform: translateY(-50%);
   width: 40px;
@@ -1198,14 +1331,14 @@ details[open] .faq__question {
 }
 
 @media (max-width: 1024px) {
-  .reviews-carousel__viewport .es-review-container {
+  .reviews-carousel__card {
     flex: 0 0 calc((100% - clamp(12px, 2vw, 20px)) / 2);
     min-width: calc((100% - clamp(12px, 2vw, 20px)) / 2);
   }
 }
 
 @media (max-width: 768px) {
-  .reviews-carousel__viewport .es-review-container {
+  .reviews-carousel__card {
     flex: 0 0 85%;
     min-width: 85%;
   }
