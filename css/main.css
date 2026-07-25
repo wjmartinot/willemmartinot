@@ -575,6 +575,12 @@ p {
   animation: bounce 2s infinite;
 }
 
+.hero-scroll svg {
+  width: 44px;
+  height: 44px;
+  display: block;
+}
+
 .hero-scroll:hover {
   opacity: 1;
 }
