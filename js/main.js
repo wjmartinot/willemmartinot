@@ -129,6 +129,30 @@
     }
   }
 
+  function hydrateHeroImage(slide) {
+    const img = slide?.querySelector("img");
+    if (!img || img.dataset.hydrated === "true") return;
+
+    const dataSrc = img.getAttribute("data-src");
+    const dataSrcset = img.getAttribute("data-srcset");
+    const dataSizes = img.getAttribute("data-sizes");
+
+    if (dataSrc) {
+      img.setAttribute("src", dataSrc);
+      img.removeAttribute("data-src");
+    }
+    if (dataSrcset) {
+      img.setAttribute("srcset", dataSrcset);
+      img.removeAttribute("data-srcset");
+    }
+    if (dataSizes) {
+      img.setAttribute("sizes", dataSizes);
+      img.removeAttribute("data-sizes");
+    }
+
+    img.dataset.hydrated = "true";
+  }
+
   function initHeroSlider() {
     const hero = document.querySelector(".hero-slider");
     if (!hero || hero.dataset.bound) return;
@@ -149,6 +173,8 @@
     function goTo(index) {
       slides[current].classList.remove("is-active");
       current = (index + slides.length) % slides.length;
+      hydrateHeroImage(slides[current]);
+      hydrateHeroImage(slides[(current + 1) % slides.length]);
       slides[current].classList.add("is-active");
     }
 
@@ -164,6 +190,9 @@
       clearInterval(timer);
       timer = setInterval(next, INTERVAL);
     }
+
+    hydrateHeroImage(slides[0]);
+    hydrateHeroImage(slides[1] || slides[0]);
 
     prevBtn?.addEventListener("click", () => {
       prev();
@@ -190,21 +219,25 @@
     }, { passive: true });
   }
 
+  // Keep the first (LCP) slide fixed; only shuffle the rest so preload stays valid.
   function shuffleHeroSlides(track, slideElements) {
     const slides = Array.from(slideElements);
+    const first = slides[0];
+    const rest = slides.slice(1);
 
-    for (let i = slides.length - 1; i > 0; i--) {
+    for (let i = rest.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [slides[i], slides[j]] = [slides[j], slides[i]];
+      [rest[i], rest[j]] = [rest[j], rest[i]];
     }
 
-    slides.forEach((slide) => {
+    const ordered = first ? [first, ...rest] : rest;
+    ordered.forEach((slide) => {
       slide.classList.remove("is-active");
       track.appendChild(slide);
     });
 
-    slides[0].classList.add("is-active");
-    return slides;
+    if (ordered[0]) ordered[0].classList.add("is-active");
+    return ordered;
   }
 
   function initImageProtection() {
