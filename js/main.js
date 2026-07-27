@@ -84,8 +84,9 @@
   }
 
   function loadPartials() {
-    const header = document.getElementById("hero-header-placeholder");
+    const headerPlaceholder = document.getElementById("hero-header-placeholder");
     const footer = document.getElementById("footer-placeholder");
+    const existingHeader = document.querySelector(".hero-header");
 
     const lang = document.documentElement.lang;
     const headerFile = lang === "en"
@@ -97,17 +98,24 @@
 
     initCopyright();
 
-    if (header) {
+    function initHeaderUi() {
+      initNavActive();
+      initLangSwitch();
+      initHeroNav();
+    }
+
+    // Prefer inlined header (no fetch on critical path). Fallback keeps partials working.
+    if (existingHeader && !headerPlaceholder) {
+      initHeaderUi();
+    } else if (headerPlaceholder) {
       fetch(headerFile)
         .then((r) => {
           if (!r.ok) throw new Error("Header fetch failed");
           return r.text();
         })
         .then((html) => {
-          header.innerHTML = html;
-          initNavActive();
-          initLangSwitch();
-          initHeroNav();
+          headerPlaceholder.innerHTML = html;
+          initHeaderUi();
         })
         .catch(() => {});
     }
