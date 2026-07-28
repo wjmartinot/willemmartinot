@@ -263,6 +263,7 @@ p {
   left: 0;
   right: 0;
   z-index: 10;
+  isolation: isolate;
 }
 
 .hero-wrapper > .hero-header::before,
@@ -271,6 +272,7 @@ p {
   content: "";
   position: absolute;
   inset: 0 0 auto;
+  z-index: -1;
   height: clamp(140px, 22vh, 220px);
   background: linear-gradient(
     to bottom,
