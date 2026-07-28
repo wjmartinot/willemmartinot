@@ -255,6 +255,8 @@ p {
   overflow: hidden;
 }
 
+.hero-wrapper > .hero-header,
+.hero-section > .hero-header,
 #hero-header-placeholder {
   position: absolute;
   top: 0;
@@ -263,6 +265,8 @@ p {
   z-index: 10;
 }
 
+.hero-wrapper > .hero-header::before,
+.hero-section > .hero-header::before,
 #hero-header-placeholder::before {
   content: "";
   position: absolute;
@@ -1731,10 +1735,12 @@ details[open] .faq__question {
   border-bottom: 1px solid var(--color-border);
 }
 
+.page-header > .hero-header,
 .page-header #hero-header-placeholder {
   position: static;
 }
 
+.page-header > .hero-header::before,
 .page-header #hero-header-placeholder::before {
   display: none;
 }
@@ -2287,6 +2293,8 @@ details[open] .faq__question {
     display: inline-block;
   }
 
+  .hero-wrapper > .hero-header.is-nav-open::before,
+  .hero-section > .hero-header.is-nav-open::before,
   #hero-header-placeholder:has(.hero-header.is-nav-open)::before {
     height: clamp(280px, 55vh, 520px);
   }
