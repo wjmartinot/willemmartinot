@@ -5,6 +5,13 @@
   "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Willem+Martinot+Fotograaf&query_place_id=ChIJ_-hf1BOxxUcRfEmnLXxPyZo",
   "reviews": [
     {
+      "author": "Mylette",
+      "rating": 5,
+      "date": "2026-07-31",
+      "text": "Altijd blij met de foto's van Willem, hij verzorgt voor ons de portretfoto's van de medewerkers. Een hele fijne en flexibele bedrijfsfotograaf.",
+      "avatarColor": "#188038"
+    },
+    {
       "author": "Schippers Architecten",
       "rating": 5,
       "date": "2026-05-15",
