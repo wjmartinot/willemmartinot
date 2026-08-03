@@ -1112,6 +1112,7 @@ details[open] .faq__question {
   align-items: center;
   justify-content: center;
   padding: 1rem;
+  padding-top: 3.5rem;
   text-align: center;
   font-family: "Jost", sans-serif;
   font-weight: 400;
