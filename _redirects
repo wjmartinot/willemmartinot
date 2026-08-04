@@ -98,3 +98,17 @@ https://willemmartinot.nl/* https://www.willemmartinot.nl/:splat 301
 /en/corporate-films/ https://www.limestonepictures.nl 301
 /en/fotograaf-den-haag /en/ 301
 /en/fotograaf-den-haag/ /en/ 301
+
+# Oude Wix-URL's die nog soft-404 gaven (homepage 200) — GSC aug 2026
+/about /about-fotograaf-den-haag/ 301
+/about/ /about-fotograaf-den-haag/ 301
+/films https://www.limestonepictures.nl 301
+/films/ https://www.limestonepictures.nl 301
+/en/films https://www.limestonepictures.nl 301
+/en/films/ https://www.limestonepictures.nl 301
+/fotograaf-den-haag / 301
+/fotograaf-den-haag/ / 301
+/en/theblacklabel /en/ 301
+/en/theblacklabel/ /en/ 301
+/blog-feed.xml / 410
+/en/blog-feed.xml / 410
