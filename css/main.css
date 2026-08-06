@@ -1375,7 +1375,7 @@ details[open] .faq__question {
   color: var(--color-text);
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 6;
+  -webkit-line-clamp: 12;
   overflow: hidden;
 }
 
