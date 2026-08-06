@@ -315,11 +315,8 @@
     const carousel = section?.querySelector(".reviews-carousel");
     if (!section || !carousel || carousel.dataset.bound) return;
 
-    const viewport = carousel.querySelector(".reviews-carousel__viewport");
     const track = carousel.querySelector(".reviews-carousel__track");
-    const prevBtn = carousel.querySelector(".reviews-carousel__btn--prev");
-    const nextBtn = carousel.querySelector(".reviews-carousel__btn--next");
-    if (!viewport || !track) return;
+    if (!track) return;
 
     carousel.dataset.bound = "true";
 
@@ -406,16 +403,6 @@
       }).join("");
     }
 
-    function scrollByCards(direction) {
-      const card = track.querySelector(".reviews-carousel__card");
-      const gap = parseFloat(getComputedStyle(track).gap) || 16;
-      const amount = (card?.offsetWidth || track.clientWidth / 4) + gap;
-      track.scrollBy({ left: direction * amount, behavior: "smooth" });
-    }
-
-    prevBtn?.addEventListener("click", () => scrollByCards(-1));
-    nextBtn?.addEventListener("click", () => scrollByCards(1));
-
     fetch("/data/google-reviews.json")
       .then((response) => {
         if (!response.ok) throw new Error("Reviews fetch failed");
@@ -423,8 +410,11 @@
       })
       .then((data) => {
         if (!Array.isArray(data.reviews) || !data.reviews.length) return;
+        const reviews = [...data.reviews]
+          .sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")))
+          .slice(0, 8);
         renderHeader(data);
-        renderCards(data.reviews);
+        renderCards(reviews);
       })
       .catch(() => {});
   }

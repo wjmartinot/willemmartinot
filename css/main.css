@@ -1266,28 +1266,20 @@ details[open] .faq__question {
 }
 
 .reviews-carousel__viewport {
-  overflow: hidden;
+  overflow: visible;
 }
 
 .reviews-carousel__track {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: clamp(12px, 2vw, 20px);
-  padding-bottom: 4px;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
 }
 
 .reviews-carousel__card {
-  flex: 0 0 calc((100% - 3 * clamp(12px, 2vw, 20px)) / 4);
-  min-width: calc((100% - 3 * clamp(12px, 2vw, 20px)) / 4);
-  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   gap: 12px;
+  min-width: 0;
   padding: 20px;
   background: var(--color-bg-section);
   border: 1px solid var(--color-border);
@@ -1379,57 +1371,15 @@ details[open] .faq__question {
   overflow: hidden;
 }
 
-.reviews-carousel__btn {
-  position: absolute;
-  top: 50%;
-  z-index: 2;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  padding: 0;
-  border: 1px solid var(--color-border);
-  border-radius: 50%;
-  background: var(--color-bg);
-  color: var(--color-text);
-  font-size: 1.5rem;
-  line-height: 1;
-  cursor: pointer;
-  opacity: 0.85;
-  transition: opacity 0.2s ease, border-color 0.2s ease;
-}
-
-.reviews-carousel__btn:hover {
-  opacity: 1;
-  border-color: var(--color-text);
-}
-
-.reviews-carousel__btn--prev {
-  left: -12px;
-}
-
-.reviews-carousel__btn--next {
-  right: -12px;
-}
-
 @media (max-width: 1024px) {
-  .reviews-carousel__card {
-    flex: 0 0 calc((100% - clamp(12px, 2vw, 20px)) / 2);
-    min-width: calc((100% - clamp(12px, 2vw, 20px)) / 2);
+  .reviews-carousel__track {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 768px) {
-  .reviews-carousel__card {
-    flex: 0 0 85%;
-    min-width: 85%;
-  }
-
-  .reviews-carousel__btn--prev {
-    left: 0;
-  }
-
-  .reviews-carousel__btn--next {
-    right: 0;
+@media (max-width: 640px) {
+  .reviews-carousel__track {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
