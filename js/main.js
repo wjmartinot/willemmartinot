@@ -367,7 +367,7 @@
       const header = document.createElement("div");
       header.className = "reviews-header";
       header.innerHTML = `
-        <div class="reviews-header__rating" aria-label="${copy.ratingLabel} ${data.rating} van 5">
+        <div class="reviews-header__rating" aria-label="${copy.ratingLabel} ${data.rating} ${lang === "en" ? "out of" : "van"} 5">
           <span class="reviews-header__score">${escapeHtml(String(data.rating))}</span>
           <span class="reviews-header__stars" aria-hidden="true">${stars(data.rating)}</span>
           <span class="reviews-header__source">Google</span>
@@ -379,6 +379,14 @@
       } else {
         label?.after(header);
       }
+    }
+
+    function reviewText(review) {
+      const text = review?.text;
+      if (text && typeof text === "object") {
+        return text[lang] || text.nl || text.en || "";
+      }
+      return text || "";
     }
 
     function renderCards(reviews) {
@@ -397,7 +405,7 @@
               <span class="reviews-carousel__stars" aria-label="${review.rating} / 5">${stars(review.rating)}</span>
               <time class="reviews-carousel__date" datetime="${escapeHtml(review.date)}">${escapeHtml(formatDate(review.date))}</time>
             </div>
-            <p class="reviews-carousel__text">${escapeHtml(review.text)}</p>
+            <p class="reviews-carousel__text">${escapeHtml(reviewText(review))}</p>
           </article>
         `;
       }).join("");

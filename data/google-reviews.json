@@ -8,56 +8,80 @@
       "author": "DNHK",
       "rating": 5,
       "date": "2026-08-06",
-      "text": "Voor een evenement waren we op zoek naar een fotograaf die niet alleen mooie beelden maakt, maar ook de sfeer en dynamiek van tafelgesprekken weet te vangen. We wilden foto's die de kijker het gevoel geven zelf aan tafel te zitten: spontaan, betrokken, dichtbij en fotografie die de interactie tussen mensen centraal stelt. Dit is gelukt en wij zijn heel blij met de beelden van Willem. Aanrader!",
+      "text": {
+        "nl": "Voor een evenement waren we op zoek naar een fotograaf die niet alleen mooie beelden maakt, maar ook de sfeer en dynamiek van tafelgesprekken weet te vangen. We wilden foto's die de kijker het gevoel geven zelf aan tafel te zitten: spontaan, betrokken, dichtbij en fotografie die de interactie tussen mensen centraal stelt. Dit is gelukt en wij zijn heel blij met de beelden van Willem. Aanrader!",
+        "en": "For an event, we were looking for a photographer who not only creates beautiful images but also knows how to capture the atmosphere and dynamics of table conversations. We wanted photos that give the viewer the feeling of sitting at the table themselves: spontaneous, engaging, close, and photography that puts the interaction between people centre stage. This worked out, and we are very happy with Willem's images. Highly recommended!"
+      },
       "avatarColor": "#1a73e8"
     },
     {
       "author": "Mylette",
       "rating": 5,
       "date": "2026-07-31",
-      "text": "Altijd blij met de foto's van Willem, hij verzorgt voor ons de portretfoto's van de medewerkers. Een hele fijne en flexibele bedrijfsfotograaf.",
+      "text": {
+        "nl": "Altijd blij met de foto's van Willem, hij verzorgt voor ons de portretfoto's van de medewerkers. Een hele fijne en flexibele bedrijfsfotograaf.",
+        "en": "Always happy with Willem's photos; he takes care of our employee portrait photos. A really pleasant and flexible corporate photographer."
+      },
       "avatarColor": "#188038"
     },
     {
       "author": "Schippers Architecten",
       "rating": 5,
       "date": "2026-05-15",
-      "text": "Willem Martinot is vindingrijk en creatief. Nadat het ontwerp voor onze website klaar was, moesten er hele specifieke portretfoto's worden gemaakt. Willem heeft op hele creatieve wijze en met een flinke dosis energie prachtige foto's voor ons weten te maken, die ook nog perfect in het ontwerp pasten!",
+      "text": {
+        "nl": "Willem Martinot is vindingrijk en creatief. Nadat het ontwerp voor onze website klaar was, moesten er hele specifieke portretfoto's worden gemaakt. Willem heeft op hele creatieve wijze en met een flinke dosis energie prachtige foto's voor ons weten te maken, die ook nog perfect in het ontwerp pasten!",
+        "en": "Willem Martinot is inventive and creative. After the design for our website was ready, we needed very specific portrait photos. Willem created beautiful photos for us in a highly creative way and with a great deal of energy — and they fitted the design perfectly!"
+      },
       "avatarColor": "#188038"
     },
     {
       "author": "Mark Lind",
       "rating": 5,
       "date": "2026-03-20",
-      "text": "Fijne fotograaf - ik heb een serie profiel foto's gemaakt voor professioneel gebruik. Willem denkt goed en creatief mee, en nam de tijd om dé foto te krijgen die het best bij mij past .",
+      "text": {
+        "nl": "Fijne fotograaf - ik heb een serie profiel foto's gemaakt voor professioneel gebruik. Willem denkt goed en creatief mee, en nam de tijd om dé foto te krijgen die het best bij mij past .",
+        "en": "Great photographer — I had a series of profile photos taken for professional use. Willem thinks along well and creatively, and took the time to get the photo that suits me best."
+      },
       "avatarColor": "#188038"
     },
     {
       "author": "holdet age",
       "rating": 5,
       "date": "2026-03-15",
-      "text": "Willem wist het beste in me naar boven te halen. Mijn neutrale blik is altijd wat streng en boos, maar onder de bezielende leiding van Willem werd deze zacht, lief en vrolijk. Dank je wel!!! X D.",
+      "text": {
+        "nl": "Willem wist het beste in me naar boven te halen. Mijn neutrale blik is altijd wat streng en boos, maar onder de bezielende leiding van Willem werd deze zacht, lief en vrolijk. Dank je wel!!! X D.",
+        "en": "Willem brought out the best in me. My neutral expression always looks a bit stern and angry, but under Willem's inspiring guidance it became soft, kind and cheerful. Thank you!!! X D."
+      },
       "avatarColor": "#e37400"
     },
     {
       "author": "Midas Van Dijk",
       "rating": 5,
       "date": "2026-02-20",
-      "text": "Willem is een echte vakman die plezier heeft in zijn werk!",
+      "text": {
+        "nl": "Willem is een echte vakman die plezier heeft in zijn werk!",
+        "en": "Willem is a true professional who enjoys his work!"
+      },
       "avatarColor": "#188038"
     },
     {
       "author": "Moonlight Moon",
       "rating": 5,
       "date": "2025-12-20",
-      "text": "Highly recommend. Great communication, a relaxed shoot, and the photos came out natural and sharp. Fast turnaround too.",
+      "text": {
+        "nl": "Sterk aanbevolen. Goede communicatie, een ontspannen shoot, en de foto's werden natuurlijk en scherp. Snelle oplevering ook.",
+        "en": "Highly recommend. Great communication, a relaxed shoot, and the photos came out natural and sharp. Fast turnaround too."
+      },
       "avatarColor": "#d93025"
     },
     {
       "author": "Keith Vos",
       "rating": 5,
       "date": "2021-07-01",
-      "text": "My Family and I had photo's taken by Willem. He was great with the kids and captured the day perfectly! He was responsive to my emails when planning the day.",
+      "text": {
+        "nl": "Mijn gezin en ik zijn door Willem gefotografeerd. Hij was geweldig met de kinderen en legde de dag perfect vast! Hij reageerde snel op mijn e-mails bij het plannen van de dag.",
+        "en": "My Family and I had photo's taken by Willem. He was great with the kids and captured the day perfectly! He was responsive to my emails when planning the day."
+      },
       "avatarColor": "#137333"
     }
   ]
