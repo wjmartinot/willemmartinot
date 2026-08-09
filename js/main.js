@@ -325,10 +325,14 @@
       ? {
           fromGoogle: "Review from Google",
           ratingLabel: "Google rating",
+          ctaLabel: "Request a no-obligation quote",
+          ctaHref: "/en/contact/",
         }
       : {
           fromGoogle: "Review van Google",
           ratingLabel: "Google-beoordeling",
+          ctaLabel: "Vraag vrijblijvend offerte aan",
+          ctaHref: "/contact/",
         };
 
     const googleIcon = `
@@ -387,6 +391,14 @@
         return text[lang] || text.nl || text.en || "";
       }
       return text || "";
+    }
+
+    function renderCta() {
+      if (carousel.querySelector(".reviews-carousel__cta")) return;
+      const cta = document.createElement("p");
+      cta.className = "reviews-carousel__cta";
+      cta.innerHTML = `<a href="${copy.ctaHref}" class="btn-outline">${escapeHtml(copy.ctaLabel)}</a>`;
+      carousel.appendChild(cta);
     }
 
     function renderCards(reviews) {
@@ -469,6 +481,7 @@
           .slice(0, 8);
         renderHeader(data);
         renderCards(reviews);
+        renderCta();
         syncCardHeights();
       })
       .catch(() => {});

@@ -1266,6 +1266,15 @@ details[open] .faq__question {
   position: relative;
 }
 
+.reviews-carousel__cta {
+  margin: clamp(32px, 5vw, 48px) 0 0;
+  text-align: center;
+}
+
+.reviews-carousel__cta .btn-outline {
+  display: inline-block;
+}
+
 .reviews-carousel__viewport {
   overflow: visible;
 }
