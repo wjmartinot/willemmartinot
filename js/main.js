@@ -403,7 +403,6 @@
 
     function renderCards(reviews) {
       track.innerHTML = reviews.map((review) => {
-        const initial = (review.author || "?").trim().charAt(0) || "?";
         const alt = review.imageAlt
           ? escapeHtml(review.imageAlt)
           : escapeHtml(lang === "en" ? `Photo related to review by ${review.author || "client"}` : `Foto bij review van ${review.author || "klant"}`);
@@ -415,7 +414,6 @@
         return `
           <article class="reviews-carousel__card">
             <div class="reviews-carousel__author">
-              <span class="reviews-carousel__avatar" style="background:${escapeHtml(review.avatarColor || "#314f77")}" aria-hidden="true">${escapeHtml(initial)}</span>
               <div class="reviews-carousel__meta">
                 <span class="reviews-carousel__name">${escapeHtml(review.author)}</span>
                 <span class="reviews-carousel__from">${googleIcon}<span>${copy.fromGoogle}</span></span>
