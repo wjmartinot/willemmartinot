@@ -406,10 +406,20 @@
         const alt = review.imageAlt
           ? escapeHtml(review.imageAlt)
           : escapeHtml(lang === "en" ? `Photo related to review by ${review.author || "client"}` : `Foto bij review van ${review.author || "klant"}`);
+        const position = review.imagePosition
+          ? ` style="object-position:${escapeHtml(review.imagePosition)}"`
+          : "";
+        const img = review.image
+          ? `<img src="${escapeHtml(review.image)}" alt="${alt}" width="640" height="360" loading="eager" decoding="async"${position}>`
+          : "";
+        const href = review.imageHref && typeof review.imageHref === "object"
+          ? (review.imageHref[lang] || review.imageHref.nl || review.imageHref.en)
+          : review.imageHref;
+        const mediaInner = href && img
+          ? `<a href="${escapeHtml(href)}" class="reviews-carousel__media-link">${img}</a>`
+          : img;
         const media = review.image
-          ? `<div class="reviews-carousel__media">
-              <img src="${escapeHtml(review.image)}" alt="${alt}" width="640" height="360" loading="eager" decoding="async"${review.imagePosition ? ` style="object-position:${escapeHtml(review.imagePosition)}"` : ""}>
-            </div>`
+          ? `<div class="reviews-carousel__media">${mediaInner}</div>`
           : `<div class="reviews-carousel__media reviews-carousel__media--placeholder" aria-hidden="true"></div>`;
         return `
           <article class="reviews-carousel__card">
