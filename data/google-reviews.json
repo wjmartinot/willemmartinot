@@ -12,8 +12,14 @@
         "nl": "Voor een evenement waren we op zoek naar een fotograaf die niet alleen mooie beelden maakt, maar ook de sfeer en dynamiek van tafelgesprekken weet te vangen. We wilden foto's die de kijker het gevoel geven zelf aan tafel te zitten: spontaan, betrokken, dichtbij en fotografie die de interactie tussen mensen centraal stelt. Dit is gelukt en wij zijn heel blij met de beelden van Willem. Aanrader!",
         "en": "For an event, we were looking for a photographer who not only creates beautiful images but also knows how to capture the atmosphere and dynamics of table conversations. We wanted photos that give the viewer the feeling of sitting at the table themselves: spontaneous, engaging, close, and photography that puts the interaction between people centre stage. This worked out, and we are very happy with Willem's images. Highly recommended!"
       },
-      "image": "/images/nl/1200/IZ7A6304-eventfotograaf-den-haag-ambassade-hero.jpg",
-      "imageAlt": "Eventfotografie ambassade Den Haag — tafelgesprekken en sfeer",
+      "image": {
+        "nl": "/images/nl/1200/IZ7A6304-eventfotograaf-den-haag-ambassade-hero.jpg",
+        "en": "/images/en/1200/IZ7A6304-event-photographer-the-hague-embassy-hero.jpg"
+      },
+      "imageAlt": {
+        "nl": "Eventfotografie ambassade Den Haag — tafelgesprekken en sfeer",
+        "en": "Event photography embassy The Hague — table conversations and atmosphere"
+      },
       "imageHref": {
         "nl": "/event-fotograaf-den-haag/",
         "en": "/en/event-photographer-the-hague/"
@@ -27,8 +33,14 @@
         "nl": "Altijd blij met de foto's van Willem, hij verzorgt voor ons de portretfoto's van de medewerkers. Een hele fijne en flexibele bedrijfsfotograaf.",
         "en": "Always happy with Willem's photos; he takes care of our employee portrait photos. A really pleasant and flexible corporate photographer."
       },
-      "image": "/images/nl/1200/zakelijk-portretfotograaf-den-haag.jpg",
-      "imageAlt": "Zakelijk portret — portretfotograaf Den Haag",
+      "image": {
+        "nl": "/images/nl/1200/zakelijk-portretfotograaf-den-haag.jpg",
+        "en": "/images/en/1200/corporate-portrait-photographer-the-hague.jpg"
+      },
+      "imageAlt": {
+        "nl": "Zakelijk portret — portretfotograaf Den Haag",
+        "en": "Corporate portrait — portrait photographer The Hague"
+      },
       "imageHref": {
         "nl": "/portretfotograaf-den-haag/",
         "en": "/en/corporate-portrait-photographer-the-hague/"
@@ -42,8 +54,14 @@
         "nl": "Willem Martinot is vindingrijk en creatief. Nadat het ontwerp voor onze website klaar was, moesten er hele specifieke portretfoto's worden gemaakt. Willem heeft op hele creatieve wijze en met een flinke dosis energie prachtige foto's voor ons weten te maken, die ook nog perfect in het ontwerp pasten!",
         "en": "Willem Martinot is inventive and creative. After the design for our website was ready, we needed very specific portrait photos. Willem created beautiful photos for us in a highly creative way and with a great deal of energy — and they fitted the design perfectly!"
       },
-      "image": "/images/nl/1200/5I2A4676-bedrijfsfotograaf-den-haag-architecten.jpg",
-      "imageAlt": "Bedrijfsfotografie Schippers Architecten Den Haag",
+      "image": {
+        "nl": "/images/nl/1200/5I2A4676-bedrijfsfotograaf-den-haag-architecten.jpg",
+        "en": "/images/en/1200/5I2A4676-business-photographer-the-hague-architects.jpg"
+      },
+      "imageAlt": {
+        "nl": "Bedrijfsfotografie Schippers Architecten Den Haag",
+        "en": "Business photography Schippers Architects The Hague"
+      },
       "imageHref": {
         "nl": "/bedrijfsfotograaf-den-haag/",
         "en": "/en/business-photographer-the-hague/"
@@ -57,8 +75,14 @@
         "nl": "Fijne fotograaf - ik heb een serie profiel foto's gemaakt voor professioneel gebruik. Willem denkt goed en creatief mee, en nam de tijd om dé foto te krijgen die het best bij mij past .",
         "en": "Great photographer — I had a series of profile photos taken for professional use. Willem thinks along well and creatively, and took the time to get the photo that suits me best."
       },
-      "image": "/images/nl/1200/zakelijke-portret-fotograaf-den-haag-mark-3.jpg",
-      "imageAlt": "Zakelijk portret Mark Lind — portretfotograaf Den Haag",
+      "image": {
+        "nl": "/images/nl/1200/zakelijke-portret-fotograaf-den-haag-mark-3.jpg",
+        "en": "/images/en/1200/corporate-portrait-photographer-the-hague-mark-3.jpg"
+      },
+      "imageAlt": {
+        "nl": "Zakelijk portret Mark Lind — portretfotograaf Den Haag",
+        "en": "Corporate portrait Mark Lind — portrait photographer The Hague"
+      },
       "imageHref": {
         "nl": "/linkedin-profielfoto-den-haag/",
         "en": "/en/linkedin-portrait-the-hague/"
@@ -72,8 +96,14 @@
         "nl": "Willem wist het beste in me naar boven te halen. Mijn neutrale blik is altijd wat streng en boos, maar onder de bezielende leiding van Willem werd deze zacht, lief en vrolijk. Dank je wel!!! X D.",
         "en": "Willem brought out the best in me. My neutral expression always looks a bit stern and angry, but under Willem's inspiring guidance it became soft, kind and cheerful. Thank you!!! X D."
       },
-      "image": "/images/nl/1200/5I2A6681-portretfotograaf-den-haag-studio.jpg",
-      "imageAlt": "Zakelijk portret in studio — portretfotograaf Den Haag",
+      "image": {
+        "nl": "/images/nl/1200/5I2A6681-portretfotograaf-den-haag-studio.jpg",
+        "en": "/images/en/1200/5I2A6681-corporate-portrait-photographer-the-hague-studio.jpg"
+      },
+      "imageAlt": {
+        "nl": "Zakelijk portret in studio — portretfotograaf Den Haag",
+        "en": "Corporate portrait in studio — portrait photographer The Hague"
+      },
       "imageHref": {
         "nl": "/portretfotograaf-den-haag/",
         "en": "/en/corporate-portrait-photographer-the-hague/"
@@ -87,8 +117,14 @@
         "nl": "Willem is een echte vakman die plezier heeft in zijn werk!",
         "en": "Willem is a true professional who enjoys his work!"
       },
-      "image": "/images/nl/1200/5I2A6504-zakelijk-portretfotograaf-den-haag.jpg",
-      "imageAlt": "Zakelijk portret — portretfotograaf Den Haag",
+      "image": {
+        "nl": "/images/nl/1200/5I2A6504-zakelijk-portretfotograaf-den-haag.jpg",
+        "en": "/images/en/1200/5I2A6504-corporate-portrait-photographer-the-hague.jpg"
+      },
+      "imageAlt": {
+        "nl": "Zakelijk portret — portretfotograaf Den Haag",
+        "en": "Corporate portrait — portrait photographer The Hague"
+      },
       "imagePosition": "70% center",
       "imageHref": {
         "nl": "/portretfotograaf-den-haag/",
@@ -103,8 +139,14 @@
         "nl": "Sterk aanbevolen. Goede communicatie, een ontspannen shoot, en de foto's werden natuurlijk en scherp. Snelle oplevering ook.",
         "en": "Highly recommend. Great communication, a relaxed shoot, and the photos came out natural and sharp. Fast turnaround too."
       },
-      "image": "/images/nl/1200/2P4A0438-eventfotograaf-den-haag-nationale-nederlanden.jpg",
-      "imageAlt": "Eventfotografie Nationale Nederlanden Den Haag",
+      "image": {
+        "nl": "/images/nl/1200/2P4A0438-eventfotograaf-den-haag-nationale-nederlanden.jpg",
+        "en": "/images/en/1200/2P4A0438-event-photographer-the-hague-nationale-nederlanden.jpg"
+      },
+      "imageAlt": {
+        "nl": "Eventfotografie Nationale Nederlanden Den Haag",
+        "en": "Event photography Nationale Nederlanden The Hague"
+      },
       "imagePosition": "80% center",
       "imageHref": {
         "nl": "/event-fotograaf-den-haag/",
@@ -119,8 +161,14 @@
         "nl": "Willem heeft een perfect en artistiek oog om momenten op een unieke manier vast te leggen. Zijn foto's en films vallen altijd op. Wil je kwaliteit, werk dan met hem. Hij heeft meerdere opdrachten voor mij gedaan en ik kan hem van harte aanbevelen.",
         "en": "Willem has a perfect and artistic eye to capture moments in a unique way. His pictures and movies always stand out. If you want quality, work with him. He did several jobs for me and after that I would like to highly recommend him."
       },
-      "image": "/images/nl/1200/mode-fotograaf-den-haag-review.jpg",
-      "imageAlt": "Modefotografie Den Haag",
+      "image": {
+        "nl": "/images/nl/1200/mode-fotograaf-den-haag-review.jpg",
+        "en": "/images/en/1200/fashion-photographer-the-hague-review.jpg"
+      },
+      "imageAlt": {
+        "nl": "Modefotografie Den Haag",
+        "en": "Fashion photography The Hague"
+      },
       "imageHref": {
         "nl": "/mode-fotograaf-den-haag/",
         "en": "/en/fashion-photographer-the-hague/"

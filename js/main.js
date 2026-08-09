@@ -393,6 +393,13 @@
       return text || "";
     }
 
+    function localizedField(value, fallback = "") {
+      if (value && typeof value === "object") {
+        return value[lang] || value.nl || value.en || fallback;
+      }
+      return value || fallback;
+    }
+
     function renderCta() {
       if (carousel.querySelector(".reviews-carousel__cta")) return;
       const cta = document.createElement("p");
@@ -403,22 +410,26 @@
 
     function renderCards(reviews) {
       track.innerHTML = reviews.map((review) => {
-        const alt = review.imageAlt
-          ? escapeHtml(review.imageAlt)
-          : escapeHtml(lang === "en" ? `Photo related to review by ${review.author || "client"}` : `Foto bij review van ${review.author || "klant"}`);
+        const image = localizedField(review.image);
+        const alt = escapeHtml(
+          localizedField(
+            review.imageAlt,
+            lang === "en"
+              ? `Photo related to review by ${review.author || "client"}`
+              : `Foto bij review van ${review.author || "klant"}`
+          )
+        );
         const position = review.imagePosition
           ? ` style="object-position:${escapeHtml(review.imagePosition)}"`
           : "";
-        const img = review.image
-          ? `<img src="${escapeHtml(review.image)}" alt="${alt}" width="640" height="360" loading="eager" decoding="async"${position}>`
+        const img = image
+          ? `<img src="${escapeHtml(image)}" alt="${alt}" width="640" height="360" loading="eager" decoding="async"${position}>`
           : "";
-        const href = review.imageHref && typeof review.imageHref === "object"
-          ? (review.imageHref[lang] || review.imageHref.nl || review.imageHref.en)
-          : review.imageHref;
+        const href = localizedField(review.imageHref);
         const mediaInner = href && img
           ? `<a href="${escapeHtml(href)}" class="reviews-carousel__media-link">${img}</a>`
           : img;
-        const media = review.image
+        const media = image
           ? `<div class="reviews-carousel__media">${mediaInner}</div>`
           : `<div class="reviews-carousel__media reviews-carousel__media--placeholder" aria-hidden="true"></div>`;
         return `
