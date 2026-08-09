@@ -368,9 +368,9 @@
       header.className = "reviews-header";
       header.innerHTML = `
         <div class="reviews-header__rating" aria-label="${copy.ratingLabel} ${data.rating} ${lang === "en" ? "out of" : "van"} 5">
+          ${googleIcon.replace('reviews-carousel__google-icon', 'reviews-header__google-icon')}
           <span class="reviews-header__score">${escapeHtml(String(data.rating))}</span>
           <span class="reviews-header__stars" aria-hidden="true">${stars(data.rating)}</span>
-          <span class="reviews-header__source">Google</span>
         </div>
       `;
 
@@ -392,6 +392,14 @@
     function renderCards(reviews) {
       track.innerHTML = reviews.map((review) => {
         const initial = (review.author || "?").trim().charAt(0) || "?";
+        const alt = review.imageAlt
+          ? escapeHtml(review.imageAlt)
+          : escapeHtml(lang === "en" ? `Photo related to review by ${review.author || "client"}` : `Foto bij review van ${review.author || "klant"}`);
+        const media = review.image
+          ? `<div class="reviews-carousel__media">
+              <img src="${escapeHtml(review.image)}" alt="${alt}" width="640" height="360" loading="eager" decoding="async"${review.imagePosition ? ` style="object-position:${escapeHtml(review.imagePosition)}"` : ""}>
+            </div>`
+          : `<div class="reviews-carousel__media reviews-carousel__media--placeholder" aria-hidden="true"></div>`;
         return `
           <article class="reviews-carousel__card">
             <div class="reviews-carousel__author">
@@ -406,10 +414,48 @@
               <time class="reviews-carousel__date" datetime="${escapeHtml(review.date)}">${escapeHtml(formatDate(review.date))}</time>
             </div>
             <p class="reviews-carousel__text">${escapeHtml(reviewText(review))}</p>
+            ${media}
           </article>
         `;
       }).join("");
     }
+
+    function equalizeCardHeights() {
+      const cards = [...track.querySelectorAll(".reviews-carousel__card")];
+      if (!cards.length) return;
+      cards.forEach((card) => {
+        card.style.height = "";
+      });
+      const maxHeight = Math.max(...cards.map((card) => card.getBoundingClientRect().height));
+      if (!maxHeight) return;
+      cards.forEach((card) => {
+        card.style.height = `${Math.ceil(maxHeight)}px`;
+      });
+    }
+
+    function whenImagesReady() {
+      const images = [...track.querySelectorAll("img")];
+      if (!images.length) return Promise.resolve();
+      return Promise.all(images.map((img) => {
+        if (img.complete) return Promise.resolve();
+        return new Promise((resolve) => {
+          img.addEventListener("load", resolve, { once: true });
+          img.addEventListener("error", resolve, { once: true });
+        });
+      }));
+    }
+
+    function syncCardHeights() {
+      whenImagesReady().then(() => {
+        requestAnimationFrame(equalizeCardHeights);
+      });
+    }
+
+    let resizeTimer = 0;
+    window.addEventListener("resize", () => {
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(syncCardHeights, 150);
+    });
 
     fetch("/data/google-reviews.json")
       .then((response) => {
@@ -423,6 +469,7 @@
           .slice(0, 8);
         renderHeader(data);
         renderCards(reviews);
+        syncCardHeights();
       })
       .catch(() => {});
   }
