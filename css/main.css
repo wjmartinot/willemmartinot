@@ -1566,6 +1566,10 @@ details[open] .faq__question {
   object-position: center 15%;
 }
 
+.blog-card__image--crop-face {
+  object-position: center 18%;
+}
+
 .content-section--prose .corporate-inline-row {
   width: calc(100% + 2 * clamp(24px, 4vw, 80px));
   max-width: var(--container-max);
