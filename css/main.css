@@ -588,6 +588,11 @@ p {
   --hero-pos-mobile: center 38%;
 }
 
+.hero-section--directieportret.hero-section--short {
+  --hero-pos: center 32%;
+  --hero-pos-mobile: center 28%;
+}
+
 .hero-section--short.hero-section--short-portrait {
   --hero-pos: 50% 18%;
   --hero-pos-mobile: 50% 22%;
@@ -1567,6 +1572,16 @@ details[open] .faq__question {
 }
 
 .blog-card__image--crop-face {
+  object-position: center 18%;
+}
+
+.content-portrait {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  margin: clamp(32px, 5vw, 48px) auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
   object-position: center 18%;
 }
 
