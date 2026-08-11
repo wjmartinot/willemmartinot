@@ -304,11 +304,24 @@
     });
   }
 
+  function initCloudflareAnalytics() {
+    if (document.querySelector("script[data-cf-beacon]")) return;
+    const script = document.createElement("script");
+    script.type = "module";
+    script.src = "https://static.cloudflareinsights.com/beacon.min.js";
+    script.setAttribute(
+      "data-cf-beacon",
+      '{"token":"9255340006774309b3c7927cb3822b89"}'
+    );
+    document.body.appendChild(script);
+  }
+
   loadPartials();
   initFormNotice();
   initImageProtection();
   initHeroSlider();
   initReviewsCarousel();
+  initCloudflareAnalytics();
 
   function initReviewsCarousel() {
     const section = document.querySelector(".section.reviews");
