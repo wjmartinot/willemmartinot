@@ -750,7 +750,6 @@ p {
   height: auto;
   max-height: 80px;
   object-fit: contain;
-  opacity: 0.6;
 }
 
 @media (max-width: 768px) {
