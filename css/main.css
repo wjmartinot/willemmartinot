@@ -307,12 +307,13 @@ p {
 
 .hero-header .logo-sub {
   display: block;
-  font-family: var(--font-logo);
-  font-weight: 900;
-  letter-spacing: 0.03em;
+  font-family: "Jost", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.5em;
   text-transform: uppercase;
-  font-size: clamp(0.95rem, 1.5vw, 1.25rem);
-  margin-top: 2px;
+  font-size: clamp(0.7rem, 1.05vw, 0.85rem);
+  margin-top: -2px;
+  padding-left: 0.5em;
   color: #ffffff;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
@@ -1949,10 +1950,10 @@ details[open] .faq__question {
 }
 
 .footer-logo .logo-sub {
-  font-family: var(--font-logo);
-  font-weight: 900;
-  font-size: clamp(0.8rem, 1.3vw, 1.1rem);
-  letter-spacing: 0.03em;
+  font-family: var(--font-jost);
+  font-weight: 300;
+  font-size: clamp(0.7rem, 1.05vw, 0.85rem);
+  letter-spacing: 0.5em;
   text-transform: uppercase;
   color: var(--color-text);
   margin-top: 4px;
