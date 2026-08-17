@@ -230,7 +230,7 @@ p {
 .img-placeholder--service,
 .service-item img {
   width: 100%;
-  height: 420px;
+  height: 288px;
   object-fit: cover;
   display: block;
   transition: transform 0.5s ease;
@@ -1096,62 +1096,82 @@ details[open] .faq__question {
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px 32px;
+  gap: 24px;
+}
+
+.service-item {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 22px;
+  overflow: hidden;
 }
 
 .service-item h3 {
-  margin: 14px 0 6px;
-  font-size: 1rem;
-  font-weight: 700;
+  order: 1;
+  margin: 0;
+  padding: 28px 24px 10px;
+  font-family: var(--font-jost);
+  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
 }
 
 .service-item p {
+  order: 2;
   margin: 0;
-  font-size: 0.85rem;
+  padding: 0 24px 24px;
+  font-size: 0.9rem;
   line-height: 1.55;
   color: var(--color-text-secondary);
+  flex: 1;
 }
 
 .service-item__link {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   text-decoration: none;
   color: inherit;
 }
 
 .service-item__media {
+  order: 3;
   position: relative;
   overflow: hidden;
+  margin-top: auto;
 }
 
-.service-item__caption {
+.service-item__cta {
   position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 1rem 1rem 16%;
-  text-align: center;
-  font-family: "Jost", sans-serif;
+  left: 50%;
+  top: 84%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid #ffffff;
+  border-radius: 2px;
+  font-family: var(--font-jost);
   font-weight: 400;
-  font-size: 1.15rem;
-  letter-spacing: 0.07em;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #ffffff;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
-  background: rgba(0, 0, 0, 0);
-  opacity: 1;
-  transition: background 0.35s ease;
+  background: rgba(0, 0, 0, 0.28);
+  white-space: nowrap;
   pointer-events: none;
+  transition: background 0.2s ease;
 }
 
-.service-item__link:hover .service-item__caption,
-.service-item__link:focus-visible .service-item__caption {
-  background: rgba(0, 0, 0, 0.5);
+.service-item__link:hover .service-item__cta,
+.service-item__link:focus-visible .service-item__cta {
+  background: rgba(0, 0, 0, 0.48);
 }
 
 .service-item__link:hover img,
 .service-item__link:focus-visible img {
-  transform: scale(1.06);
+  transform: scale(1.04);
 }
 
 /* --- Testimonials --- */
