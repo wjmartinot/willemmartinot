@@ -255,16 +255,19 @@
       <button type="button" class="hero-slider__btn hero-slider__btn--prev" aria-label="Vorige slide">&#8592;</button>
       <button type="button" class="hero-slider__btn hero-slider__btn--next" aria-label="Volgende slide">&#8594;</button>
     </section>
-    <button class="hero-scroll"
-            aria-label="Scroll naar beneden"
-            onclick="document.querySelector('.main-content').scrollIntoView({behavior:'smooth'})">
-      <svg viewBox="0 0 32 32"
-           aria-hidden="true"
-           width="32" height="32">
-        <path d="M9.5 12L16 19l6.5-7H24v1.5L16 22 8 13.5V12h1.5z"
-              fill="white"/>
-      </svg>
-    </button>
+    <div class="hero-cue">
+      <span class="btn-outline btn-outline--hero">Scroll down voor meer info</span>
+      <button class="hero-scroll"
+              aria-label="Scroll naar beneden"
+              onclick="document.querySelector('.main-content').scrollIntoView({behavior:'smooth'})">
+        <svg viewBox="0 0 32 32"
+             aria-hidden="true"
+             width="32" height="32">
+          <path d="M9.5 12L16 19l6.5-7H24v1.5L16 22 8 13.5V12h1.5z"
+                fill="white"/>
+        </svg>
+      </button>
+    </div>
   </section>
 
   <main>

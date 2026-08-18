@@ -660,12 +660,43 @@ p {
   opacity: 1;
 }
 
+.hero-cue {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  pointer-events: none;
+}
+
+.hero-cue .hero-scroll {
+  position: static;
+  left: auto;
+  bottom: auto;
+  transform: none;
+  pointer-events: auto;
+  animation: bounce-y 2s infinite;
+}
+
 @keyframes bounce {
   0%, 100% {
     transform: translateX(-50%) translateY(0);
   }
   50% {
     transform: translateX(-50%) translateY(6px);
+  }
+}
+
+@keyframes bounce-y {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
   }
 }
 
@@ -788,6 +819,31 @@ p {
 .btn-outline:hover {
   background: var(--color-text);
   color: #ffffff;
+}
+
+.hero-cue .btn-outline.btn-outline--hero {
+  margin-top: 0;
+  background: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  cursor: default;
+  pointer-events: none;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+  white-space: nowrap;
+}
+
+.hero-cue .btn-outline.btn-outline--hero:hover {
+  background: transparent;
+  color: #ffffff;
+}
+
+@media (max-width: 480px) {
+  .hero-cue .btn-outline.btn-outline--hero {
+    padding: 12px 20px;
+    letter-spacing: 0.12em;
+    white-space: normal;
+    text-align: center;
+  }
 }
 
 /* --- Homepage content section --- */
