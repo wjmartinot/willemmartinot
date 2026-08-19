@@ -2507,3 +2507,108 @@ details[open] .faq__question {
 .content-section--rates li {
   margin-bottom: 0.35rem;
 }
+
+/* --- Mid-gallery CTA reviews --- */
+.event-grid__cta-reviews {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  width: 100%;
+  max-width: var(--container-max);
+  margin-bottom: 1.75rem;
+}
+
+.event-grid__cta-quote {
+  margin: 0;
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid var(--color-accent);
+  background: var(--color-bg-section, #fafaf8);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  display: flex;
+  flex-direction: column;
+}
+
+.event-grid__cta-quote p {
+  margin: 0;
+  font-style: italic;
+  color: var(--color-text);
+  flex: 1;
+}
+
+.event-grid__cta-quote cite {
+  display: block;
+  margin-top: 0.75rem;
+  font-style: normal;
+  font-size: 0.8rem;
+  color: var(--color-text-muted, #777);
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .event-grid__cta-reviews {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .event-grid__cta-reviews {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Sticky mobile CTA --- */
+.sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 90;
+  background: #1a1a1a;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.18);
+  transform: translateY(100%);
+  transition: transform 0.35s ease;
+}
+
+.sticky-cta.is-visible {
+  transform: translateY(0);
+}
+
+.sticky-cta__text {
+  margin: 0;
+  font-size: 0.82rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sticky-cta__btn {
+  flex-shrink: 0;
+  padding: 0.55rem 1.1rem;
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  white-space: nowrap;
+}
+
+.sticky-cta__btn:hover {
+  background: var(--color-accent-dark);
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .sticky-cta {
+    display: flex;
+  }
+}

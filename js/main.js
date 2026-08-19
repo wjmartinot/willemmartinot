@@ -519,6 +519,32 @@
       .catch(() => {});
   }
 
+  // Sticky CTA: show on scroll, hide when page CTA is visible
+  const stickyCta = document.getElementById("sticky-cta");
+  if (stickyCta) {
+    const pageCtas = document.querySelectorAll(".btn-outline:not(.event-grid__toggle):not(.sticky-cta__btn):not(.btn-outline--hero)");
+    const lastPageCta = pageCtas.length ? pageCtas[pageCtas.length - 1] : null;
+    let stickyVisible = false;
+
+    function updateStickyCta() {
+      const scrolled = window.scrollY > 300;
+      let ctaInView = false;
+      if (lastPageCta) {
+        const rect = lastPageCta.getBoundingClientRect();
+        ctaInView = rect.top < window.innerHeight && rect.bottom > 0;
+      }
+      const shouldShow = scrolled && !ctaInView;
+      if (shouldShow !== stickyVisible) {
+        stickyVisible = shouldShow;
+        stickyCta.classList.toggle("is-visible", shouldShow);
+        stickyCta.setAttribute("aria-hidden", shouldShow ? "false" : "true");
+      }
+    }
+
+    window.addEventListener("scroll", updateStickyCta, { passive: true });
+    updateStickyCta();
+  }
+
   // Event grid: show more on mobile
   document.querySelectorAll(".event-grid__toggle").forEach((btn) => {
     const isEn = document.documentElement.lang === "en";
