@@ -2058,7 +2058,7 @@ details[open] .faq__question {
   font-family: var(--font-logo);
   font-weight: 900;
   font-size: clamp(1.5rem, 3vw, 2.5rem);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--color-text);
   line-height: 1;
