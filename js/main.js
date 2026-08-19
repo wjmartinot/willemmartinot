@@ -510,7 +510,7 @@
         if (!Array.isArray(data.reviews) || !data.reviews.length) return;
         const reviews = [...data.reviews]
           .sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")))
-          .slice(0, 8);
+          .slice(0, 10);
         renderHeader(data);
         renderCards(reviews);
         renderCta();

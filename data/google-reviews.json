@@ -5,6 +5,27 @@
   "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Willem+Martinot+Fotografie&query_place_id=ChIJ_-hf1BOxxUcRfEmnLXxPyZo",
   "reviews": [
     {
+      "author": "Rolf Nielsen",
+      "rating": 5,
+      "date": "2026-08-10",
+      "text": {
+        "nl": "Willem profileert zichzelf als zakelijk portretfotograaf, en ik was zeer tevreden over zowel het proces als het eindresultaat. Willem was efficiënt en punctueel, en de portretfoto's zijn heel goed geworden.",
+        "en": "Willem positions himself as a business portrait photographer, and I was very happy with both the process and the outcome. Willem was efficient and timely and the portrait photos turned out very good."
+      },
+      "image": {
+        "nl": "/images/nl/1200/5I2A5572-portretfotograaf-den-haag-CEO.jpg",
+        "en": "/images/nl/1200/5I2A5572-portretfotograaf-den-haag-CEO.jpg"
+      },
+      "imageAlt": {
+        "nl": "CEO-portret Den Haag — portretfotograaf Willem Martinot",
+        "en": "CEO portrait The Hague — portrait photographer Willem Martinot"
+      },
+      "imageHref": {
+        "nl": "/portretfotograaf-den-haag/",
+        "en": "/en/corporate-portrait-photographer-the-hague/"
+      }
+    },
+    {
       "author": "Duits Nederlandse Handelskamer",
       "rating": 5,
       "date": "2026-08-06",
@@ -132,6 +153,48 @@
       }
     },
     {
+      "author": "Marcel Vermeulen Juwelier",
+      "rating": 5,
+      "date": "2025-12-19",
+      "text": {
+        "nl": "Willem heeft een perfect en artistiek oog om momenten op een unieke manier vast te leggen. Zijn foto's en films vallen altijd op. Wil je kwaliteit, werk dan met hem. Hij heeft meerdere opdrachten voor mij gedaan en ik kan hem van harte aanbevelen.",
+        "en": "Willem has a perfect and artistic eye to capture moments in a unique way. His pictures and movies always stand out. If you want quality, work with him. He did several jobs for me and I can highly recommend him."
+      },
+      "image": {
+        "nl": "/images/nl/1200/mode-fotograaf-den-haag-review.jpg",
+        "en": "/images/en/1200/fashion-photographer-the-hague-review.jpg"
+      },
+      "imageAlt": {
+        "nl": "Modefotografie Den Haag",
+        "en": "Fashion photography The Hague"
+      },
+      "imageHref": {
+        "nl": "/mode-fotograaf-den-haag/",
+        "en": "/en/fashion-photographer-the-hague/"
+      }
+    },
+    {
+      "author": "Bart Mulleneers",
+      "rating": 5,
+      "date": "2025-12-18",
+      "text": {
+        "nl": "Willem is een ervaren fotograaf die op een toplocatie in Amsterdam enkele foto's van ons heeft gemaakt tbv personal en company branding. Het resultaat is beter dan we hadden durven verwachten. Ik zal zeker weer een beroep doen op Willem zijn kunde en dienstverlening.",
+        "en": "Willem is an experienced photographer who took some photos of us at a great location in Amsterdam for personal and company branding. The result exceeded our expectations. I will definitely call on Willem's expertise and services again."
+      },
+      "image": {
+        "nl": "/images/nl/1200/2C5A7195-bedrijfsfotografie-den-haag.jpg",
+        "en": "/images/nl/1200/2C5A7195-bedrijfsfotografie-den-haag.jpg"
+      },
+      "imageAlt": {
+        "nl": "Bedrijfsfotografie Den Haag — Willem Martinot",
+        "en": "Business photography The Hague — Willem Martinot"
+      },
+      "imageHref": {
+        "nl": "/bedrijfsfotograaf-den-haag/",
+        "en": "/en/business-photographer-the-hague/"
+      }
+    },
+    {
       "author": "Nationale Nederlanden",
       "rating": 5,
       "date": "2025-12-20",
@@ -151,27 +214,6 @@
       "imageHref": {
         "nl": "/event-fotograaf-den-haag/",
         "en": "/en/event-photographer-the-hague/"
-      }
-    },
-    {
-      "author": "Marcel Vermeulen Juwelier",
-      "rating": 5,
-      "date": "2019-11-06",
-      "text": {
-        "nl": "Willem heeft een perfect en artistiek oog om momenten op een unieke manier vast te leggen. Zijn foto's en films vallen altijd op. Wil je kwaliteit, werk dan met hem. Hij heeft meerdere opdrachten voor mij gedaan en ik kan hem van harte aanbevelen.",
-        "en": "Willem has a perfect and artistic eye to capture moments in a unique way. His pictures and movies always stand out. If you want quality, work with him. He did several jobs for me and after that I would like to highly recommend him."
-      },
-      "image": {
-        "nl": "/images/nl/1200/mode-fotograaf-den-haag-review.jpg",
-        "en": "/images/en/1200/fashion-photographer-the-hague-review.jpg"
-      },
-      "imageAlt": {
-        "nl": "Modefotografie Den Haag",
-        "en": "Fashion photography The Hague"
-      },
-      "imageHref": {
-        "nl": "/mode-fotograaf-den-haag/",
-        "en": "/en/fashion-photographer-the-hague/"
       }
     }
   ]
