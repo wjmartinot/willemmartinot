@@ -519,6 +519,21 @@
       .catch(() => {});
   }
 
+  // Event grid: show more on mobile
+  document.querySelectorAll(".event-grid__toggle").forEach((btn) => {
+    const isEn = document.documentElement.lang === "en";
+    const labelMore = btn.textContent.trim();
+    const labelLess = isEn ? "Show less" : "Minder foto's";
+    btn.addEventListener("click", () => {
+      const more = btn.closest("section, .section--alt")?.querySelector(".event-grid--more");
+      if (!more) return;
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      more.hidden = expanded;
+      btn.setAttribute("aria-expanded", expanded ? "false" : "true");
+      btn.textContent = expanded ? labelMore : labelLess;
+    });
+  });
+
   const lightbox = document.getElementById("lightbox");
   if (lightbox) {
     const lightboxImg = lightbox.querySelector("img");
