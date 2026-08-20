@@ -671,6 +671,29 @@ p {
   align-items: center;
   gap: 0.65rem;
   pointer-events: none;
+  width: min(92vw, 42rem);
+}
+
+.hero-cue__tagline {
+  margin: 0 0 0.55rem;
+  padding: 0 0.5rem;
+  font-family: var(--font-jost);
+  font-weight: 400;
+  font-size: clamp(0.85rem, 1.8vw, 1.05rem);
+  font-variant: small-caps;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+  line-height: 1.35;
+}
+
+@media (max-width: 480px) {
+  .hero-cue__tagline {
+    letter-spacing: 0.16em;
+    font-size: 0.78rem;
+  }
 }
 
 .hero-cue .hero-scroll {
