@@ -53,6 +53,17 @@ Repo: https://github.com/wjmartinot/willemmartinot
 
 Push naar `main` → Cloudflare bouwt en publiceert automatisch. Geen FTP, geen handmatige upload.
 
+## IndexNow (Bing)
+
+Na elke push naar `main` stuurt GitHub Actions gewijzigde HTML-URL’s naar Bing IndexNow.
+
+- Verificatiebestand in de root: `e592f148ce7226d263761be9892eedc6.txt` (inhoud = de key)
+- Script: `python3 scripts/indexnow.py --git-diff HEAD~1 HEAD`
+- Handmatig alle sitemap-URL’s: `python3 scripts/indexnow.py --sitemap`
+- Dry-run: voeg `--dry-run` toe
+
+Workflow: `.github/workflows/indexnow.yml` (wacht ~90s op Cloudflare Pages-deploy).
+
 ## Bronfoto's
 
 High-res originelen staan lokaal in `source/` (niet in git). Verwerken via `./resize-images.sh source/RAW.jpg nl bestandsnaam`.
