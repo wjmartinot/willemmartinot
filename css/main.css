@@ -330,7 +330,7 @@ p {
 .hero-header__nav a,
 .hero-header__nav .lang-sep {
   font-size: 0.95rem;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.11em;
 }
 
 .hero-header__nav a {
@@ -451,7 +451,7 @@ p {
   font-family: var(--font-jost);
   font-weight: 400;
   font-size: 0.95rem;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
   color: #ffffff;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
@@ -660,7 +660,7 @@ p {
 }
 
 .hero-cue__tagline {
-  margin: 0 0 0.55rem;
+  margin: 0 0 0.85rem;
   padding: 0 0.5rem;
   font-family: var(--font-jost);
   font-weight: 400;
@@ -671,7 +671,7 @@ p {
   color: #ffffff;
   text-align: center;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
-  line-height: 1.35;
+  line-height: 1.75;
 }
 
 @media (max-width: 480px) {
