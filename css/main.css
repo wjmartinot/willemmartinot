@@ -2119,6 +2119,14 @@ details[open] .faq__question {
   color: var(--color-text);
 }
 
+.footer__legal {
+  margin: 20px 0 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
 .footer__copyright {
   margin-top: 48px;
   padding-top: 24px;
