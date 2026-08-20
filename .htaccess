@@ -1,3 +1,42 @@
+# Apache fallback (Strato). Primary redirects live in _redirects for Cloudflare Pages.
+
 # Redirect old EN city landing URLs (corporate → commercial)
 RedirectMatch 301 ^/en/corporate-photographer-amsterdam/?$ /en/commercial-photographer-amsterdam/
 RedirectMatch 301 ^/en/corporate-photographer-rotterdam/?$ /en/commercial-photographer-rotterdam/
+RedirectMatch 301 ^/en/concertfotograaf/?$ /en/concert-photographer/
+RedirectMatch 301 ^/en/commercial-photographer-the-hague/?$ /en/business-photographer-the-hague/
+
+# Oude NL-slugs onder /en/
+RedirectMatch 301 ^/en/portretfotograaf-den-haag/?$ /en/corporate-portrait-photographer-the-hague/
+RedirectMatch 301 ^/en/portretfotograaf-amsterdam/?$ /en/corporate-portrait-photographer-amsterdam/
+RedirectMatch 301 ^/en/portretfotograaf-rotterdam/?$ /en/corporate-portrait-photographer-rotterdam/
+RedirectMatch 301 ^/en/event-fotograaf-den-haag/?$ /en/event-photographer-the-hague/
+RedirectMatch 301 ^/en/eventfotograaf-den-haag/?$ /en/event-photographer-the-hague/
+RedirectMatch 301 ^/en/eventfotograaf-amsterdam/?$ /en/event-photographer-amsterdam/
+RedirectMatch 301 ^/en/eventfotograaf-rotterdam/?$ /en/event-photographer-rotterdam/
+RedirectMatch 301 ^/en/mode-fotograaf-den-haag/?$ /en/fashion-photographer-the-hague/
+RedirectMatch 301 ^/en/linkedin-profielfoto-den-haag/?$ /en/linkedin-portrait-the-hague/
+RedirectMatch 301 ^/en/fotograaf-amsterdam/?$ /en/commercial-photographer-amsterdam/
+RedirectMatch 301 ^/en/fotograaf-rotterdam/?$ /en/commercial-photographer-rotterdam/
+RedirectMatch 301 ^/en/bedrijfsfotograaf-den-haag/?$ /en/business-photographer-the-hague/
+RedirectMatch 301 ^/en/contact-fotograaf-den-haag/?$ /en/contact/
+RedirectMatch 301 ^/en/about-fotograaf-den-haag/?$ /en/about/
+RedirectMatch 301 ^/en/tarieven/?$ /en/rates/
+RedirectMatch 301 ^/en/blog-fotograaf-den-haag/?$ /en/blog/
+
+# Oude Wix-pagina's
+RedirectMatch 301 ^/contact-fotograaf-den-haag/?$ /contact/
+RedirectMatch 301 ^/cases/?$ /
+RedirectMatch 301 ^/partners/?$ /
+RedirectMatch 301 ^/bedrijfsfilms/?$ https://www.limestonepictures.nl
+RedirectMatch 301 ^/concertfotograaf-den-haag/?$ /concertfotograaf/
+RedirectMatch 301 ^/congresfotograaf-den-haag/?$ /event-fotograaf-den-haag/
+RedirectMatch 301 ^/fotograaf-den-haag/?$ /
+RedirectMatch 301 ^/about/?$ /about-fotograaf-den-haag/
+
+# Force trailing slash on directories (no file extension)
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !/$
+RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]{1,5}$
+RewriteRule ^(.*)$ /$1/ [R=301,L]
