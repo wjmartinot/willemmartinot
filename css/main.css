@@ -493,21 +493,6 @@ p {
   opacity: 1;
 }
 
-.hero-slide__caption {
-  position: absolute;
-  left: clamp(20px, 3vw, 40px);
-  bottom: clamp(20px, 3vw, 40px);
-  z-index: 2;
-  font-family: var(--font-jost);
-  font-size: 1.1rem;
-  font-weight: 400;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: #ffffff;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
-  pointer-events: none;
-}
-
 .hero-slide picture,
 .hero-slide img {
   width: 100%;
