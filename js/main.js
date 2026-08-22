@@ -137,13 +137,18 @@
     }
   }
 
-  function hydrateHeroImage(slide) {
+  function hydrateHeroImage(slide, eager = false) {
     const img = slide?.querySelector("img");
     if (!img || img.dataset.hydrated === "true") return;
 
     const dataSrc = img.getAttribute("data-src");
     const dataSrcset = img.getAttribute("data-srcset");
     const dataSizes = img.getAttribute("data-sizes");
+
+    if (!dataSrc && img.getAttribute("src")) {
+      img.dataset.hydrated = "true";
+      return;
+    }
 
     if (dataSrc) {
       img.setAttribute("src", dataSrc);
@@ -158,7 +163,7 @@
       img.removeAttribute("data-sizes");
     }
 
-    img.loading = "eager";
+    img.loading = eager ? "eager" : "lazy";
     img.dataset.hydrated = "true";
   }
 
@@ -182,8 +187,7 @@
     function goTo(index) {
       slides[current].classList.remove("is-active");
       current = (index + slides.length) % slides.length;
-      hydrateHeroImage(slides[current]);
-      hydrateHeroImage(slides[(current + 1) % slides.length]);
+      hydrateHeroImage(slides[current], true);
       slides[current].classList.add("is-active");
     }
 
@@ -201,7 +205,6 @@
     }
 
     hydrateHeroImage(slides[0]);
-    hydrateHeroImage(slides[(current + 1) % slides.length]);
 
     prevBtn?.addEventListener("click", () => {
       prev();
