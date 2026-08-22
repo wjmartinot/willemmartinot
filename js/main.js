@@ -341,7 +341,6 @@
       ".section.faq .container",
       ".blog-section .container",
       ".about-services .container",
-      ".section[aria-labelledby='testimonials-heading'] .container",
     ];
 
     const elements = new Set();
@@ -353,8 +352,14 @@
       });
     });
 
-    document.querySelectorAll(".services-grid").forEach((grid) => {
-      grid.querySelectorAll(".service-item").forEach((item, index) => {
+    document.querySelectorAll(".services-grid, .portrait-grid, .testimonials").forEach((grid) => {
+      const itemSelector = grid.classList.contains("testimonials")
+        ? ".testimonial"
+        : grid.classList.contains("portrait-grid")
+          ? ".portrait-grid__item"
+          : ".service-item";
+
+      grid.querySelectorAll(itemSelector).forEach((item, index) => {
         item.classList.add("reveal");
         const delay = Math.min(index, 5) + 1;
         if (delay > 1) item.classList.add(`reveal--delay-${delay}`);
