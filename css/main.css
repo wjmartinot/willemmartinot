@@ -2368,10 +2368,13 @@ details[open] .faq__question {
     order: -1;
   }
 
+  .footer-col,
   .footer-col--right,
+  .footer-col .footer-heading,
   .footer-col--right .footer-heading,
+  .footer-col a,
   .footer-col--right a {
-    text-align: left;
+    text-align: center;
   }
 
   .portrait-grid,
