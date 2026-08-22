@@ -325,7 +325,58 @@
   initImageProtection();
   initHeroSlider();
   initReviewsCarousel();
+  initScrollReveal();
   initCloudflareAnalytics();
+
+  function initScrollReveal() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const selectors = [
+      ".section.intro .container",
+      ".clients .container",
+      ".content-section .container",
+      ".section > .container > .label",
+      ".section.section--alt > .container > :not(.label):not(.services-grid)",
+      ".section.reviews .container",
+      ".section.faq .container",
+      ".blog-section .container",
+      ".about-services .container",
+      ".section[aria-labelledby='testimonials-heading'] .container",
+    ];
+
+    const elements = new Set();
+
+    selectors.forEach((selector) => {
+      document.querySelectorAll(selector).forEach((el) => {
+        el.classList.add("reveal");
+        elements.add(el);
+      });
+    });
+
+    document.querySelectorAll(".services-grid").forEach((grid) => {
+      grid.querySelectorAll(".service-item").forEach((item, index) => {
+        item.classList.add("reveal");
+        const delay = Math.min(index, 5) + 1;
+        if (delay > 1) item.classList.add(`reveal--delay-${delay}`);
+        elements.add(item);
+      });
+    });
+
+    if (!elements.size) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+  }
 
   function initReviewsCarousel() {
     const section = document.querySelector(".section.reviews");
