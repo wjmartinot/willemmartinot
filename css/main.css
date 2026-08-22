@@ -2452,12 +2452,12 @@ details[open] .faq__question {
     object-position: var(--hero-pos-mobile, var(--hero-pos, center center));
   }
 
-  .hero-slide img.hero-slide__img--pos-mobile-left-40,
+  .hero-slide img.hero-slide__img--concert-mic,
   .hero-slide img[src*="0L9A2100-concert-fotograaf"],
   .hero-slide img[data-src*="0L9A2100-concert-fotograaf"],
   .hero-slide img[src*="0L9A2100-concert-photographer"],
   .hero-slide img[data-src*="0L9A2100-concert-photographer"] {
-    object-position: -40% center;
+    object-position: 40% center;
   }
 
   .hero-header__toggle {

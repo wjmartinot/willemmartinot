@@ -158,6 +158,7 @@
       img.removeAttribute("data-sizes");
     }
 
+    img.loading = "eager";
     img.dataset.hydrated = "true";
   }
 
@@ -200,7 +201,7 @@
     }
 
     hydrateHeroImage(slides[0]);
-    hydrateHeroImage(slides[1] || slides[0]);
+    hydrateHeroImage(slides[(current + 1) % slides.length]);
 
     prevBtn?.addEventListener("click", () => {
       prev();
