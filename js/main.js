@@ -337,7 +337,8 @@
       ".content-section .container",
       ".section > .container > .label",
       ".section.section--alt > .container > :not(.label):not(.services-grid)",
-      ".section.reviews .container",
+      // Do not reveal the whole reviews container: after cards load it is taller than
+      // the viewport, so IntersectionObserver thresholds never fire on mobile.
       ".section.faq .container",
       ".blog-section .container",
       ".about-services .container",
@@ -377,7 +378,8 @@
           observer.unobserve(entry.target);
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+      // Use a low threshold so tall sections (e.g. reviews on mobile) can still reveal.
+      { threshold: 0.01, rootMargin: "0px 0px -8% 0px" }
     );
 
     elements.forEach((el) => observer.observe(el));
@@ -394,18 +396,25 @@
     carousel.dataset.bound = "true";
 
     const lang = document.documentElement.lang === "en" ? "en" : "nl";
+    const MOBILE_REVIEW_LIMIT = 8;
+    const mobileMq = window.matchMedia("(max-width: 640px)");
+    let mobileExpanded = false;
     const copy = lang === "en"
       ? {
           fromGoogle: "Review from Google",
           ratingLabel: "Google rating",
           ctaLabel: "Request a no-obligation quote",
           ctaHref: "/en/contact/",
+          moreLabel: "More reviews",
+          lessLabel: "Fewer reviews",
         }
       : {
           fromGoogle: "Review van Google",
           ratingLabel: "Google-beoordeling",
           ctaLabel: "Vraag vrijblijvend offerte aan",
           ctaHref: "/contact/",
+          moreLabel: "Meer reviews",
+          lessLabel: "Minder reviews",
         };
 
     const googleIcon = `
@@ -481,6 +490,55 @@
       carousel.appendChild(cta);
     }
 
+    function renderMoreToggle(total) {
+      let toggle = carousel.querySelector(".reviews-carousel__more");
+      if (total <= MOBILE_REVIEW_LIMIT) {
+        toggle?.remove();
+        return;
+      }
+      if (!toggle) {
+        toggle = document.createElement("p");
+        toggle.className = "reviews-carousel__more";
+        toggle.innerHTML = `<button type="button" class="btn-outline reviews-carousel__more-btn" aria-expanded="false">${escapeHtml(copy.moreLabel)}</button>`;
+        const cta = carousel.querySelector(".reviews-carousel__cta");
+        if (cta) {
+          carousel.insertBefore(toggle, cta);
+        } else {
+          carousel.appendChild(toggle);
+        }
+        toggle.querySelector("button").addEventListener("click", () => {
+          mobileExpanded = !mobileExpanded;
+          applyMobileReviewLimit();
+          syncCardHeights();
+        });
+      }
+    }
+
+    function applyMobileReviewLimit() {
+      const cards = [...track.querySelectorAll(".reviews-carousel__card")];
+      const isMobile = mobileMq.matches;
+      const hideOverflow = isMobile && !mobileExpanded;
+      cards.forEach((card, index) => {
+        card.hidden = hideOverflow && index >= MOBILE_REVIEW_LIMIT;
+      });
+
+      const toggle = carousel.querySelector(".reviews-carousel__more");
+      const btn = toggle?.querySelector("button");
+      if (!toggle || !btn) return;
+
+      const needsToggle = isMobile && cards.length > MOBILE_REVIEW_LIMIT;
+      toggle.hidden = !needsToggle;
+      if (!needsToggle) {
+        mobileExpanded = false;
+        btn.setAttribute("aria-expanded", "false");
+        btn.textContent = copy.moreLabel;
+        return;
+      }
+
+      btn.setAttribute("aria-expanded", mobileExpanded ? "true" : "false");
+      btn.textContent = mobileExpanded ? copy.lessLabel : copy.moreLabel;
+    }
+
     function renderCards(reviews) {
       track.innerHTML = reviews.map((review) => {
         const image = localizedField(review.image);
@@ -522,14 +580,20 @@
           </article>
         `;
       }).join("");
+      applyMobileReviewLimit();
     }
 
     function equalizeCardHeights() {
-      const cards = [...track.querySelectorAll(".reviews-carousel__card")];
+      const cards = [...track.querySelectorAll(".reviews-carousel__card")].filter((card) => !card.hidden);
       if (!cards.length) return;
       cards.forEach((card) => {
         card.style.height = "";
       });
+      // Single-column layouts don't need equal heights; forcing them makes the
+      // section so tall that scroll-reveal never fires on mobile.
+      if (mobileMq.matches) return;
+      const columns = getComputedStyle(track).gridTemplateColumns.split(" ").filter(Boolean).length;
+      if (columns <= 1) return;
       const maxHeight = Math.max(...cards.map((card) => card.getBoundingClientRect().height));
       if (!maxHeight) return;
       cards.forEach((card) => {
@@ -558,8 +622,17 @@
     let resizeTimer = 0;
     window.addEventListener("resize", () => {
       window.clearTimeout(resizeTimer);
-      resizeTimer = window.setTimeout(syncCardHeights, 150);
+      resizeTimer = window.setTimeout(() => {
+        applyMobileReviewLimit();
+        syncCardHeights();
+      }, 150);
     });
+    if (typeof mobileMq.addEventListener === "function") {
+      mobileMq.addEventListener("change", () => {
+        applyMobileReviewLimit();
+        syncCardHeights();
+      });
+    }
 
     fetch("/data/google-reviews.json")
       .then((response) => {
@@ -574,6 +647,8 @@
         renderHeader(data);
         renderCards(reviews);
         renderCta();
+        renderMoreToggle(reviews.length);
+        applyMobileReviewLimit();
         syncCardHeights();
       })
       .catch(() => {});
@@ -582,7 +657,7 @@
   // Sticky CTA: show on scroll, hide when page CTA is visible
   const stickyCta = document.getElementById("sticky-cta");
   if (stickyCta) {
-    const pageCtas = document.querySelectorAll(".btn-outline:not(.event-grid__toggle):not(.sticky-cta__btn):not(.btn-outline--hero)");
+    const pageCtas = document.querySelectorAll(".btn-outline:not(.event-grid__toggle):not(.reviews-carousel__more-btn):not(.sticky-cta__btn):not(.btn-outline--hero)");
     const lastPageCta = pageCtas.length ? pageCtas[pageCtas.length - 1] : null;
     let stickyVisible = false;
 
