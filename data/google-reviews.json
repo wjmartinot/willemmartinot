@@ -5,6 +5,27 @@
   "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Willem+Martinot+Fotografie&query_place_id=ChIJ_-hf1BOxxUcRfEmnLXxPyZo",
   "reviews": [
     {
+      "author": "Jerril Strijdhaftig",
+      "rating": 5,
+      "date": "2026-08-24",
+      "text": {
+        "nl": "Vanaf het eerste contact dacht Willem prettig mee over wat ik met de foto's wilde uitstralen. Ook zijn advies over de locatie en kleding bleek achteraf precies goed te werken. Tijdens de shoot creëerde hij een ontspannen sfeer en gaf hij op een natuurlijke manier aanwijzingen, waardoor het fotograferen eigenlijk vanzelf ging. Het eindresultaat is een mooie en gevarieerde serie geworden met meerdere foto's waar ik erg tevreden over ben. Professioneel, prettig in de omgang en met duidelijk oog voor de persoon voor de camera. Absoluut een aanrader.",
+        "en": "From the very first contact, Willem was very helpful in thinking along with me about what I wanted to convey with the photos. His advice regarding the location and clothing also turned out to work perfectly in hindsight. During the shoot, he created a relaxed atmosphere and gave directions in a natural way, making the photography practically effortless. The end result is a beautiful and varied series with multiple photos that I am very satisfied with. Professional, pleasant to work with, and with a clear eye for the person in front of the camera. Highly recommended."
+      },
+      "image": {
+        "nl": "/images/nl/1200/1N8A0493-zakelijk-portret-fotograaf-den-haag.jpg",
+        "en": "/images/nl/1200/1N8A0493-zakelijk-portret-fotograaf-den-haag.jpg"
+      },
+      "imageAlt": {
+        "nl": "Zakelijk portret Jerril Strijdhaftig — portretfotograaf Den Haag",
+        "en": "Corporate portrait Jerril Strijdhaftig — portrait photographer The Hague"
+      },
+      "imageHref": {
+        "nl": "/portretfotograaf-den-haag/",
+        "en": "/en/corporate-portrait-photographer-the-hague/"
+      }
+    },
+    {
       "author": "Rolf Nielsen",
       "rating": 5,
       "date": "2026-08-10",
