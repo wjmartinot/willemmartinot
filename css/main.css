@@ -2658,12 +2658,23 @@ details[open] .faq__question {
   }
 
   .hero-header__nav .lang-sep {
-    display: none;
+    display: inline;
+    padding: 0;
+    opacity: 0.45;
+  }
+
+  .hero-header__nav .lang-switch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 0.35em;
   }
 
   .hero-header__nav .lang-link,
   .hero-header__nav .lang-active {
     display: inline-block;
+    padding: 0.65rem 0.35rem;
   }
 
   .hero-wrapper > .hero-header.is-nav-open::before,
