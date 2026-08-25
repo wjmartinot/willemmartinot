@@ -2628,6 +2628,12 @@ details[open] .faq__question {
     display: inline-flex;
   }
 
+  .hero-wrapper > .hero-header.is-nav-open,
+  .hero-section > .hero-header.is-nav-open,
+  #hero-header-placeholder:has(.hero-header.is-nav-open) {
+    z-index: 20;
+  }
+
   .hero-header__nav {
     display: none;
     flex-direction: column;
@@ -2677,10 +2683,27 @@ details[open] .faq__question {
     padding: 0.65rem 0.35rem;
   }
 
+  /* Full-height scrim so the open menu covers hero captions at the bottom */
   .hero-wrapper > .hero-header.is-nav-open::before,
   .hero-section > .hero-header.is-nav-open::before,
   #hero-header-placeholder:has(.hero-header.is-nav-open)::before {
-    height: clamp(280px, 55vh, 520px);
+    height: 100%;
+    background: rgba(0, 0, 0, 0.78);
+  }
+
+  .hero-wrapper:has(.hero-header.is-nav-open) .hero-cue,
+  .hero-section:has(.hero-header.is-nav-open) .hero-cue,
+  .hero-wrapper:has(.hero-header.is-nav-open) > .hero-scroll,
+  .hero-section:has(.hero-header.is-nav-open) > .hero-scroll {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .hero-wrapper:has(.hero-header.is-nav-open) .hero-slider__btn,
+  .hero-section:has(.hero-header.is-nav-open) .hero-slider__btn {
+    visibility: hidden;
+    pointer-events: none;
   }
 }
 
