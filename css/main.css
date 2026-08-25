@@ -979,6 +979,52 @@ p {
   opacity: 0.6;
 }
 
+/* Compact city/service cross-links (homepage) */
+.city-links {
+  display: grid;
+  gap: 0;
+  margin: 0.25rem 0 1.5rem;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--color-border);
+}
+
+.city-links li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.35rem 1rem;
+  margin: 0;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.9375rem;
+  line-height: 1.4;
+}
+
+.city-links__service {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.city-links__cities {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.85rem;
+}
+
+.city-links__cities a {
+  color: var(--color-text-secondary);
+  font-weight: 300;
+  text-decoration: none;
+}
+
+.city-links__cities a:hover {
+  color: var(--color-text);
+  opacity: 1;
+}
+
 .content-section .btn-outline {
   display: block;
   width: fit-content;
