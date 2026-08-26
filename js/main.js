@@ -1,6 +1,11 @@
 (function () {
   "use strict";
 
+  function trackEvent(name, params) {
+    if (typeof window.gtag !== "function") return;
+    window.gtag("event", name, params);
+  }
+
   function initFormNotice() {
     const params = new URLSearchParams(window.location.search);
     const notice = document.getElementById("form-notice");
@@ -9,6 +14,23 @@
     notice.hidden = false;
     notice.closest("form")?.scrollIntoView({ behavior: "smooth", block: "start" });
     history.replaceState(null, "", window.location.pathname);
+
+    const form = notice.closest("form.contact-form");
+    trackEvent("generate_lead", {
+      method: "contact_form",
+      location: form?.dataset.contactLocation || "contact_form",
+    });
+  }
+
+  function initContactTracking() {
+    document.addEventListener("click", (event) => {
+      const link = event.target.closest(".contact-action");
+      if (!link) return;
+      trackEvent("contact_click", {
+        method: link.dataset.contactMethod || "unknown",
+        location: link.dataset.contactLocation || "unknown",
+      });
+    });
   }
 
   function initHeroNav() {
@@ -322,6 +344,7 @@
 
   loadPartials();
   initFormNotice();
+  initContactTracking();
   initImageProtection();
   initHeroSlider();
   initReviewsCarousel();
