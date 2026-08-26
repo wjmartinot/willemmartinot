@@ -2448,12 +2448,6 @@ details[open] .faq__question {
   white-space: nowrap;
 }
 
-.contact-actions__note {
-  margin-top: 1rem !important;
-  font-size: 0.9rem;
-  color: var(--color-text-secondary);
-}
-
 @media (max-width: 720px) {
   .contact-actions {
     grid-template-columns: 1fr;
