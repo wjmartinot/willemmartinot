@@ -663,6 +663,16 @@ p {
   --hero-pos-mobile: center 40%;
 }
 
+.hero-section--contact {
+  --hero-pos: center 22%;
+}
+
+@media (min-width: 1600px) {
+  .hero-section--contact {
+    --hero-pos: center 15%;
+  }
+}
+
 .hero-slider__btn {
   position: absolute;
   top: 50%;
