@@ -664,12 +664,12 @@ p {
 }
 
 .hero-section--contact {
-  --hero-pos: center 32%;
+  --hero-pos: center 38%;
 }
 
 @media (min-width: 1600px) {
   .hero-section--contact {
-    --hero-pos: center 24%;
+    --hero-pos: center 30%;
   }
 }
 
