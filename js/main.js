@@ -18,18 +18,37 @@
 
     notice.hidden = false;
     notice.closest("form")?.scrollIntoView({ behavior: "smooth", block: "start" });
-    history.replaceState(null, "", window.location.pathname);
 
     const form = notice.closest("form.contact-form");
-    trackEvent("generate_lead", {
-      method: "contact_form",
-      location: form?.dataset.contactLocation || "contact_form",
-    });
-    // Google Ads: Informatieaanvraag
-    trackAdsConversion("AW-1064034871/onpuCImJogEQt8Sv-wM", {
-      value: 1.0,
-      currency: "EUR",
-    });
+    const location = form?.dataset.contactLocation || "contact_form";
+    const conversionKey = `ads_info_request:${window.location.pathname}`;
+    const alreadyCounted = (() => {
+      try {
+        return sessionStorage.getItem(conversionKey) === "1";
+      } catch {
+        return false;
+      }
+    })();
+
+    if (!alreadyCounted) {
+      trackEvent("generate_lead", {
+        method: "contact_form",
+        location,
+      });
+      // Google Ads: Informatieaanvraag
+      trackAdsConversion("AW-1064034871/onpuCImJogEQt8Sv-wM", {
+        value: 1.0,
+        currency: "EUR",
+      });
+      try {
+        sessionStorage.setItem(conversionKey, "1");
+      } catch {
+        /* ignore quota / private mode */
+      }
+    }
+
+    // Strip ?sent=1 so refresh / back-forward / shared URLs don't re-fire.
+    history.replaceState(null, "", window.location.pathname);
   }
 
   function initContactTracking() {
