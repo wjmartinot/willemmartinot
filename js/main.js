@@ -6,6 +6,11 @@
     window.gtag("event", name, params);
   }
 
+  function trackAdsConversion(sendTo, extra) {
+    if (typeof window.gtag !== "function") return;
+    window.gtag("event", "conversion", Object.assign({ send_to: sendTo }, extra || {}));
+  }
+
   function initFormNotice() {
     const params = new URLSearchParams(window.location.search);
     const notice = document.getElementById("form-notice");
@@ -20,16 +25,31 @@
       method: "contact_form",
       location: form?.dataset.contactLocation || "contact_form",
     });
+    // Google Ads: Informatieaanvraag
+    trackAdsConversion("AW-1064034871/onpuCImJogEQt8Sv-wM", {
+      value: 1.0,
+      currency: "EUR",
+    });
   }
 
   function initContactTracking() {
     document.addEventListener("click", (event) => {
-      const link = event.target.closest(".contact-action");
+      const link = event.target.closest("a");
       if (!link) return;
-      trackEvent("contact_click", {
-        method: link.dataset.contactMethod || "unknown",
-        location: link.dataset.contactLocation || "unknown",
-      });
+
+      const contactAction = link.closest(".contact-action");
+      if (contactAction) {
+        trackEvent("contact_click", {
+          method: contactAction.dataset.contactMethod || "unknown",
+          location: contactAction.dataset.contactLocation || "unknown",
+        });
+      }
+
+      const href = link.getAttribute("href") || "";
+      if (href.startsWith("tel:")) {
+        // Google Ads: Call Clicks from Website
+        trackAdsConversion("AW-1064034871/IdqNCMKws3oQt8Sv-wM");
+      }
     });
   }
 
