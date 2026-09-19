@@ -245,6 +245,12 @@
     let timer;
     const INTERVAL = 3000;
 
+    function slideDuration(slide) {
+      const raw = slide?.dataset?.duration;
+      const n = raw ? Number.parseInt(raw, 10) : NaN;
+      return Number.isFinite(n) && n > 0 ? n : INTERVAL;
+    }
+
     function goTo(index) {
       slides[current].classList.remove("is-active");
       current = (index + slides.length) % slides.length;
@@ -261,8 +267,11 @@
     }
 
     function startTimer() {
-      clearInterval(timer);
-      timer = setInterval(next, INTERVAL);
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        next();
+        startTimer();
+      }, slideDuration(slides[current]));
     }
 
     hydrateHeroImage(slides[0]);
