@@ -549,6 +549,20 @@ p {
   object-position: center top;
 }
 
+/* Zelfde verticale crop als portret-hero (50% 12%) — homepage heeft geen --portrait */
+.hero-slide img[src*="1N8A2490-fotograaf-den-haag"],
+.hero-slide img[data-src*="1N8A2490-fotograaf-den-haag"] {
+  --hero-pos: 50% 12%;
+  --hero-pos-mobile: 50% 18%;
+}
+
+@media (min-width: 1600px) {
+  .hero-slide img[src*="1N8A2490-fotograaf-den-haag"],
+  .hero-slide img[data-src*="1N8A2490-fotograaf-den-haag"] {
+    --hero-pos: 50% 14%;
+  }
+}
+
 .hero-section--portrait {
   --hero-pos: 50% 12%;
   --hero-pos-mobile: 50% 18%;
