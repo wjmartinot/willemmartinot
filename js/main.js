@@ -239,7 +239,11 @@
     const nextBtn = hero.querySelector(".hero-slider__btn--next");
     if (!track || !slideElements.length) return;
 
-    const slides = shuffleHeroSlides(track, slideElements);
+    const slides = shuffleHeroSlides(
+      track,
+      slideElements,
+      hero.hasAttribute("data-shuffle-all")
+    );
 
     let current = 0;
     let timer;
@@ -301,18 +305,30 @@
     }, { passive: true });
   }
 
-  // Keep the first (LCP) slide fixed; only shuffle the rest so preload stays valid.
-  function shuffleHeroSlides(track, slideElements) {
+  // By default keep the first (LCP) slide fixed; only shuffle the rest.
+  // Homepage can opt into full random order with data-shuffle-all.
+  function shuffleHeroSlides(track, slideElements, shuffleAll = false) {
     const slides = Array.from(slideElements);
-    const first = slides[0];
-    const rest = slides.slice(1);
+    let ordered;
 
-    for (let i = rest.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [rest[i], rest[j]] = [rest[j], rest[i]];
+    if (shuffleAll) {
+      ordered = slides.slice();
+      for (let i = ordered.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [ordered[i], ordered[j]] = [ordered[j], ordered[i]];
+      }
+    } else {
+      const first = slides[0];
+      const rest = slides.slice(1);
+
+      for (let i = rest.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [rest[i], rest[j]] = [rest[j], rest[i]];
+      }
+
+      ordered = first ? [first, ...rest] : rest;
     }
 
-    const ordered = first ? [first, ...rest] : rest;
     ordered.forEach((slide) => {
       slide.classList.remove("is-active");
       track.appendChild(slide);
