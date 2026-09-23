@@ -542,11 +542,21 @@ p {
   --hero-pos-mobile: 28% center;
 }
 
-.hero-section--portrait .hero-slide img[src*="5I2A5516-portretfotograaf-den-haag-CEO"],
-.hero-section--portrait .hero-slide img[data-src*="5I2A5516-portretfotograaf-den-haag-CEO"] {
-  --hero-pos: center top;
-  --hero-pos-mobile: center top;
-  object-position: center top;
+.hero-section--portrait .hero-slide img[src*="5I2A5572-portretfotograaf-den-haag-CEO"],
+.hero-section--portrait .hero-slide img[data-src*="5I2A5572-portretfotograaf-den-haag-CEO"] {
+  --hero-pos: center 20%;
+  --hero-pos-mobile: center 24%;
+}
+
+/* Landscape studio / headshots: iets lager ankeren dan default 50% 12% */
+.hero-section--portrait .hero-slide img[src*="portretfotograaf-den-haag-studio.jpg"],
+.hero-section--portrait .hero-slide img[data-src*="portretfotograaf-den-haag-studio.jpg"],
+.hero-section--portrait .hero-slide img[src*="1N8A2490-portretfotograaf-den-haag"],
+.hero-section--portrait .hero-slide img[data-src*="1N8A2490-portretfotograaf-den-haag"],
+.hero-section--portrait .hero-slide img[src*="1N8A2360-portretfotograaf-den-haag"],
+.hero-section--portrait .hero-slide img[data-src*="1N8A2360-portretfotograaf-den-haag"] {
+  --hero-pos: center 28%;
+  --hero-pos-mobile: center 32%;
 }
 
 /* Zelfde verticale crop als portret-hero (50% 12%) — homepage heeft geen --portrait */
@@ -2030,6 +2040,14 @@ details[open] .faq__question {
   cursor: pointer;
   transition: transform 0.5s ease;
   background: var(--color-placeholder);
+}
+
+/* Landscape CEO/studio in portret-grid: minder strakke 2/3-crop */
+.portrait-grid img[src*="5I2A5572-portretfotograaf-den-haag-CEO"],
+.portrait-grid img[src*="1N8A2490-portretfotograaf-den-haag"],
+.portrait-grid img[src*="1N8A2360-portretfotograaf-den-haag"] {
+  aspect-ratio: 4 / 5;
+  object-position: center 22%;
 }
 
 .portrait-grid__item:hover img {
