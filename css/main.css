@@ -2175,6 +2175,21 @@ details[open] .faq__question {
   border: 0;
 }
 
+.about-showreel__intro {
+  margin-top: clamp(28px, 4vw, 40px);
+  margin-bottom: 1rem;
+}
+
+.about-showreel {
+  margin-top: 0.25rem;
+  margin-bottom: clamp(8px, 2vw, 16px);
+}
+
+.about-showreel__more {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
 /* --- Lightbox --- */
 .lightbox {
   display: none;
