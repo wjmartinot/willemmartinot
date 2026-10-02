@@ -542,6 +542,13 @@ p {
   --hero-pos-mobile: 28% center;
 }
 
+.hero-slide img[src*="5I2A5029-bedrijfsfotograaf-"],
+.hero-slide img[data-src*="5I2A5029-bedrijfsfotograaf-"],
+.hero-slide img[src*="5I2A4676-bedrijfsfotograaf-"],
+.hero-slide img[data-src*="5I2A4676-bedrijfsfotograaf-"] {
+  --hero-pos-mobile: 62% center;
+}
+
 .hero-section--portrait .hero-slide img[src*="5I2A5572-portretfotograaf-den-haag-CEO"],
 .hero-section--portrait .hero-slide img[data-src*="5I2A5572-portretfotograaf-den-haag-CEO"] {
   --hero-pos: center 20%;
