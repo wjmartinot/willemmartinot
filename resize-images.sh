@@ -17,10 +17,11 @@ if [ "$MODE" = "homepage" ]; then
   BASENAME="$4"
   DIR="images/homepage/${SUBPATH}"
   mkdir -p "$DIR"
+  sips -Z 2560 "$INPUT" --out "${DIR}/${BASENAME}-2560.jpg"
   sips -Z 1920 "$INPUT" --out "${DIR}/${BASENAME}-1920.jpg"
   sips -Z 1200 "$INPUT" --out "${DIR}/${BASENAME}-1200.jpg"
   sips -Z 800  "$INPUT" --out "${DIR}/${BASENAME}-800.jpg"
-  echo "Klaar: homepage/${SUBPATH}/${BASENAME}-{800,1200,1920}.jpg"
+  echo "Klaar: homepage/${SUBPATH}/${BASENAME}-{800,1200,1920,2560}.jpg"
 else
   LANG="$MODE"
   for SIZE in 800 1200 1920 2560; do
