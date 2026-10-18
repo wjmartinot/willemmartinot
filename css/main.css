@@ -2043,6 +2043,69 @@ details[open] .faq__question {
   }
 }
 
+/* Portret page: 2-up 4:5 heroes, full width with white gutters (Bodhi-style) */
+.hero-section.hero-section--short.hero-section--portrait-pair {
+  border-bottom: none;
+}
+
+.portrait-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(16px, 2vw, 32px);
+  width: 100%;
+  padding: clamp(12px, 2vw, 28px) clamp(16px, 2.5vw, 40px) clamp(16px, 2.5vw, 40px);
+  box-sizing: border-box;
+  background: var(--color-bg);
+}
+
+.portrait-pair__item {
+  margin: 0;
+  overflow: hidden;
+  background: var(--color-placeholder);
+}
+
+.portrait-pair img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+}
+
+.portrait-pair img[src*="1N8A2360-Editportret"] {
+  object-position: center 22%;
+}
+
+.portrait-pair img[src*="5I2A5570-Editportret"] {
+  object-position: center 18%;
+}
+
+@media (max-width: 700px) {
+  .portrait-pair {
+    grid-template-columns: 1fr;
+    gap: clamp(14px, 3vw, 20px);
+    padding: clamp(10px, 2.5vw, 16px) clamp(14px, 3.5vw, 24px) clamp(14px, 3.5vw, 24px);
+  }
+}
+
+/* Portret pair-layout: intro even breed als de galerij-container */
+body:has(.hero-section--portrait-pair) .section.intro .container {
+  max-width: var(--container-max);
+}
+
+body:has(.hero-section--portrait-pair) .section.intro.main-content {
+  padding-top: clamp(28px, 4vw, 48px);
+  padding-bottom: clamp(28px, 4vw, 48px);
+}
+
+.portrait-pair-section {
+  background: var(--color-bg);
+}
+
+.portrait-pair-section .portrait-pair {
+  padding-top: 0;
+}
+
 .portrait-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -2070,7 +2133,6 @@ details[open] .faq__question {
 
 /* Landscape CEO/studio in portret-grid: minder strakke 2/3-crop */
 .portrait-grid img[src*="5I2A5572-portretfotograaf-den-haag-CEO"],
-.portrait-grid img[src*="1N8A2490-portretfotograaf-den-haag"],
 .portrait-grid img[src*="1N8A2360-portretfotograaf-den-haag"] {
   aspect-ratio: 4 / 5;
   object-position: center 22%;
