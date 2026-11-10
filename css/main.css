@@ -2071,7 +2071,7 @@ details[open] .faq__question {
 
 .portrait-pair img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 2 / 3;
   object-fit: cover;
   object-position: center 20%;
   display: block;
