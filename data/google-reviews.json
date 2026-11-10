@@ -5,6 +5,27 @@
   "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Willem+Martinot+Fotografie&query_place_id=ChIJ_-hf1BOxxUcRfEmnLXxPyZo",
   "reviews": [
     {
+      "author": "Marit Buddenbaum",
+      "rating": 5,
+      "date": "2026-11-10",
+      "text": {
+        "nl": "Ik was op zoek naar een zakelijk portret fotograaf en stuitte via Google op Willem's website. Prachtige foto's, dus ik mailde meteen en kreeg ook snel reactie.\n\nVanaf dat eerste moment was het contact al heel prettig. Willem reageert snel, denkt fijn mee en is vriendelijk en mensgericht. Hij zorgde voor een warme, ontspannen sfeer en de shoot verliep heel natuurlijk. Terwijl ik eigenlijk niet graag op de foto ga, vond ik het heel leuk om te doen en de foto's zijn ook nog eens heel mooi geworden!\n\nVeel dank Willem, ik kan een shoot met u aan iedereen aanraden!",
+        "en": "I was looking for a corporate portrait photographer and came across Willem's website via Google. Beautiful photos, so I emailed right away and got a quick reply too.\n\nFrom that first moment, the contact was already very pleasant. Willem responds quickly, thinks along nicely, and is friendly and people-oriented. He created a warm, relaxed atmosphere and the shoot felt very natural. Even though I don't usually like being photographed, I really enjoyed it — and the photos turned out beautiful too!\n\nThank you so much Willem, I can recommend a shoot with you to everyone!"
+      },
+      "image": {
+        "nl": "/images/nl/1200/1N8A1828-portretfotograaf-den-haag.jpg",
+        "en": "/images/nl/1200/1N8A1828-portretfotograaf-den-haag.jpg"
+      },
+      "imageAlt": {
+        "nl": "Zakelijk studio-portret Marit Buddenbaum — portretfotograaf Den Haag",
+        "en": "Corporate studio portrait Marit Buddenbaum — portrait photographer The Hague"
+      },
+      "imageHref": {
+        "nl": "/portretfotograaf-den-haag/",
+        "en": "/en/corporate-portrait-photographer-the-hague/"
+      }
+    },
+    {
       "author": "Jerril Strijdhaftig",
       "rating": 5,
       "date": "2026-08-24",
