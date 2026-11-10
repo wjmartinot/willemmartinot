@@ -542,8 +542,12 @@ p {
   --hero-pos-mobile: 28% center;
 }
 
-.hero-slide img[src*="5I2A5029-bedrijfsfotograaf-"],
-.hero-slide img[data-src*="5I2A5029-bedrijfsfotograaf-"],
+.hero-slide img[src*="1N8A3950-bedrijfsfotograaf-"],
+.hero-slide img[data-src*="1N8A3950-bedrijfsfotograaf-"] {
+  --hero-pos: 50% 42%;
+  --hero-pos-mobile: 50% 45%;
+}
+
 .hero-slide img[src*="5I2A4676-bedrijfsfotograaf-"],
 .hero-slide img[data-src*="5I2A4676-bedrijfsfotograaf-"] {
   --hero-pos-mobile: 62% center;
