@@ -581,9 +581,13 @@ p {
   }
 }
 
-/* Zelfde verticale crop als portret-hero (50% 12%) — homepage heeft geen --portrait */
-.hero-slide img[src*="1N8A2490-fotograaf-den-haag"],
-.hero-slide img[data-src*="1N8A2490-fotograaf-den-haag"],
+/* Homepage hero crops */
+.hero-slide img[src*="1N8A1690-fotograaf-den-haag"],
+.hero-slide img[data-src*="1N8A1690-fotograaf-den-haag"] {
+  --hero-pos: 50% 22%;
+  --hero-pos-mobile: 50% 28%;
+}
+
 .hero-slide img[src*="1N8A2360-fotograaf-den-haag"],
 .hero-slide img[data-src*="1N8A2360-fotograaf-den-haag"] {
   --hero-pos: 50% 12%;
@@ -591,8 +595,11 @@ p {
 }
 
 @media (min-width: 1600px) {
-  .hero-slide img[src*="1N8A2490-fotograaf-den-haag"],
-  .hero-slide img[data-src*="1N8A2490-fotograaf-den-haag"],
+  .hero-slide img[src*="1N8A1690-fotograaf-den-haag"],
+  .hero-slide img[data-src*="1N8A1690-fotograaf-den-haag"] {
+    --hero-pos: 50% 24%;
+  }
+
   .hero-slide img[src*="1N8A2360-fotograaf-den-haag"],
   .hero-slide img[data-src*="1N8A2360-fotograaf-den-haag"] {
     --hero-pos: 50% 14%;
