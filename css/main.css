@@ -2240,9 +2240,17 @@ body:has(.hero-section--portrait-pair) .section.intro.main-content {
 }
 
 .linkedin-inline-row {
+  margin: clamp(32px, 5vw, 56px) 0;
+  padding: 0;
+}
+
+/* Match row 1 (.portrait-showcase) and row 3 (.container) width — break out of .content-section padding */
+.content-section--prose .linkedin-inline-row {
+  width: calc(100% + 2 * clamp(24px, 4vw, 80px));
   max-width: var(--container-max);
-  margin: clamp(32px, 5vw, 56px) auto;
-  padding: 0 clamp(24px, 4vw, 80px);
+  margin-left: calc(-1 * clamp(24px, 4vw, 80px));
+  margin-right: calc(-1 * clamp(24px, 4vw, 80px));
+  padding: 0 clamp(16px, 4vw, 80px);
 }
 
 .linkedin-inline-row .linkedin-showcase {
