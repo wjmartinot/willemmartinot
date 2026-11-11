@@ -2357,6 +2357,16 @@ body:has(.hero-section--portrait-pair) .section.intro.main-content {
   color: var(--color-text);
 }
 
+.linkedin-featured-review__role {
+  margin: 0.25rem 0 0;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.4;
+  color: var(--color-text-secondary);
+}
+
 @media (max-width: 768px) {
   .linkedin-featured-review__layout {
     grid-template-columns: 1fr;
