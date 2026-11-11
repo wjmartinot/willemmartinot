@@ -2281,6 +2281,98 @@ body:has(.hero-section--portrait-pair) .section.intro.main-content {
   gap: clamp(8px, 1.5vw, 16px);
 }
 
+/* Featured Google review under LinkedIn intro CTA — photo matches 1/3 showcase width */
+.linkedin-featured-review {
+  padding: 0 0 clamp(40px, 6vw, 72px);
+}
+
+.linkedin-featured-review__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 80px);
+}
+
+.linkedin-featured-review__layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(8px, 1.5vw, 16px);
+  align-items: center;
+  margin: 0;
+}
+
+.linkedin-featured-review__media {
+  grid-column: 1;
+  min-width: 0;
+}
+
+.linkedin-featured-review__media img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.linkedin-featured-review__body {
+  grid-column: 2 / 4;
+  min-width: 0;
+  text-align: left;
+}
+
+.linkedin-featured-review__quote {
+  margin: 0;
+}
+
+.linkedin-featured-review__quote p {
+  margin: 0 0 0.85em;
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.65;
+  color: var(--color-text);
+}
+
+.linkedin-featured-review__quote p:last-of-type {
+  margin-bottom: 0;
+}
+
+.linkedin-featured-review__mark {
+  font: inherit;
+  color: inherit;
+}
+
+.linkedin-featured-review__quote p:last-of-type::after {
+  content: "”";
+  font: inherit;
+  color: inherit;
+}
+
+.linkedin-featured-review__name {
+  margin: 1.15rem 0 0;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+  .linkedin-featured-review__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .linkedin-featured-review__media,
+  .linkedin-featured-review__body {
+    grid-column: 1;
+  }
+
+  .linkedin-featured-review__media {
+    max-width: min(100%, 420px);
+    margin: 0 auto;
+  }
+}
+
 /* --- Video embed --- */
 .video-wrapper {
   position: relative;
