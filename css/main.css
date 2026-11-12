@@ -658,14 +658,8 @@ p {
 }
 
 .hero-section--personal-branding.hero-section--short {
-  --hero-pos: 50% 22%;
-  --hero-pos-mobile: 50% 28%;
-}
-
-@media (min-width: 1600px) {
-  .hero-section--personal-branding.hero-section--short {
-    --hero-pos: 50% 20%;
-  }
+  --hero-pos: center center;
+  --hero-pos-mobile: center center;
 }
 
 .blog-caption {
@@ -742,6 +736,14 @@ p {
   height: clamp(280px, 48vw, 540px);
   min-height: 280px;
   flex-shrink: 0;
+}
+
+/* After short-hero height — match 3:2 personal-branding photo so the subject fits */
+.hero-section.hero-section--short.hero-section--personal-branding .hero {
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 3 / 2;
+  max-height: none;
 }
 
 .hero-section--ceo-headshot.hero-section--short {
