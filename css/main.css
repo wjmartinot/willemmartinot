@@ -647,8 +647,14 @@ p {
 }
 
 .hero-section--winvent.hero-section--short {
-  --hero-pos: 50% 40%;
-  --hero-pos-mobile: 50% 42%;
+  --hero-pos: 50% 28%;
+  --hero-pos-mobile: 50% 32%;
+}
+
+@media (min-width: 1600px) {
+  .hero-section--winvent.hero-section--short {
+    --hero-pos: 50% 26%;
+  }
 }
 
 .blog-caption {
