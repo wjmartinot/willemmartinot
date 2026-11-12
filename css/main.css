@@ -657,6 +657,17 @@ p {
   }
 }
 
+.hero-section--personal-branding.hero-section--short {
+  --hero-pos: 50% 22%;
+  --hero-pos-mobile: 50% 28%;
+}
+
+@media (min-width: 1600px) {
+  .hero-section--personal-branding.hero-section--short {
+    --hero-pos: 50% 20%;
+  }
+}
+
 .blog-caption {
   margin: -0.5rem 0 1.5rem;
   font-size: 0.875rem;
