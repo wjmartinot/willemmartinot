@@ -237,6 +237,7 @@
     const slideElements = hero.querySelectorAll(".hero-slide");
     const prevBtn = hero.querySelector(".hero-slider__btn--prev");
     const nextBtn = hero.querySelector(".hero-slider__btn--next");
+    const pauseBtn = hero.querySelector(".hero-slider__btn--pause");
     if (!track || !slideElements.length) return;
 
     const slides = shuffleHeroSlides(
@@ -245,8 +246,14 @@
       hero.hasAttribute("data-shuffle-all")
     );
 
+    const isEn = document.documentElement.lang === "en";
+    const labelPause = isEn ? "Pause slideshow" : "Pauzeer slideshow";
+    const labelPlay = isEn ? "Play slideshow" : "Hervat slideshow";
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     let current = 0;
     let timer;
+    let playing = !reduceMotion;
     const INTERVAL = 3000;
 
     function slideDuration(slide) {
@@ -270,27 +277,52 @@
       goTo(current - 1);
     }
 
-    function startTimer() {
+    function stopTimer() {
       clearTimeout(timer);
+      timer = null;
+    }
+
+    function startTimer() {
+      stopTimer();
+      if (!playing) return;
       timer = setTimeout(() => {
         next();
         startTimer();
       }, slideDuration(slides[current]));
     }
 
+    function syncPauseButton() {
+      if (!pauseBtn) return;
+      pauseBtn.setAttribute("aria-pressed", playing ? "false" : "true");
+      pauseBtn.setAttribute("aria-label", playing ? labelPause : labelPlay);
+      pauseBtn.textContent = playing ? "❚❚" : "▶";
+    }
+
+    function setPlaying(nextPlaying) {
+      playing = nextPlaying;
+      syncPauseButton();
+      if (playing) startTimer();
+      else stopTimer();
+    }
+
     hydrateHeroImage(slides[0]);
+    syncPauseButton();
 
     prevBtn?.addEventListener("click", () => {
       prev();
-      startTimer();
+      if (playing) startTimer();
     });
 
     nextBtn?.addEventListener("click", () => {
       next();
-      startTimer();
+      if (playing) startTimer();
     });
 
-    startTimer();
+    pauseBtn?.addEventListener("click", () => {
+      setPlaying(!playing);
+    });
+
+    if (playing) startTimer();
 
     let touchStartX = 0;
     hero.addEventListener("touchstart", (e) => {
@@ -300,7 +332,7 @@
       const dx = e.changedTouches[0].clientX - touchStartX;
       if (Math.abs(dx) > 50) {
         dx < 0 ? next() : prev();
-        startTimer();
+        if (playing) startTimer();
       }
     }, { passive: true });
   }
@@ -810,6 +842,12 @@
       lightboxImg.alt = img.alt;
     }
 
+    function closeLightbox() {
+      lightbox.classList.remove("active");
+      lightboxImg.removeAttribute("src");
+      lightboxImg.alt = "";
+    }
+
     items.forEach((img, i) => {
       img.addEventListener("click", () => {
         current = i;
@@ -818,11 +856,11 @@
       });
     });
 
-    lightbox.addEventListener("click", () => lightbox.classList.remove("active"));
+    lightbox.addEventListener("click", () => closeLightbox());
 
     document.addEventListener("keydown", (e) => {
       if (!lightbox.classList.contains("active")) return;
-      if (e.key === "Escape") lightbox.classList.remove("active");
+      if (e.key === "Escape") closeLightbox();
       if (e.key === "ArrowRight") {
         current = (current + 1) % items.length;
         showLightboxImage(items[current]);

@@ -799,6 +799,20 @@ p {
   right: clamp(12px, 2vw, 32px);
 }
 
+.hero-slider__btn--pause {
+  left: clamp(12px, 2vw, 32px);
+  top: auto;
+  bottom: clamp(1.25rem, 3.5vh, 2.25rem);
+  transform: none;
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  padding: 10px 12px;
+}
+
+.hero-slider__btn--pause[aria-pressed="true"] {
+  opacity: 1;
+}
+
 .hero-scroll {
   position: absolute;
   bottom: 2rem;

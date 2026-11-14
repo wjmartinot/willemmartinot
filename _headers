@@ -1,0 +1,17 @@
+# Cloudflare Pages headers — lange cache voor statische assets (JPG blijft JPG)
+# https://developers.cloudflare.com/pages/configuration/headers/
+
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/css/*
+  Cache-Control: public, max-age=604800
+
+/js/*
+  Cache-Control: public, max-age=604800
+
+/favicon.ico
+  Cache-Control: public, max-age=604800
