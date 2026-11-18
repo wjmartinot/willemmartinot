@@ -662,12 +662,29 @@ p {
   --hero-pos-mobile: center center;
 }
 
+.hero-section--ontspannen-fotoshoot.hero-section--short {
+  --hero-pos: center center;
+  --hero-pos-mobile: center center;
+}
+
 .blog-caption {
   margin: -0.5rem 0 1.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
   color: var(--color-text-secondary);
   text-align: center;
+}
+
+.content-section--prose .content-block blockquote {
+  margin: 1.25rem 0 1.75rem;
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  border-left: 2px solid var(--color-border);
+}
+
+.content-section--prose .content-block blockquote p {
+  margin: 0;
+  font-style: italic;
+  color: var(--color-text);
 }
 
 .hero-section--directieportret.hero-section--short {
@@ -745,6 +762,7 @@ p {
   aspect-ratio: 3 / 2;
   max-height: none;
 }
+
 
 .hero-section--ceo-headshot.hero-section--short {
   --hero-pos: center 32%;
