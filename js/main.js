@@ -295,7 +295,10 @@
       if (!pauseBtn) return;
       pauseBtn.setAttribute("aria-pressed", playing ? "false" : "true");
       pauseBtn.setAttribute("aria-label", playing ? labelPause : labelPlay);
-      pauseBtn.textContent = playing ? "❚❚" : "▶";
+      // SVG icons are toggled via CSS [aria-pressed]; plain-text buttons stay as fallback
+      if (!pauseBtn.querySelector(".hero-slider__icon")) {
+        pauseBtn.textContent = playing ? "❚❚" : "▶";
+      }
     }
 
     function setPlaying(nextPlaying) {

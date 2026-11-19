@@ -289,7 +289,15 @@
         </article>
       </div>
       <button type="button" class="hero-slider__btn hero-slider__btn--prev" aria-label="Previous slide">&#8592;</button>
-      <button type="button" class="hero-slider__btn hero-slider__btn--pause" aria-label="Pause slideshow" aria-pressed="false">❚❚</button>
+      <button type="button" class="hero-slider__btn hero-slider__btn--pause" aria-label="Pause slideshow" aria-pressed="false">
+        <svg class="hero-slider__icon hero-slider__icon--pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <rect x="6" y="5" width="4" height="14" rx="1"></rect>
+          <rect x="14" y="5" width="4" height="14" rx="1"></rect>
+        </svg>
+        <svg class="hero-slider__icon hero-slider__icon--play" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M8 5v14l11-7z"></path>
+        </svg>
+      </button>
       <button type="button" class="hero-slider__btn hero-slider__btn--next" aria-label="Next slide">&#8594;</button>
     </section>
     <div class="hero-cue">

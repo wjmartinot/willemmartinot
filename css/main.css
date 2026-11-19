@@ -818,17 +818,56 @@ p {
 }
 
 .hero-slider__btn--pause {
-  left: clamp(12px, 2vw, 32px);
+  left: auto;
+  right: clamp(12px, 2vw, 32px);
   top: auto;
-  bottom: clamp(1.25rem, 3.5vh, 2.25rem);
+  bottom: clamp(1.5rem, 4vh, 2.75rem);
   transform: none;
-  font-size: 1.05rem;
-  letter-spacing: 0.06em;
-  padding: 10px 12px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  opacity: 0.9;
+  font-size: 0;
+  line-height: 0;
+}
+
+.hero-slider__btn--pause:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.hero-slider__btn--pause:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
 }
 
 .hero-slider__btn--pause[aria-pressed="true"] {
   opacity: 1;
+}
+
+.hero-slider__icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  display: block;
+  grid-area: 1 / 1;
+}
+
+.hero-slider__btn--pause .hero-slider__icon--play {
+  display: none;
+}
+
+.hero-slider__btn--pause[aria-pressed="true"] .hero-slider__icon--pause {
+  display: none;
+}
+
+.hero-slider__btn--pause[aria-pressed="true"] .hero-slider__icon--play {
+  display: block;
 }
 
 .hero-scroll {
