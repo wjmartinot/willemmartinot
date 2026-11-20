@@ -802,18 +802,34 @@
     updateStickyCta();
   }
 
-  // Event grid: show more on mobile
+  // Event grid: show/hide extra photos (desktop + mobile)
   document.querySelectorAll(".event-grid__toggle").forEach((btn) => {
     const isEn = document.documentElement.lang === "en";
     const labelMore = btn.textContent.trim();
     const labelLess = isEn ? "Show less" : "Minder foto's";
+    const more =
+      (btn.getAttribute("aria-controls") && document.getElementById(btn.getAttribute("aria-controls"))) ||
+      btn.closest("section, .section--alt")?.querySelector(".event-grid--more");
+    if (!more) return;
+
+    function setExpanded(next) {
+      more.hidden = !next;
+      btn.setAttribute("aria-expanded", next ? "true" : "false");
+      btn.textContent = next ? labelLess : labelMore;
+    }
+
+    // Keep initial DOM state authoritative (hidden ↔ aria-expanded)
+    setExpanded(!more.hidden);
+
     btn.addEventListener("click", () => {
-      const more = btn.closest("section, .section--alt")?.querySelector(".event-grid--more");
-      if (!more) return;
-      const expanded = btn.getAttribute("aria-expanded") === "true";
-      more.hidden = expanded;
-      btn.setAttribute("aria-expanded", expanded ? "false" : "true");
-      btn.textContent = expanded ? labelMore : labelLess;
+      setExpanded(btn.getAttribute("aria-expanded") !== "true");
+    });
+
+    btn.addEventListener("keydown", (e) => {
+      if (e.key !== "Escape") return;
+      if (btn.getAttribute("aria-expanded") !== "true") return;
+      setExpanded(false);
+      btn.focus();
     });
   });
 
