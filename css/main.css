@@ -1038,20 +1038,20 @@ p {
 }
 
 /* Hague event pages: pull strip closer to intro text above */
-.section.intro.main-content:has(+ .clients--event-dh) {
+.section.intro.main-content:has(+ .clients--event-city) {
   padding-bottom: 16px;
 }
 
-.clients--event-dh {
+.clients--event-city {
   padding-top: 8px;
   border-top: none;
 }
 
-.clients--event-dh .clients__label {
+.clients--event-city .clients__label {
   margin-bottom: 20px;
 }
 
-.clients--event-dh + .section--event-portfolio {
+.clients--event-city + .section--event-portfolio {
   padding-top: 40px;
 }
 
@@ -1129,7 +1129,7 @@ p {
 }
 
 /* Hague event pages: H1 + quote CTA on the opening screen */
-.hero-section--event-dh .hero-opening {
+.hero-section--event-city .hero-opening {
   position: absolute;
   left: 0;
   right: 0;
@@ -1144,7 +1144,7 @@ p {
   pointer-events: none;
 }
 
-.hero-section--event-dh .hero-opening__eyebrow {
+.hero-section--event-city .hero-opening__eyebrow {
   margin: 0 0 -0.55em;
   font-family: "Jost", sans-serif;
   font-weight: 300;
@@ -1157,7 +1157,7 @@ p {
   white-space: nowrap;
 }
 
-.hero-section--event-dh .hero-opening__title {
+.hero-section--event-city .hero-opening__title {
   margin: 0;
   max-width: 18ch;
   color: #ffffff;
@@ -1169,7 +1169,7 @@ p {
   text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45);
 }
 
-.hero-section--event-dh .hero-opening__cta {
+.hero-section--event-city .hero-opening__cta {
   pointer-events: auto;
   margin-top: 0;
   background: #ffffff;
@@ -1181,14 +1181,14 @@ p {
   transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 
-.hero-section--event-dh .hero-opening__cta:hover {
+.hero-section--event-city .hero-opening__cta:hover {
   background: #1a1a1a;
   border-color: #1a1a1a;
   color: #ffffff;
   text-shadow: none;
 }
 
-.hero-section--event-dh .hero-scroll--event-dh {
+.hero-section--event-city .hero-scroll--event-city {
   position: absolute;
   bottom: clamp(1.1rem, 3vh, 1.75rem);
   left: 50%;
@@ -1198,16 +1198,16 @@ p {
 }
 
 @media (max-width: 480px) {
-  .hero-section--event-dh .hero-opening {
+  .hero-section--event-city .hero-opening {
     bottom: clamp(3.25rem, 8vh, 4.75rem);
   }
 
-  .hero-section--event-dh .hero-opening__title {
+  .hero-section--event-city .hero-opening__title {
     font-size: clamp(1.7rem, 7.2vw, 2.15rem);
     max-width: 14ch;
   }
 
-  .hero-section--event-dh .hero-opening__cta {
+  .hero-section--event-city .hero-opening__cta {
     padding: 12px 22px;
     letter-spacing: 0.08em;
   }
@@ -3295,8 +3295,8 @@ body:has(.hero-section--portrait-pair) .section.intro.main-content {
 
   .hero-wrapper:has(.hero-header.is-nav-open) .hero-cue,
   .hero-section:has(.hero-header.is-nav-open) .hero-cue,
-  .hero-section--event-dh:has(.hero-header.is-nav-open) .hero-opening,
-  .hero-section--event-dh:has(.hero-header.is-nav-open) .hero-scroll--event-dh,
+  .hero-section--event-city:has(.hero-header.is-nav-open) .hero-opening,
+  .hero-section--event-city:has(.hero-header.is-nav-open) .hero-scroll--event-city,
   .hero-wrapper:has(.hero-header.is-nav-open) > .hero-scroll,
   .hero-section:has(.hero-header.is-nav-open) > .hero-scroll {
     opacity: 0;
