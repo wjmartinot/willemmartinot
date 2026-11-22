@@ -2437,6 +2437,10 @@ body:has(.hero-section--portrait-pair) .section.intro.main-content {
   padding-bottom: clamp(28px, 4vw, 48px);
 }
 
+body:has(.hero-section--portrait-pair) .content-section h2 {
+  text-align: center;
+}
+
 .portrait-pair-section {
   background: var(--color-bg);
 }
