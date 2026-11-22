@@ -1891,10 +1891,7 @@ details[open] .faq__question {
   font-size: 0.9375rem;
   line-height: 1.55;
   color: var(--color-text);
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 12;
-  overflow: hidden;
+  white-space: pre-line;
   flex: 0 1 auto;
 }
 
