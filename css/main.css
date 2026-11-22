@@ -3418,6 +3418,10 @@ body:has(.hero-section--portrait-pair) .section.intro.main-content {
 }
 
 /* --- Rates / tarieven --- */
+.content-section--rates > img {
+  margin-bottom: clamp(32px, 5vw, 56px);
+}
+
 .content-section--rates .content-blocks {
   max-width: 720px;
 }
