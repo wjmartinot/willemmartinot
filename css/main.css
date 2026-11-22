@@ -2304,7 +2304,7 @@ details[open] .faq__question {
   width: 100%;
   box-sizing: border-box;
   gap: clamp(0.75rem, 2vh, 1.1rem);
-  padding: 0 clamp(16px, 4vw, 40px) clamp(12px, 2.2vw, 20px);
+  padding: clamp(20px, 3.5vh, 36px) clamp(16px, 4vw, 40px) clamp(12px, 2.2vw, 20px);
   text-align: center;
 }
 
@@ -2326,6 +2326,19 @@ details[open] .faq__question {
 .page-header--portrait-cta .hero-opening--portrait .hero-opening__title {
   max-width: 28ch;
   font-size: clamp(1.2rem, 3vw, 1.85rem);
+}
+
+.hero-section--portrait-cta .hero-opening--portrait .hero-opening__lead {
+  margin: -0.15em 0 0;
+  max-width: min(42em, 100%);
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: clamp(0.92rem, 1.5vw, 1.05rem);
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  color: var(--color-text-secondary);
+  text-align: center;
+  text-wrap: pretty;
 }
 
 .hero-section--portrait-cta .hero-opening--portrait .hero-opening__cta,
@@ -2357,6 +2370,11 @@ details[open] .faq__question {
 
   .page-header--portrait-cta .hero-opening--portrait .hero-opening__title {
     max-width: 22ch;
+  }
+
+  .hero-section--portrait-cta .hero-opening--portrait .hero-opening__lead {
+    font-size: 0.88rem;
+    max-width: min(34em, 100%);
   }
 
   .hero-section--portrait-cta .hero-opening--portrait .hero-opening__cta,
