@@ -1891,7 +1891,6 @@ details[open] .faq__question {
   font-size: 0.9375rem;
   line-height: 1.55;
   color: var(--color-text);
-  white-space: pre-line;
   flex: 0 1 auto;
 }
 
