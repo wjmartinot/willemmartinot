@@ -3460,6 +3460,7 @@ body:has(.hero-section--portrait-pair) .section.intro.main-content {
 
 .content-section--rates .rates-card__title {
   margin: 0;
+  min-height: calc(1.4em * 2);
   font-family: var(--font-body);
   font-size: 0.85rem;
   font-weight: 400;
