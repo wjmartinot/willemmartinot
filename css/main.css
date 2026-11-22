@@ -3445,6 +3445,10 @@ body:has(.hero-section--portrait-pair) .section.intro.main-content {
   margin-bottom: 0.35rem;
 }
 
+.content-section--rates h3 {
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
 /* --- Mid-gallery CTA reviews --- */
 .event-grid__cta-reviews {
   display: grid;
