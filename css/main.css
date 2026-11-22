@@ -3480,6 +3480,7 @@ body:has(.hero-section--portrait-pair) .section.intro.main-content {
 }
 
 .rates-card__price {
+  font-family: var(--font-jost);
   font-size: 2rem;
   font-weight: 400;
   line-height: 1.2;
