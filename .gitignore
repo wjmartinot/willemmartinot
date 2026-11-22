@@ -1,4 +1,5 @@
 .DS_Store
 github/
 willemmartinot/
-source/
+source/*
+!source/zakelijke-fotografie-den-haag-willem-martinot.jpg
