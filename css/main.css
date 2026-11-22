@@ -1161,7 +1161,7 @@ p {
 
 .hero-section--event-city .hero-opening__title {
   margin: 0 -0.01em 0 0;
-  max-width: 18ch;
+  max-width: min(22ch, 100%);
   color: #ffffff;
   font-family: var(--font-jost);
   font-weight: 900;
@@ -1170,6 +1170,9 @@ p {
   letter-spacing: 0.01em;
   text-align: center;
   text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45);
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
 }
 
 .hero-section--event-city .hero-opening__cta {
@@ -1208,7 +1211,7 @@ p {
 
   .hero-section--event-city .hero-opening__title {
     font-size: clamp(1.7rem, 7.2vw, 2.15rem);
-    max-width: 14ch;
+    max-width: min(20ch, 100%);
   }
 
   .hero-section--event-city .hero-opening__cta {
@@ -2311,7 +2314,7 @@ details[open] .faq__question {
 .hero-section--portrait-cta .hero-opening--portrait .hero-opening__title,
 .page-header--portrait-cta .hero-opening--portrait .hero-opening__title {
   margin: 0 -0.06em 0 0;
-  max-width: 22ch;
+  max-width: min(28ch, 100%);
   color: var(--color-text);
   font-family: var(--font-jost);
   font-weight: 500;
@@ -2321,6 +2324,9 @@ details[open] .faq__question {
   text-transform: uppercase;
   text-align: center;
   text-shadow: none;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
 }
 
 .page-header--portrait-cta .hero-opening--portrait .hero-opening__title {
@@ -2365,11 +2371,11 @@ details[open] .faq__question {
   .hero-section--portrait-cta .hero-opening--portrait .hero-opening__title,
   .page-header--portrait-cta .hero-opening--portrait .hero-opening__title {
     font-size: clamp(1.15rem, 5.8vw, 1.45rem);
-    max-width: 18ch;
+    max-width: min(24ch, 100%);
   }
 
   .page-header--portrait-cta .hero-opening--portrait .hero-opening__title {
-    max-width: 22ch;
+    max-width: min(26ch, 100%);
   }
 
   .hero-section--portrait-cta .hero-opening--portrait .hero-opening__lead {
