@@ -2334,7 +2334,8 @@ details[open] .faq__question {
   font-size: clamp(1.2rem, 3vw, 1.85rem);
 }
 
-.hero-section--portrait-cta .hero-opening--portrait .hero-opening__lead {
+.hero-section--portrait-cta .hero-opening--portrait .hero-opening__lead,
+.page-header--portrait-cta .hero-opening--portrait .hero-opening__lead {
   margin: -0.15em 0 0;
   max-width: min(42em, 100%);
   font-family: var(--font-body);
@@ -2378,7 +2379,8 @@ details[open] .faq__question {
     max-width: min(26ch, 100%);
   }
 
-  .hero-section--portrait-cta .hero-opening--portrait .hero-opening__lead {
+  .hero-section--portrait-cta .hero-opening--portrait .hero-opening__lead,
+  .page-header--portrait-cta .hero-opening--portrait .hero-opening__lead {
     font-size: 0.88rem;
     max-width: min(34em, 100%);
   }
