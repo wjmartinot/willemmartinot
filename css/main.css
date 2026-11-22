@@ -2289,6 +2289,73 @@ details[open] .faq__question {
   border-bottom: none;
 }
 
+/* Portrait + LinkedIn: H1 + book CTA in first viewport */
+.hero-section--portrait-cta .hero-opening--portrait,
+.page-header--portrait-cta .hero-opening--portrait {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(0.75rem, 2vh, 1.1rem);
+  padding: 0 clamp(16px, 4vw, 40px) clamp(12px, 2.2vw, 20px);
+  text-align: center;
+}
+
+.hero-section--portrait-cta .hero-opening--portrait .hero-opening__title,
+.page-header--portrait-cta .hero-opening--portrait .hero-opening__title {
+  margin: 0;
+  max-width: 22ch;
+  color: var(--color-text);
+  font-family: var(--font-jost);
+  font-weight: 500;
+  font-size: clamp(1.35rem, 3.4vw, 2.15rem);
+  line-height: 1.15;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-shadow: none;
+}
+
+.page-header--portrait-cta .hero-opening--portrait .hero-opening__title {
+  max-width: 28ch;
+  font-size: clamp(1.2rem, 3vw, 1.85rem);
+}
+
+.hero-section--portrait-cta .hero-opening--portrait .hero-opening__cta,
+.page-header--portrait-cta .hero-opening--portrait .hero-opening__cta {
+  margin-top: 0;
+  background: var(--color-text);
+  border: 1px solid var(--color-text);
+  color: #ffffff;
+  cursor: pointer;
+  text-shadow: none;
+  white-space: nowrap;
+  pointer-events: auto;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.hero-section--portrait-cta .hero-opening--portrait .hero-opening__cta:hover,
+.page-header--portrait-cta .hero-opening--portrait .hero-opening__cta:hover {
+  background: transparent;
+  color: var(--color-text);
+}
+
+@media (max-width: 480px) {
+  .hero-section--portrait-cta .hero-opening--portrait .hero-opening__title,
+  .page-header--portrait-cta .hero-opening--portrait .hero-opening__title {
+    font-size: clamp(1.15rem, 5.8vw, 1.45rem);
+    max-width: 18ch;
+  }
+
+  .page-header--portrait-cta .hero-opening--portrait .hero-opening__title {
+    max-width: 22ch;
+  }
+
+  .hero-section--portrait-cta .hero-opening--portrait .hero-opening__cta,
+  .page-header--portrait-cta .hero-opening--portrait .hero-opening__cta {
+    padding: 12px 22px;
+    letter-spacing: 0.08em;
+  }
+}
+
 .portrait-pair {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -3297,6 +3364,8 @@ body:has(.hero-section--portrait-pair) .section.intro.main-content {
   .hero-section:has(.hero-header.is-nav-open) .hero-cue,
   .hero-section--event-city:has(.hero-header.is-nav-open) .hero-opening,
   .hero-section--event-city:has(.hero-header.is-nav-open) .hero-scroll--event-city,
+  .hero-section--portrait-cta:has(.hero-header.is-nav-open) .hero-opening--portrait,
+  .page-header--portrait-cta:has(.hero-header.is-nav-open) .hero-opening--portrait,
   .hero-wrapper:has(.hero-header.is-nav-open) > .hero-scroll,
   .hero-section:has(.hero-header.is-nav-open) > .hero-scroll {
     opacity: 0;
