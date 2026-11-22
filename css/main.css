@@ -780,13 +780,7 @@ p {
 }
 
 .hero-section--contact {
-  --hero-pos: center 44%;
-}
-
-@media (min-width: 1600px) {
-  .hero-section--contact {
-    --hero-pos: center 36%;
-  }
+  --hero-pos: center 30%;
 }
 
 .hero-slider__btn {
