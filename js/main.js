@@ -529,6 +529,8 @@
           ctaHref: "/en/contact/",
           moreLabel: "More reviews",
           lessLabel: "Fewer reviews",
+          readMore: "Read more…",
+          readLess: "Read less",
         }
       : {
           fromGoogle: "Review van Google",
@@ -537,6 +539,8 @@
           ctaHref: "/contact/",
           moreLabel: "Meer reviews",
           lessLabel: "Minder reviews",
+          readMore: "Lees meer…",
+          readLess: "Lees minder",
         };
 
     const googleIcon = `
@@ -643,6 +647,7 @@
       cards.forEach((card, index) => {
         card.hidden = hideOverflow && index >= MOBILE_REVIEW_LIMIT;
       });
+      requestAnimationFrame(setupTextToggles);
 
       const toggle = carousel.querySelector(".reviews-carousel__more");
       const btn = toggle?.querySelector("button");
@@ -698,11 +703,40 @@
               <time class="reviews-carousel__date" datetime="${escapeHtml(review.date)}">${escapeHtml(formatDate(review.date))}</time>
             </div>
             <p class="reviews-carousel__text">${escapeHtml(reviewText(review))}</p>
+            <button type="button" class="reviews-carousel__more-text" hidden aria-expanded="false">${escapeHtml(copy.readMore)}</button>
             ${media}
           </article>
         `;
       }).join("");
       applyMobileReviewLimit();
+      requestAnimationFrame(() => {
+        setupTextToggles();
+        syncCardHeights();
+      });
+    }
+
+    function setupTextToggles() {
+      track.querySelectorAll(".reviews-carousel__card").forEach((card) => {
+        const text = card.querySelector(".reviews-carousel__text");
+        const btn = card.querySelector(".reviews-carousel__more-text");
+        if (!text || !btn) return;
+
+        if (!btn.dataset.bound) {
+          btn.dataset.bound = "true";
+          btn.addEventListener("click", () => {
+            const expanded = card.classList.toggle("is-expanded");
+            btn.setAttribute("aria-expanded", expanded ? "true" : "false");
+            btn.textContent = expanded ? copy.readLess : copy.readMore;
+            syncCardHeights();
+          });
+        }
+
+        if (card.hidden || card.classList.contains("is-expanded")) return;
+
+        btn.setAttribute("aria-expanded", "false");
+        btn.textContent = copy.readMore;
+        btn.hidden = !(text.scrollHeight > text.clientHeight + 1);
+      });
     }
 
     function equalizeCardHeights() {
@@ -714,6 +748,7 @@
       // Single-column layouts don't need equal heights; forcing them makes the
       // section so tall that scroll-reveal never fires on mobile.
       if (mobileMq.matches) return;
+      if (track.querySelector(".reviews-carousel__card.is-expanded")) return;
       const columns = getComputedStyle(track).gridTemplateColumns.split(" ").filter(Boolean).length;
       if (columns <= 1) return;
       const maxHeight = Math.max(...cards.map((card) => card.getBoundingClientRect().height));

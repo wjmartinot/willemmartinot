@@ -1916,6 +1916,10 @@ details[open] .faq__question {
 }
 
 .reviews-carousel__text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  overflow: hidden;
   margin: 0;
   font-size: 0.9375rem;
   line-height: 1.55;
@@ -1923,10 +1927,42 @@ details[open] .faq__question {
   flex: 0 1 auto;
 }
 
+.reviews-carousel__card.is-expanded .reviews-carousel__text {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+.reviews-carousel__more-text {
+  align-self: flex-start;
+  margin: -2px 0 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.4;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.reviews-carousel__more-text:hover {
+  color: var(--color-text);
+}
+
+.reviews-carousel__more-text[hidden] {
+  display: none;
+}
+
 .reviews-carousel__media {
-  flex: 1 1 auto;
+  flex: 0 0 auto;
   width: 100%;
-  min-height: 7.5rem;
+  aspect-ratio: 16 / 10;
+  height: auto;
+  min-height: 0;
   margin-top: auto;
   overflow: hidden;
   border-radius: 4px;
