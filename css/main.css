@@ -1257,6 +1257,7 @@ p {
   line-height: 1.2;
   margin-bottom: 0.6rem;
   margin-top: 2rem;
+  text-align: center;
 }
 
 .content-section h2:first-child {
