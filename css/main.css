@@ -986,10 +986,11 @@ p {
 
 .proof-points {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.35rem;
-  margin: 1.35rem auto 1.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem 1.15rem;
+  width: 100%;
+  margin: 1.35rem 0 1.6rem;
   padding: 0;
   list-style: none;
   font-size: 0.9375rem;
@@ -999,13 +1000,17 @@ p {
 }
 
 .proof-points li {
-  display: list-item;
-  width: fit-content;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35em;
   margin: 0;
-  list-style: disc;
-  list-style-position: inside;
   font-weight: 600;
   color: var(--color-accent);
+}
+
+.proof-points li::before {
+  content: "•";
+  flex: 0 0 auto;
 }
 
 .proof-points strong {
