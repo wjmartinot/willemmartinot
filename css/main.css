@@ -1169,6 +1169,20 @@ p {
   hyphens: none;
 }
 
+.hero-section--event-city .hero-opening__lead {
+  margin: 0;
+  max-width: min(38em, 100%);
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: clamp(0.9rem, 1.45vw, 1.05rem);
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+  text-wrap: pretty;
+}
+
 .hero-section--event-city .hero-opening__cta {
   pointer-events: auto;
   margin-top: 0;
