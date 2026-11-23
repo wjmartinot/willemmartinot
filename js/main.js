@@ -798,9 +798,14 @@
       })
       .then((data) => {
         if (!Array.isArray(data.reviews) || !data.reviews.length) return;
-        const reviews = [...data.reviews]
-          .sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")))
-          .slice(0, 12);
+        const sorted = [...data.reviews]
+          .sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
+        const isMarcel = (review) => /marcel\s+vermeulen/i.test(review.author || "");
+        const marcel = sorted.find(isMarcel);
+        // Always keep Marcel Vermeulen as the last card (review 12).
+        const reviews = marcel
+          ? [...sorted.filter((review) => !isMarcel(review)).slice(0, 11), marcel]
+          : sorted.slice(0, 12);
         renderHeader(data);
         renderCards(reviews);
         renderCta();
