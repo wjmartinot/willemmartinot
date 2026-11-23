@@ -5,6 +5,28 @@
   "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Willem+Martinot+Fotografie&query_place_id=ChIJ_-hf1BOxxUcRfEmnLXxPyZo",
   "reviews": [
     {
+      "author": "Travel Associates AU",
+      "rating": 5,
+      "date": "2026-11-09",
+      "text": {
+        "nl": "Ik heb Willem onlangs ingehuurd als eventfotograaf voor ons bedrijf. Ongelooflijk professioneel, hero-shots binnen enkele uren, en hij blokkeerde zelfs zijn agenda om beschikbaar te zijn voor directe nabewerking terwijl we samen werkten om onze content live te krijgen. Zou hem als fotograaf van harte aanbevelen.",
+        "en": "I hired Willem as a event photographer recently for our business. Incredibly professional, hero shots within hours, and even blocked out his calendar to be available for immediate edits as we worked together to get our content live. Would highly recommend as a photographer."
+      },
+      "image": {
+        "nl": "/images/nl/1200/eventfotograaf-den-haag-travel-associates.jpg",
+        "en": "/images/en/1200/event-photographer-the-hague-travel-associates.jpg"
+      },
+      "imageAlt": {
+        "nl": "Eventfotografie Travel Associates AU — interview met Viking-kapitein",
+        "en": "Event photography Travel Associates AU — interview with Viking captain"
+      },
+      "imageHref": {
+        "nl": "/event-fotograaf-den-haag/",
+        "en": "/en/event-photographer-the-hague/"
+      },
+      "imagePosition": "center 28%"
+    },
+    {
       "author": "Marit Buddenbaum",
       "rating": 5,
       "date": "2026-11-10",
