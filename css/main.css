@@ -1014,8 +1014,8 @@ p {
 }
 
 .proof-points strong {
-  font-weight: 600;
-  color: var(--color-accent);
+  font-weight: inherit;
+  color: inherit;
 }
 
 .intro__subtitle {
