@@ -1020,21 +1020,6 @@ p {
   margin-top: -0.85rem;
 }
 
-/* Soft scrim on homepage hero so white opening text stays readable on bright slides */
-.hero-section--home .hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.18) 0%,
-    rgba(0, 0, 0, 0.28) 40%,
-    rgba(0, 0, 0, 0.42) 100%
-  );
-}
-
 .intro__subtitle {
   font-family: var(--font-heading);
   font-weight: 700;
