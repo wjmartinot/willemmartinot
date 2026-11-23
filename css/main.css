@@ -995,7 +995,7 @@ p {
   list-style: none;
   font-size: 0.9375rem;
   line-height: 1.55;
-  color: var(--color-accent);
+  color: var(--color-text);
   text-align: center;
 }
 
@@ -1003,8 +1003,8 @@ p {
   display: inline-flex;
   align-items: baseline;
   margin: 0;
-  font-weight: 600;
-  color: var(--color-accent);
+  font-weight: 300;
+  color: var(--color-text);
 }
 
 .proof-points li + li::before {
@@ -1015,7 +1015,7 @@ p {
 
 .proof-points strong {
   font-weight: 600;
-  color: inherit;
+  color: var(--color-accent);
 }
 
 .intro__subtitle {
