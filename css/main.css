@@ -1000,8 +1000,7 @@ p {
 }
 
 .proof-points li {
-  display: inline-flex;
-  align-items: baseline;
+  display: inline;
   margin: 0;
   font-weight: 300;
   color: var(--color-text);
@@ -1009,7 +1008,6 @@ p {
 
 .proof-points li + li::before {
   content: "•";
-  flex: 0 0 auto;
   margin: 0 0.85rem;
 }
 
