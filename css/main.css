@@ -1177,7 +1177,7 @@ p {
   line-height: 1.05;
   letter-spacing: 0.01em;
   text-align: center;
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.28);
   overflow-wrap: normal;
   word-break: normal;
   hyphens: none;
