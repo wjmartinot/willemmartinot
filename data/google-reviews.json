@@ -174,27 +174,6 @@
       }
     },
     {
-      "author": "Daphne Da Ponte",
-      "rating": 5,
-      "date": "2026-03-15",
-      "text": {
-        "nl": "Willem wist het beste in me naar boven te halen. Mijn neutrale blik is altijd wat streng en boos, maar onder de bezielende leiding van Willem werd deze zacht, lief en vrolijk. Dank je wel!!! X D.",
-        "en": "Willem brought out the best in me. My neutral expression always looks a bit stern and angry, but under Willem's inspiring guidance it became soft, kind and cheerful. Thank you!!! X D."
-      },
-      "image": {
-        "nl": "/images/nl/1200/5I2A6681-portretfotograaf-den-haag-studio.jpg",
-        "en": "/images/en/1200/5I2A6681-corporate-portrait-photographer-the-hague-studio.jpg"
-      },
-      "imageAlt": {
-        "nl": "Zakelijk portret in studio — portretfotograaf Den Haag",
-        "en": "Corporate portrait in studio — portrait photographer The Hague"
-      },
-      "imageHref": {
-        "nl": "/portretfotograaf-den-haag/",
-        "en": "/en/corporate-portrait-photographer-the-hague/"
-      }
-    },
-    {
       "author": "Midas Van Dijk",
       "rating": 5,
       "date": "2026-02-20",
@@ -300,6 +279,28 @@
       "imageHref": {
         "nl": "/event-fotograaf-den-haag/",
         "en": "/en/event-photographer-the-hague/"
+      }
+    },
+    {
+      "author": "Fortus",
+      "rating": 5,
+      "date": "2026-11-25",
+      "text": {
+        "nl": "We hebben Willem ingeschakeld voor zakelijke fotografie, waaronder professionele portretten van onze medewerkers en mooie beelden van ons pand. Vanaf het eerste moment dacht hij actief mee over de invulling van de fotoserie. Met zijn tips, inspiratie en proactieve houding wist hij onze wensen perfect te vertalen naar een mooi eindresultaat. Daarnaast is hij flexibel, professioneel en ontzettend prettig in de omgang. Een fotograaf die niet alleen prachtige beelden maakt, maar ook echt met je meedenkt. Absoluut een aanrader!",
+        "en": "We engaged Willem for business photography, including professional portraits of our employees and beautiful images of our premises. From the very first moment he actively thought along about shaping the photo series. With his tips, inspiration and proactive approach he perfectly translated our wishes into a beautiful end result. He is also flexible, professional and extremely pleasant to work with. A photographer who not only creates stunning images, but truly thinks with you. Absolutely recommended!"
+      },
+      "image": {
+        "nl": "/images/nl/1200/1N8A5824-Editportret-fotograaf-den-haag-2.jpg",
+        "en": "/images/nl/1200/1N8A5824-Editportret-fotograaf-den-haag-2.jpg"
+      },
+      "imageAlt": {
+        "nl": "Zakelijk portret — portretfotograaf Den Haag",
+        "en": "Corporate portrait — portrait photographer The Hague"
+      },
+      "imagePosition": "center 18%",
+      "imageHref": {
+        "nl": "/portretfotograaf-den-haag/",
+        "en": "/en/corporate-portrait-photographer-the-hague/"
       }
     }
   ]
