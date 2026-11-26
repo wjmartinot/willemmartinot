@@ -1091,24 +1091,33 @@ p {
 }
 
 .btn-outline {
-  display: inline-block;
-  padding: 14px 40px;
-  border: 1px solid var(--color-text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  min-height: 44px;
+  box-sizing: border-box;
+  border: 1px solid #e6b800;
+  border-radius: 10px;
   font-family: var(--font-body);
   font-weight: 300;
   font-size: 0.75rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-text);
+  color: #1a1a1a;
   text-decoration: none;
-  background: transparent;
-  transition: background 0.2s ease, color 0.2s ease;
+  background: #f5c518;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
   margin-top: 1.5rem;
 }
 
 .btn-outline:hover {
-  background: var(--color-text);
-  color: #ffffff;
+  background: #e0b000;
+  border-color: #d4a600;
+  color: #1a1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.28);
 }
 
 .hero-cue .btn-outline.btn-outline--hero {
@@ -1201,20 +1210,30 @@ p {
   pointer-events: auto;
   margin-top: 0;
   margin-right: -0.18em;
-  background: #ffffff;
-  border: 1px solid #ffffff;
+  background: #f5c518;
+  border: 1px solid #e6b800;
   color: #1a1a1a;
+  border-radius: 10px;
+  min-height: 44px;
+  padding: 16px 32px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   text-shadow: none;
   white-space: nowrap;
-  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
 
 .hero-section--event-city .hero-opening__cta:hover {
-  background: #1a1a1a;
-  border-color: #1a1a1a;
-  color: #ffffff;
+  background: #e0b000;
+  border-color: #d4a600;
+  color: #1a1a1a;
   text-shadow: none;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
 }
 
 .hero-section--event-city .hero-scroll--event-city {
@@ -2407,20 +2426,31 @@ details[open] .faq__question {
 .page-header--portrait-cta .hero-opening--portrait .hero-opening__cta {
   margin-top: 0;
   margin-right: -0.18em;
-  background: var(--color-text);
-  border: 1px solid var(--color-text);
-  color: #ffffff;
+  background: #f5c518;
+  border: 1px solid #e6b800;
+  color: #1a1a1a;
+  border-radius: 10px;
+  min-height: 44px;
+  padding: 16px 32px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   text-shadow: none;
   white-space: nowrap;
   pointer-events: auto;
-  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
 
 .hero-section--portrait-cta .hero-opening--portrait .hero-opening__cta:hover,
 .page-header--portrait-cta .hero-opening--portrait .hero-opening__cta:hover {
-  background: transparent;
-  color: var(--color-text);
+  background: #e0b000;
+  border-color: #d4a600;
+  color: #1a1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
 }
 
 @media (max-width: 480px) {
@@ -3758,21 +3788,32 @@ body:has(.hero-section--portrait-pair) .content-section h2 {
 
 .sticky-cta__btn {
   flex-shrink: 0;
-  padding: 0.55rem 1.1rem;
-  background: var(--color-accent);
-  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.25rem;
+  min-height: 44px;
+  box-sizing: border-box;
+  background: #f5c518;
+  color: #1a1a1a;
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
-  border: none;
+  border: 1px solid #e6b800;
+  border-radius: 10px;
   white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
 
 .sticky-cta__btn:hover {
-  background: var(--color-accent-dark);
-  color: #fff;
+  background: #e0b000;
+  border-color: #d4a600;
+  color: #1a1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.28);
 }
 
 @media (max-width: 768px) {

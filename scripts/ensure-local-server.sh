@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-# Ensure 127.0.0.1:8765 is serving this repo.
+# Ensure 127.0.0.1:3000 is serving this repo.
 # Prefer launchd (KeepAlive); fall back to a detached python server.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-PORT=8765
+PORT=3000
 BIND=127.0.0.1
-LABEL="nl.willemmartinot.http8765"
+LABEL="nl.willemmartinot.http3000"
 UID_NUM="$(id -u)"
 LSOF="/usr/sbin/lsof"
 PYTHON="/usr/bin/python3"
