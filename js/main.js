@@ -11,6 +11,30 @@
     window.gtag("event", "conversion", Object.assign({ send_to: sendTo }, extra || {}));
   }
 
+  function fireLeadConversion(location) {
+    const conversionKey = `ads_info_request:${window.location.pathname}`;
+    try {
+      if (sessionStorage.getItem(conversionKey) === "1") return;
+    } catch {
+      /* ignore */
+    }
+
+    trackEvent("generate_lead", {
+      method: "contact_form",
+      location: location || "contact_form",
+    });
+    // Google Ads: Informatieaanvraag
+    trackAdsConversion("AW-1064034871/onpuCImJogEQt8Sv-wM", {
+      value: 1.0,
+      currency: "EUR",
+    });
+    try {
+      sessionStorage.setItem(conversionKey, "1");
+    } catch {
+      /* ignore quota / private mode */
+    }
+  }
+
   function initFormNotice() {
     const params = new URLSearchParams(window.location.search);
     const notice = document.getElementById("form-notice");
@@ -20,35 +44,76 @@
     notice.closest("form")?.scrollIntoView({ behavior: "smooth", block: "start" });
 
     const form = notice.closest("form.contact-form");
-    const location = form?.dataset.contactLocation || "contact_form";
-    const conversionKey = `ads_info_request:${window.location.pathname}`;
-    const alreadyCounted = (() => {
-      try {
-        return sessionStorage.getItem(conversionKey) === "1";
-      } catch {
-        return false;
-      }
-    })();
-
-    if (!alreadyCounted) {
-      trackEvent("generate_lead", {
-        method: "contact_form",
-        location,
-      });
-      // Google Ads: Informatieaanvraag
-      trackAdsConversion("AW-1064034871/onpuCImJogEQt8Sv-wM", {
-        value: 1.0,
-        currency: "EUR",
-      });
-      try {
-        sessionStorage.setItem(conversionKey, "1");
-      } catch {
-        /* ignore quota / private mode */
-      }
-    }
+    fireLeadConversion(form?.dataset.contactLocation || "contact_form");
 
     // Strip ?sent=1 so refresh / back-forward / shared URLs don't re-fire.
     history.replaceState(null, "", window.location.pathname);
+  }
+
+  function initThankYouPage() {
+    const path = window.location.pathname.replace(/\/$/, "") || "/";
+    if (path !== "/bedankt" && path !== "/en/thank-you") return;
+    fireLeadConversion("thank_you_page");
+  }
+
+  // Formspree no longer reliably honors HTML _next; submit via JSON and redirect ourselves.
+  function initContactForms() {
+    document.querySelectorAll("form.contact-form").forEach((form) => {
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const submitBtn = form.querySelector('[type="submit"]');
+        const nextInput = form.querySelector('input[name="_next"]');
+        const isEn = document.documentElement.lang === "en";
+        const fallbackNext = isEn
+          ? "https://www.willemmartinot.nl/en/thank-you/"
+          : "https://www.willemmartinot.nl/bedankt/";
+        const nextUrl = (nextInput && nextInput.value) || fallbackNext;
+
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.setAttribute("aria-busy", "true");
+        }
+
+        try {
+          const response = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { Accept: "application/json" },
+          });
+
+          if (!response.ok) {
+            throw new Error("Formspree error");
+          }
+
+          // Prefer same-origin thank-you path when testing locally.
+          try {
+            const target = new URL(nextUrl, window.location.origin);
+            if (
+              target.hostname === "www.willemmartinot.nl" &&
+              window.location.hostname !== "www.willemmartinot.nl"
+            ) {
+              window.location.href = target.pathname + (target.pathname.endsWith("/") ? "" : "/");
+              return;
+            }
+          } catch {
+            /* use absolute nextUrl */
+          }
+
+          window.location.href = nextUrl;
+        } catch {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.removeAttribute("aria-busy");
+          }
+          window.alert(
+            isEn
+              ? "Sorry, something went wrong sending the form. Please try again or email me@willemmartinot.nl."
+              : "Sorry, er ging iets mis bij het versturen. Probeer het opnieuw of mail naar me@willemmartinot.nl."
+          );
+        }
+      });
+    });
   }
 
   function initContactTracking() {
@@ -443,6 +508,8 @@
 
   loadPartials();
   initFormNotice();
+  initThankYouPage();
+  initContactForms();
   initContactTracking();
   initImageProtection();
   initHeroSlider();
