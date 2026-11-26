@@ -592,8 +592,6 @@
       ? {
           fromGoogle: "Review from Google",
           ratingLabel: "Google rating",
-          ctaLabel: "Request a no-obligation quote",
-          ctaHref: "/en/contact/",
           moreLabel: "More reviews",
           lessLabel: "Fewer reviews",
           readMore: "Read more…",
@@ -602,8 +600,6 @@
       : {
           fromGoogle: "Review van Google",
           ratingLabel: "Google-beoordeling",
-          ctaLabel: "Vraag vrijblijvend offerte aan",
-          ctaHref: "/contact/",
           moreLabel: "Meer reviews",
           lessLabel: "Minder reviews",
           readMore: "Lees meer…",
@@ -675,14 +671,6 @@
       return value || fallback;
     }
 
-    function renderCta() {
-      if (carousel.querySelector(".reviews-carousel__cta")) return;
-      const cta = document.createElement("p");
-      cta.className = "reviews-carousel__cta";
-      cta.innerHTML = `<a href="${copy.ctaHref}" class="btn-outline">${escapeHtml(copy.ctaLabel)}</a>`;
-      carousel.appendChild(cta);
-    }
-
     function renderMoreToggle(total) {
       let toggle = carousel.querySelector(".reviews-carousel__more");
       if (total <= MOBILE_REVIEW_LIMIT) {
@@ -693,12 +681,7 @@
         toggle = document.createElement("p");
         toggle.className = "reviews-carousel__more";
         toggle.innerHTML = `<button type="button" class="btn-outline reviews-carousel__more-btn" aria-expanded="false">${escapeHtml(copy.moreLabel)}</button>`;
-        const cta = carousel.querySelector(".reviews-carousel__cta");
-        if (cta) {
-          carousel.insertBefore(toggle, cta);
-        } else {
-          carousel.appendChild(toggle);
-        }
+        carousel.appendChild(toggle);
         toggle.querySelector("button").addEventListener("click", () => {
           mobileExpanded = !mobileExpanded;
           applyMobileReviewLimit();
@@ -875,7 +858,6 @@
           : sorted.slice(0, 12);
         renderHeader(data);
         renderCards(reviews);
-        renderCta();
         renderMoreToggle(reviews.length);
         applyMobileReviewLimit();
         syncCardHeights();

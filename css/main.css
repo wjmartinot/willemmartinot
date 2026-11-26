@@ -1206,7 +1206,7 @@ p {
 
 .hero-section--event-city .hero-opening__title {
   margin: 0 -0.01em 0 0;
-  max-width: min(22ch, 100%);
+  max-width: min(34ch, 100%);
   color: #ffffff;
   font-family: var(--font-jost);
   font-weight: 900;
@@ -1232,6 +1232,15 @@ p {
   text-align: center;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
   text-wrap: pretty;
+}
+
+.hero-section--event-city .hero-opening__actions {
+  pointer-events: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem 1rem;
 }
 
 .hero-section--event-city .hero-opening__cta {
@@ -1264,6 +1273,21 @@ p {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
 }
 
+.hero-section--event-city .hero-opening__cta--secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  color: #ffffff;
+  box-shadow: none;
+  margin-right: 0;
+}
+
+.hero-section--event-city .hero-opening__cta--secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #ffffff;
+  color: #ffffff;
+  box-shadow: none;
+}
+
 .hero-section--event-city .hero-scroll--event-city {
   position: absolute;
   bottom: clamp(1.1rem, 3vh, 1.75rem);
@@ -1279,8 +1303,8 @@ p {
   }
 
   .hero-section--event-city .hero-opening__title {
-    font-size: clamp(1.7rem, 7.2vw, 2.15rem);
-    max-width: min(20ch, 100%);
+    font-size: clamp(1.55rem, 6.6vw, 2.05rem);
+    max-width: min(26ch, 100%);
   }
 
   .hero-section--event-city .hero-opening__cta {
@@ -1576,8 +1600,13 @@ p {
 
 /* --- FAQ --- */
 .faq__title {
-  margin-bottom: clamp(24px, 4vw, 40px);
+  margin-bottom: clamp(20px, 3.5vw, 32px);
   text-align: center;
+  font-family: var(--font-jost);
+  font-weight: 500;
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  letter-spacing: 0.02em;
+  line-height: 1.25;
 }
 
 .faq .container > .btn-outline {
@@ -1656,6 +1685,45 @@ details[open] .faq__question {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+}
+
+#diensten {
+  padding-top: 48px;
+}
+
+#diensten .label {
+  text-align: center;
+}
+
+.services-grid--hub {
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(20px, 3vw, 28px);
+}
+
+.services-grid--hub .service-item img {
+  height: clamp(360px, 38vw, 520px);
+}
+
+.approach-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 3vw, 32px);
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.approach-grid__item h3 {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-jost);
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.approach-grid__item p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
 }
 
 .service-item {
@@ -1821,12 +1889,31 @@ details[open] .faq__question {
 }
 
 /* --- Google Reviews carousel --- */
+.section.reviews .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.85rem;
+}
+
+.section.reviews .label {
+  margin: 0;
+  line-height: 1;
+}
+
 .reviews-header {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 12px 24px;
-  margin-bottom: clamp(20px, 3vw, 32px);
+  margin: 0;
+}
+
+.section.reviews .reviews-carousel {
+  width: 100%;
+  margin-top: clamp(20px, 3vw, 32px);
 }
 
 .reviews-header__rating {
@@ -3308,6 +3395,10 @@ body:has(.hero-section--portrait-pair) .content-section h2 {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .approach-grid {
+    grid-template-columns: 1fr;
+  }
+
   .blog-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -3335,7 +3426,8 @@ body:has(.hero-section--portrait-pair) .content-section h2 {
 }
 
 @media (max-width: 768px) {
-  .services-grid {
+  .services-grid,
+  .services-grid--hub {
     grid-template-columns: 1fr;
   }
 
