@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <!-- Google tag (gtag.js) -->
+    <!-- GOOGLE_TAG_GTAG_HIER -->
+<!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VLGVQ0N4NZ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -252,7 +253,7 @@
     </section>
     <div class="hero-cue">
       <p class="hero-cue__tagline">Bedrijfsfotograaf<br>Den Haag · Amsterdam · Rotterdam</p>
-      <span class="btn-outline btn-outline--hero">Scroll down</span>
+      <a href="#offerte" class="btn-outline btn-outline--hero">Vraag offerte aan</a>
       <button class="hero-scroll"
               aria-label="Scroll naar beneden"
               onclick="document.querySelector('.main-content').scrollIntoView({behavior:'smooth'})">
@@ -278,7 +279,7 @@
           <li>Op locatie of in studio</li>
           <li>Discreet &amp; professioneel</li>
         </ul>
-        <a href="/contact/" class="btn-outline">Vraag offerte aan</a>
+        <a href="#offerte" class="btn-outline">Vraag offerte aan</a>
       </div>
     </section>
 
@@ -463,7 +464,7 @@
         </div>
       </div>
 
-      <a href="/contact/" class="btn-outline">Vraag offerte aan</a>
+      <a href="#offerte" class="btn-outline">Vraag offerte aan</a>
     </section>
     <section class="section faq" aria-labelledby="faq-heading">
       <div class="container">
@@ -568,11 +569,52 @@
         </div>
       </div>
     </section>
+  
+    <section class="section section--alt" id="offerte" aria-label="Offerte aanvragen">
+      <div class="container">
+        <h2 class="intro__h1" style="text-align:center">Offerte aanvragen</h2>
+        <p style="text-align:center;max-width:40em;margin:0 auto 1.75rem">Vul het formulier in. Ik reageer binnen 24 uur met een voorstel of korte toelichting.</p>
+        <form action="https://formspree.io/f/xykqqpgj" method="POST" class="contact-form" data-contact-location="landing_offerte">
+          <input type="hidden" name="_next" value="https://www.willemmartinot.nl/bedankt/">
+          <input type="hidden" name="bron_pagina" value="Bedrijfsfotograaf Den Haag">
+          <input type="hidden" name="_subject" value="Offerteaanvraag — Bedrijfsfotograaf Den Haag">
+          <p hidden aria-hidden="true"><label>Laat dit veld leeg: <input name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
+
+          <label class="contact-form__field">
+            <span>Naam &amp; organisatie</span>
+            <input type="text" name="naam" required autocomplete="organization name">
+          </label>
+
+          <label class="contact-form__field">
+            <span>E-mailadres</span>
+            <input type="email" name="email" required autocomplete="email">
+          </label>
+
+          <label class="contact-form__field">
+            <span>Type opdracht</span>
+            <select name="type_opdracht" required>
+              <option value="">Kies een optie</option>
+              <option value="Bedrijfsreportage op locatie">Bedrijfsreportage op locatie</option>
+              <option value="Team- en sfeerbeelden">Team- en sfeerbeelden</option>
+              <option value="Website- en brandingfotografie">Website- en brandingfotografie</option>
+            </select>
+          </label>
+
+          <label class="contact-form__field">
+            <span>Gewenste periode of korte toelichting</span>
+            <textarea name="bericht" rows="5"></textarea>
+          </label>
+
+          <button type="submit" class="btn-outline contact-form__submit">Vraag offerte aan</button>
+        </form>
+      </div>
+    </section>
+
   </main>
 
   <div class="sticky-cta" id="sticky-cta" aria-hidden="true">
     <p class="sticky-cta__text">Bedrijfsfotograaf Den Haag</p>
-    <a href="/contact/" class="sticky-cta__btn">Offerte aanvragen</a>
+    <a href="#offerte" class="sticky-cta__btn">Offerte aanvragen</a>
   </div>
 
   <footer class="footer" id="footer-placeholder" role="contentinfo"></footer>

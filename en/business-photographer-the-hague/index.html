@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
+    <!-- GOOGLE_TAG_GTAG_HIER -->
+<!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VLGVQ0N4NZ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -223,7 +224,7 @@
     </section>
     <div class="hero-cue">
       <p class="hero-cue__tagline">Business photographer<br>The Hague · Amsterdam · Rotterdam</p>
-      <span class="btn-outline btn-outline--hero">Scroll down</span>
+      <a href="#offerte" class="btn-outline btn-outline--hero">Request a quote</a>
       <button class="hero-scroll"
               aria-label="Scroll down"
               onclick="document.querySelector('.main-content').scrollIntoView({behavior:'smooth'})">
@@ -241,7 +242,7 @@
         <p class="intro__subtitle">Commercial photography for corporate reports, branding and communications, with quality and consistency</p>
         <p>As a business photographer in The Hague I create images that strengthen your brand: on-location reports in offices, labs or production, and branding for websites, campaigns and annual reports. The photography is clear, timeless and ready for communications.</p>
         <p>In The Hague I regularly photograph architecture studios, labs, city-centre offices and international organisations — as well as productions across the Randstad. On location I work with compact setups so the working day is disrupted as little as possible.</p>
-        <a href="/en/contact/" class="btn-outline">Request a quote</a>
+        <a href="#offerte" class="btn-outline">Request a quote</a>
       </div>
     </section>
 
@@ -390,7 +391,7 @@
         </div>
       </div>
 
-      <a href="/en/contact/" class="btn-outline">Request a quote</a>
+      <a href="#offerte" class="btn-outline">Request a quote</a>
     </section>
 
     <section class="section faq" aria-labelledby="faq-heading">
@@ -494,6 +495,47 @@
             </div>
           </details>
         </div>
+      </div>
+    </section>
+
+  
+    <section class="section section--alt" id="offerte" aria-label="Request a quote">
+      <div class="container">
+        <h2 class="intro__h1" style="text-align:center">Request a quote</h2>
+        <p style="text-align:center;max-width:40em;margin:0 auto 1.75rem">Fill in the form. I will reply within 24 hours with a proposal or a short follow-up.</p>
+        <form action="https://formspree.io/f/xykqqpgj" method="POST" class="contact-form" data-contact-location="landing_offerte">
+          <input type="hidden" name="_next" value="https://www.willemmartinot.nl/en/thank-you/">
+          <input type="hidden" name="bron_pagina" value="Business Photographer The Hague">
+          <input type="hidden" name="_subject" value="Quote request — Business Photographer The Hague">
+          <p hidden aria-hidden="true"><label>Leave blank: <input name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
+
+          <label class="contact-form__field">
+            <span>Name &amp; organisation</span>
+            <input type="text" name="naam" required autocomplete="organization name">
+          </label>
+
+          <label class="contact-form__field">
+            <span>Email address</span>
+            <input type="email" name="email" required autocomplete="email">
+          </label>
+
+          <label class="contact-form__field">
+            <span>Assignment type</span>
+            <select name="type_opdracht" required>
+              <option value="">Choose an option</option>
+              <option value="On-location corporate reportage">On-location corporate reportage</option>
+              <option value="Team and atmosphere shots">Team and atmosphere shots</option>
+              <option value="Website and branding photography">Website and branding photography</option>
+            </select>
+          </label>
+
+          <label class="contact-form__field">
+            <span>Preferred period or brief notes</span>
+            <textarea name="bericht" rows="5"></textarea>
+          </label>
+
+          <button type="submit" class="btn-outline contact-form__submit">Request a quote</button>
+        </form>
       </div>
     </section>
 

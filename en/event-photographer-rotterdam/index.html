@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
+    <!-- GOOGLE_TAG_GTAG_HIER -->
+<!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VLGVQ0N4NZ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -262,7 +263,7 @@
     <div class="hero-opening">
       <h1 class="hero-opening__title">Event Photographer Rotterdam</h1>
       <p class="hero-opening__lead">Discreet, sharp photography for conferences and corporate events in Rotterdam. Experienced at WTC, SS Rotterdam and major venues. Request a quote.</p>
-      <a href="/en/contact/" class="btn-outline btn-outline--hero hero-opening__cta">Request a quote</a>
+      <a href="#offerte" class="btn-outline btn-outline--hero hero-opening__cta">Request a quote</a>
     </div>
     <button class="hero-scroll hero-scroll--event-city"
             aria-label="Scroll to content"
@@ -748,7 +749,7 @@
           </blockquote>
         </div>
         <p>Event coming up? Request a quote directly.</p>
-        <a href="/en/contact/" class="btn-outline">Request a quote</a>
+        <a href="#offerte" class="btn-outline">Request a quote</a>
       </div>
 
     </section>
@@ -892,17 +893,53 @@
             </div>
           </details>
         </div>
-        <a href="/en/contact/" class="btn-outline">Request a quote</a>
+        <a href="#offerte" class="btn-outline">Request a quote</a>
 
       </div>
     </section>
+  
+    <section class="section section--alt" id="offerte" aria-label="Request a quote">
+      <div class="container">
+        <h2 class="intro__h1" style="text-align:center">Request a quote</h2>
+        <p style="text-align:center;max-width:40em;margin:0 auto 1.75rem">Fill in the form. I will reply within 24 hours with a proposal or a short follow-up.</p>
+        <form action="https://formspree.io/f/xykqqpgj" method="POST" class="contact-form" data-contact-location="landing_offerte">
+          <input type="hidden" name="_next" value="https://www.willemmartinot.nl/en/thank-you/">
+          <input type="hidden" name="bron_pagina" value="Event Photographer Rotterdam">
+          <input type="hidden" name="_subject" value="Quote request — Event Photographer Rotterdam">
+          <p hidden aria-hidden="true"><label>Leave blank: <input name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
+
+          <label class="contact-form__field">
+            <span>Name &amp; organisation</span>
+            <input type="text" name="naam" required autocomplete="organization name">
+          </label>
+
+          <label class="contact-form__field">
+            <span>Email address</span>
+            <input type="email" name="email" required autocomplete="email">
+          </label>
+
+          <label class="contact-form__field">
+            <span>Event date &amp; location</span>
+            <input type="text" name="datum_locatie" required placeholder="E.g. 12 March, World Forum The Hague">
+          </label>
+
+          <label class="contact-form__field">
+            <span>Preferred period or brief notes</span>
+            <textarea name="bericht" rows="5"></textarea>
+          </label>
+
+          <button type="submit" class="btn-outline contact-form__submit">Request a quote</button>
+        </form>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer" id="footer-placeholder" role="contentinfo"></footer>
 
   <div class="sticky-cta" id="sticky-cta" aria-hidden="true">
     <p class="sticky-cta__text">Event photographer Rotterdam</p>
-    <a href="/en/contact/" class="sticky-cta__btn">Request a quote</a>
+    <a href="#offerte" class="sticky-cta__btn">Request a quote</a>
   </div>
 
   <div id="lightbox" class="lightbox" role="dialog" aria-label="Enlarge image">

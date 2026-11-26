@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
+    <!-- GOOGLE_TAG_GTAG_HIER -->
+<!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VLGVQ0N4NZ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -211,7 +212,7 @@
         <div class="hero-opening hero-opening--portrait">
       <h1 class="hero-opening__title">LinkedIn headshot in The&nbsp;Hague</h1>
       <p class="hero-opening__lead">A portrait with presence, even in a tiny circle. Direct, friendly guidance toward a sharp, credible image you can stand behind.</p>
-      <a href="/en/contact/" class="btn-outline btn-outline--hero hero-opening__cta">Book a session</a>
+      <a href="#offerte" class="btn-outline btn-outline--hero hero-opening__cta">Book a session</a>
     </div>
 
     <div class="portrait-showcase">
@@ -550,9 +551,50 @@
 
     <section class="section">
       <div class="container" style="text-align: center;">
-        <a href="/en/contact/" class="btn-outline">Request a quote</a>
+        <a href="#offerte" class="btn-outline">Request a quote</a>
       </div>
     </section>
+  
+    <section class="section section--alt" id="offerte" aria-label="Request a quote">
+      <div class="container">
+        <h2 class="intro__h1" style="text-align:center">Request a quote</h2>
+        <p style="text-align:center;max-width:40em;margin:0 auto 1.75rem">Fill in the form. I will reply within 24 hours with a proposal or a short follow-up.</p>
+        <form action="https://formspree.io/f/xykqqpgj" method="POST" class="contact-form" data-contact-location="landing_offerte">
+          <input type="hidden" name="_next" value="https://www.willemmartinot.nl/en/thank-you/">
+          <input type="hidden" name="bron_pagina" value="LinkedIn Portrait The Hague">
+          <input type="hidden" name="_subject" value="Quote request — LinkedIn Portrait The Hague">
+          <p hidden aria-hidden="true"><label>Leave blank: <input name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
+
+          <label class="contact-form__field">
+            <span>Name &amp; organisation</span>
+            <input type="text" name="naam" required autocomplete="organization name">
+          </label>
+
+          <label class="contact-form__field">
+            <span>Email address</span>
+            <input type="email" name="email" required autocomplete="email">
+          </label>
+
+          <label class="contact-form__field">
+            <span>Session type</span>
+            <select name="type_sessie" required>
+              <option value="">Choose an option</option>
+              <option value="Individual LinkedIn headshot (studio)">Individual LinkedIn headshot (studio)</option>
+              <option value="LinkedIn headshot on location">LinkedIn headshot on location</option>
+              <option value="Team LinkedIn portraits">Team LinkedIn portraits</option>
+            </select>
+          </label>
+
+          <label class="contact-form__field">
+            <span>Preferred period or brief notes</span>
+            <textarea name="bericht" rows="5"></textarea>
+          </label>
+
+          <button type="submit" class="btn-outline contact-form__submit">Request a quote</button>
+        </form>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer" id="footer-placeholder" role="contentinfo"></footer>

@@ -1120,7 +1120,7 @@ p {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.28);
 }
 
-.hero-cue .btn-outline.btn-outline--hero {
+.hero-cue span.btn-outline.btn-outline--hero {
   margin-top: 0;
   background: transparent;
   border: 1px solid #ffffff;
@@ -1131,9 +1131,37 @@ p {
   white-space: nowrap;
 }
 
-.hero-cue .btn-outline.btn-outline--hero:hover {
+.hero-cue span.btn-outline.btn-outline--hero:hover {
   background: transparent;
   color: #ffffff;
+}
+
+.hero-cue a.btn-outline.btn-outline--hero {
+  margin-top: 0;
+  background: #f5c518;
+  border: 1px solid #e6b800;
+  color: #1a1a1a;
+  border-radius: 10px;
+  min-height: 44px;
+  padding: 16px 32px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: auto;
+  text-shadow: none;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.hero-cue a.btn-outline.btn-outline--hero:hover {
+  background: #e0b000;
+  border-color: #d4a600;
+  color: #1a1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
 }
 
 @media (max-width: 480px) {
