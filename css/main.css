@@ -1981,6 +1981,32 @@ details[open] .faq__question {
   gap: clamp(12px, 2vw, 20px);
 }
 
+.reviews-carousel--static-3,
+.reviews-carousel--static-6 {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto 1.5rem;
+}
+
+.reviews-carousel--static-3 .reviews-carousel__track,
+.reviews-carousel--static-6 .reviews-carousel__track {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.reviews-carousel__extra {
+  margin-top: clamp(12px, 2vw, 20px);
+}
+
+.reviews-carousel__extra[hidden] {
+  display: none !important;
+}
+
+.reviews-carousel__more--collapse {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0 0;
+}
+
 .reviews-carousel__card {
   display: flex;
   flex-direction: column;
@@ -2122,13 +2148,17 @@ details[open] .faq__question {
 }
 
 @media (max-width: 1024px) {
-  .reviews-carousel__track {
+  .reviews-carousel__track,
+  .reviews-carousel--static-3 .reviews-carousel__track,
+  .reviews-carousel--static-6 .reviews-carousel__track {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 640px) {
-  .reviews-carousel__track {
+  .reviews-carousel__track,
+  .reviews-carousel--static-3 .reviews-carousel__track,
+  .reviews-carousel--static-6 .reviews-carousel__track {
     grid-template-columns: minmax(0, 1fr);
   }
 }

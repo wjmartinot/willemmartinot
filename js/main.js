@@ -514,6 +514,7 @@
   initImageProtection();
   initHeroSlider();
   initReviewsCarousel();
+  initStaticReviewTextToggles();
   initScrollReveal();
   initCloudflareAnalytics();
 
@@ -578,6 +579,7 @@
     const section = document.querySelector(".section.reviews");
     const carousel = section?.querySelector(".reviews-carousel");
     if (!section || !carousel || carousel.dataset.bound) return;
+    if (carousel.dataset.static === "true") return;
 
     const track = carousel.querySelector(".reviews-carousel__track");
     if (!track) return;
@@ -586,8 +588,10 @@
 
     const lang = document.documentElement.lang === "en" ? "en" : "nl";
     const MOBILE_REVIEW_LIMIT = 8;
+    const collapseAfter = Number(carousel.dataset.collapseAfter || 0);
     const mobileMq = window.matchMedia("(max-width: 640px)");
     let mobileExpanded = false;
+    let desktopExpanded = false;
     const copy = lang === "en"
       ? {
           fromGoogle: "Review from Google",
@@ -596,6 +600,8 @@
           lessLabel: "Fewer reviews",
           readMore: "Read more…",
           readLess: "Read less",
+          showAll: "Show all 12 Google reviews",
+          showLess: "Show fewer reviews",
         }
       : {
           fromGoogle: "Review van Google",
@@ -604,6 +610,8 @@
           lessLabel: "Minder reviews",
           readMore: "Lees meer…",
           readLess: "Lees minder",
+          showAll: "Bekijk alle 12 Google reviews",
+          showLess: "Toon minder reviews",
         };
 
     const googleIcon = `
@@ -716,31 +724,31 @@
       btn.textContent = mobileExpanded ? copy.lessLabel : copy.moreLabel;
     }
 
-    function renderCards(reviews) {
-      track.innerHTML = reviews.map((review) => {
-        const image = localizedField(review.image);
-        const alt = escapeHtml(
-          localizedField(
-            review.imageAlt,
-            lang === "en"
-              ? `Photo related to review by ${review.author || "client"}`
-              : `Foto bij review van ${review.author || "klant"}`
-          )
-        );
-        const position = review.imagePosition
-          ? ` style="object-position:${escapeHtml(review.imagePosition)}"`
-          : "";
-        const img = image
-          ? `<img src="${escapeHtml(image)}" alt="${alt}" width="640" height="360" loading="eager" decoding="async"${position}>`
-          : "";
-        const href = localizedField(review.imageHref);
-        const mediaInner = href && img
-          ? `<a href="${escapeHtml(href)}" class="reviews-carousel__media-link">${img}</a>`
-          : img;
-        const media = image
-          ? `<div class="reviews-carousel__media">${mediaInner}</div>`
-          : `<div class="reviews-carousel__media reviews-carousel__media--placeholder" aria-hidden="true"></div>`;
-        return `
+    function cardHtml(review, { lazy = false } = {}) {
+      const image = localizedField(review.image);
+      const alt = escapeHtml(
+        localizedField(
+          review.imageAlt,
+          lang === "en"
+            ? `Photo related to review by ${review.author || "client"}`
+            : `Foto bij review van ${review.author || "klant"}`
+        )
+      );
+      const position = review.imagePosition
+        ? ` style="object-position:${escapeHtml(review.imagePosition)}"`
+        : "";
+      const loading = lazy ? "lazy" : "eager";
+      const img = image
+        ? `<img src="${escapeHtml(image)}" alt="${alt}" width="640" height="360" loading="${loading}" decoding="async"${position}>`
+        : "";
+      const href = localizedField(review.imageHref);
+      const mediaInner = href && img
+        ? `<a href="${escapeHtml(href)}" class="reviews-carousel__media-link">${img}</a>`
+        : img;
+      const media = image
+        ? `<div class="reviews-carousel__media">${mediaInner}</div>`
+        : `<div class="reviews-carousel__media reviews-carousel__media--placeholder" aria-hidden="true"></div>`;
+      return `
           <article class="reviews-carousel__card">
             <div class="reviews-carousel__author">
               <div class="reviews-carousel__meta">
@@ -757,7 +765,50 @@
             ${media}
           </article>
         `;
-      }).join("");
+    }
+
+    function ensureCollapseToggle() {
+      let wrap = carousel.querySelector(".reviews-carousel__collapse");
+      if (wrap) return wrap;
+      wrap = document.createElement("div");
+      wrap.className = "reviews-carousel__collapse";
+      wrap.innerHTML = `
+        <div class="reviews-carousel__extra" hidden>
+          <div class="reviews-carousel__track reviews-carousel__track--extra" aria-live="polite"></div>
+        </div>
+        <p class="reviews-carousel__more reviews-carousel__more--collapse">
+          <button type="button" class="btn-outline reviews-carousel__more-btn" aria-expanded="false">${escapeHtml(copy.showAll)}</button>
+        </p>`;
+      carousel.appendChild(wrap);
+      const btn = wrap.querySelector("button");
+      btn.addEventListener("click", () => {
+        desktopExpanded = !desktopExpanded;
+        const extra = wrap.querySelector(".reviews-carousel__extra");
+        extra.hidden = !desktopExpanded;
+        btn.setAttribute("aria-expanded", desktopExpanded ? "true" : "false");
+        btn.textContent = desktopExpanded ? copy.showLess : copy.showAll;
+        syncCardHeights();
+      });
+      return wrap;
+    }
+
+    function renderCards(reviews) {
+      if (collapseAfter > 0 && reviews.length > collapseAfter) {
+        const primary = reviews.slice(0, collapseAfter);
+        const extra = reviews.slice(collapseAfter);
+        track.innerHTML = primary.map((review) => cardHtml(review, { lazy: false })).join("");
+        const wrap = ensureCollapseToggle();
+        const extraTrack = wrap.querySelector(".reviews-carousel__track--extra");
+        extraTrack.innerHTML = extra.map((review) => cardHtml(review, { lazy: true })).join("");
+        wrap.querySelector(".reviews-carousel__extra").hidden = !desktopExpanded;
+        const btn = wrap.querySelector("button");
+        btn.setAttribute("aria-expanded", desktopExpanded ? "true" : "false");
+        btn.textContent = desktopExpanded ? copy.showLess : copy.showAll;
+        wrap.querySelector(".reviews-carousel__more--collapse").hidden = false;
+      } else {
+        track.innerHTML = reviews.map((review) => cardHtml(review, { lazy: false })).join("");
+        carousel.querySelector(".reviews-carousel__collapse")?.remove();
+      }
       applyMobileReviewLimit();
       requestAnimationFrame(() => {
         setupTextToggles();
@@ -765,8 +816,12 @@
       });
     }
 
+    function allReviewCards() {
+      return [...carousel.querySelectorAll(".reviews-carousel__card")];
+    }
+
     function setupTextToggles() {
-      track.querySelectorAll(".reviews-carousel__card").forEach((card) => {
+      allReviewCards().forEach((card) => {
         const text = card.querySelector(".reviews-carousel__text");
         const btn = card.querySelector(".reviews-carousel__more-text");
         if (!text || !btn) return;
@@ -790,7 +845,7 @@
     }
 
     function equalizeCardHeights() {
-      const cards = [...track.querySelectorAll(".reviews-carousel__card")].filter((card) => !card.hidden);
+      const cards = allReviewCards().filter((card) => !card.hidden && card.offsetParent !== null);
       if (!cards.length) return;
       cards.forEach((card) => {
         card.style.height = "";
@@ -853,16 +908,54 @@
         const isMarcel = (review) => /marcel\s+vermeulen/i.test(review.author || "");
         const marcel = sorted.find(isMarcel);
         // Always keep Marcel Vermeulen as the last card (review 12).
-        const reviews = marcel
+        let reviews = marcel
           ? [...sorted.filter((review) => !isMarcel(review)).slice(0, 11), marcel]
           : sorted.slice(0, 12);
+
+        // Homepage: pin the first visible row order.
+        if (collapseAfter > 0) {
+          const preferredTop = [
+            "Fortus",
+            "Marit Buddenbaum",
+            "Travel Associates AU",
+            "Jerril Strijdhaftig",
+          ];
+          const byAuthor = new Map(reviews.map((review) => [review.author, review]));
+          const top = preferredTop.map((name) => byAuthor.get(name)).filter(Boolean);
+          const used = new Set(top.map((review) => review.author));
+          const rest = reviews.filter((review) => !used.has(review.author));
+          reviews = [...top, ...rest].slice(0, 12);
+        }
+
         renderHeader(data);
         renderCards(reviews);
-        renderMoreToggle(reviews.length);
+        if (!(collapseAfter > 0 && reviews.length > collapseAfter)) {
+          renderMoreToggle(reviews.length);
+        }
         applyMobileReviewLimit();
         syncCardHeights();
       })
       .catch(() => {});
+  }
+
+  function initStaticReviewTextToggles() {
+    document.querySelectorAll(".reviews-carousel[data-static='true'] .reviews-carousel__card").forEach((card) => {
+      const text = card.querySelector(".reviews-carousel__text");
+      const btn = card.querySelector(".reviews-carousel__more-text");
+      if (!text || !btn || btn.dataset.bound) return;
+      btn.dataset.bound = "true";
+      btn.addEventListener("click", () => {
+        const expanded = card.classList.toggle("is-expanded");
+        btn.setAttribute("aria-expanded", expanded ? "true" : "false");
+        const isEn = document.documentElement.lang === "en";
+        btn.textContent = expanded
+          ? (isEn ? "Read less" : "Lees minder")
+          : (isEn ? "Read more…" : "Lees meer…");
+      });
+      requestAnimationFrame(() => {
+        btn.hidden = !(text.scrollHeight > text.clientHeight + 1);
+      });
+    });
   }
 
   // Sticky CTA: show on scroll, hide when page CTA is visible
