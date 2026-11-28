@@ -514,6 +514,7 @@
   initImageProtection();
   initHeroSlider();
   initReviewsCarousel();
+  initStaticReviewCollapse();
   initStaticReviewTextToggles();
   initScrollReveal();
   initCloudflareAnalytics();
@@ -938,20 +939,43 @@
       .catch(() => {});
   }
 
+  function initStaticReviewCollapse() {
+    document.querySelectorAll(".reviews-carousel[data-static='true'][data-collapse-after]").forEach((carousel) => {
+      const extra = carousel.querySelector(".reviews-carousel__extra");
+      const btn = carousel.querySelector(".reviews-carousel__more--collapse .reviews-carousel__more-btn");
+      if (!extra || !btn || btn.dataset.bound) return;
+      btn.dataset.bound = "true";
+      const isEn = document.documentElement.lang === "en";
+      const showMore = isEn ? "Show more reviews" : "Zie meer reviews";
+      const showLess = isEn ? "Show fewer reviews" : "Toon minder reviews";
+      btn.addEventListener("click", () => {
+        const expanded = extra.hasAttribute("hidden");
+        extra.hidden = !expanded;
+        btn.setAttribute("aria-expanded", expanded ? "true" : "false");
+        btn.textContent = expanded ? showLess : showMore;
+        if (expanded) initStaticReviewTextToggles();
+      });
+    });
+  }
+
   function initStaticReviewTextToggles() {
     document.querySelectorAll(".reviews-carousel[data-static='true'] .reviews-carousel__card").forEach((card) => {
+      if (card.hidden || card.closest(".reviews-carousel__extra[hidden]")) return;
       const text = card.querySelector(".reviews-carousel__text");
       const btn = card.querySelector(".reviews-carousel__more-text");
-      if (!text || !btn || btn.dataset.bound) return;
-      btn.dataset.bound = "true";
-      btn.addEventListener("click", () => {
-        const expanded = card.classList.toggle("is-expanded");
-        btn.setAttribute("aria-expanded", expanded ? "true" : "false");
-        const isEn = document.documentElement.lang === "en";
-        btn.textContent = expanded
-          ? (isEn ? "Read less" : "Lees minder")
-          : (isEn ? "Read more…" : "Lees meer…");
-      });
+      if (!text || !btn) return;
+      if (!btn.dataset.bound) {
+        btn.dataset.bound = "true";
+        btn.addEventListener("click", () => {
+          const expanded = card.classList.toggle("is-expanded");
+          btn.setAttribute("aria-expanded", expanded ? "true" : "false");
+          const isEn = document.documentElement.lang === "en";
+          btn.textContent = expanded
+            ? (isEn ? "Read less" : "Lees minder")
+            : (isEn ? "Read more…" : "Lees meer…");
+        });
+      }
+      if (card.classList.contains("is-expanded")) return;
       requestAnimationFrame(() => {
         btn.hidden = !(text.scrollHeight > text.clientHeight + 1);
       });

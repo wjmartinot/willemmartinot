@@ -302,6 +302,49 @@
         "nl": "/portretfotograaf-den-haag/",
         "en": "/en/corporate-portrait-photographer-the-hague/"
       }
+    },
+    {
+      "author": "Luna",
+      "rating": 5,
+      "date": "2026-11-24",
+      "text": {
+        "nl": "Willem is een ontzettend kundige fotograaf! Het eindresultaat is van hoge kwaliteit en ook de fotoshoot zelf heb ik als heel prettig en gezellig ervaren. Willem stelt je direct op je gemak en gebruikt verschillende technieken om tot mooie en verrassende foto's te komen. Echt een aanrader!",
+        "en": "Willem is an incredibly skilled photographer! The end result is of high quality and I also found the photoshoot itself very pleasant and enjoyable. Willem puts you at ease right away and uses various techniques to create beautiful, surprising photos. Truly recommended!"
+      },
+      "image": {
+        "nl": "/images/nl/1200/1N8A2360-Editportret-fotograaf-den-haag.jpg",
+        "en": "/images/en/1200/1N8A2360-Edit-portrait-photographer-the-hague.jpg"
+      },
+      "imageAlt": {
+        "nl": "Zakelijk studio-portret Luna — portretfotograaf Den Haag",
+        "en": "Corporate studio portrait Luna — portrait photographer The Hague"
+      },
+      "imagePosition": "center 22%",
+      "imageHref": {
+        "nl": "/portretfotograaf-den-haag/",
+        "en": "/en/corporate-portrait-photographer-the-hague/"
+      }
+    },
+    {
+      "author": "Peter Nijenhuis",
+      "rating": 5,
+      "date": "2026-11-06",
+      "text": {
+        "nl": "Ik kan Willem zeer aanbevelen. Zeer professionele fotograaf! Daarnaast is Willem ook een heel leuk mens.",
+        "en": "I can highly recommend Willem. A very professional photographer! On top of that, Willem is also a really nice person."
+      },
+      "image": {
+        "nl": "/images/nl/1200/zakelijk-portretfotograaf-den-haag-5.jpg",
+        "en": "/images/en/1200/corporate-portrait-photographer-the-hague-5.jpg"
+      },
+      "imageAlt": {
+        "nl": "Zakelijk studio-portret Peter Nijenhuis — portretfotograaf Den Haag",
+        "en": "Corporate studio portrait Peter Nijenhuis — portrait photographer The Hague"
+      },
+      "imageHref": {
+        "nl": "/portretfotograaf-den-haag/",
+        "en": "/en/corporate-portrait-photographer-the-hague/"
+      }
     }
   ]
 }

@@ -1982,7 +1982,8 @@ details[open] .faq__question {
 }
 
 .reviews-carousel--static-3,
-.reviews-carousel--static-6 {
+.reviews-carousel--static-6,
+.reviews-carousel--static-8 {
   width: 100%;
   max-width: var(--container-max);
   margin: 0 auto 1.5rem;
@@ -1991,6 +1992,20 @@ details[open] .faq__question {
 .reviews-carousel--static-3 .reviews-carousel__track,
 .reviews-carousel--static-6 .reviews-carousel__track {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.reviews-carousel--static-8 .reviews-carousel__track {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.reviews-carousel--static-8 .reviews-carousel__text {
+  min-height: calc(1.55em * 6);
+}
+
+.reviews-carousel--static-8 .reviews-carousel__more-text[hidden] {
+  display: block;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .reviews-carousel__extra {
@@ -2150,7 +2165,8 @@ details[open] .faq__question {
 @media (max-width: 1024px) {
   .reviews-carousel__track,
   .reviews-carousel--static-3 .reviews-carousel__track,
-  .reviews-carousel--static-6 .reviews-carousel__track {
+  .reviews-carousel--static-6 .reviews-carousel__track,
+  .reviews-carousel--static-8 .reviews-carousel__track {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -2158,7 +2174,8 @@ details[open] .faq__question {
 @media (max-width: 640px) {
   .reviews-carousel__track,
   .reviews-carousel--static-3 .reviews-carousel__track,
-  .reviews-carousel--static-6 .reviews-carousel__track {
+  .reviews-carousel--static-6 .reviews-carousel__track,
+  .reviews-carousel--static-8 .reviews-carousel__track {
     grid-template-columns: minmax(0, 1fr);
   }
 }
@@ -2323,6 +2340,24 @@ details[open] .faq__question {
   text-align: center;
   max-width: var(--container-max);
   margin: 0 auto;
+}
+
+.event-grid__cta .reviews-carousel {
+  align-self: stretch;
+  width: 100%;
+  text-align: left;
+}
+
+.event-grid__cta .reviews-carousel__text {
+  /* Keep 6-line block height so photos line up across cards */
+  min-height: calc(1.55em * 6);
+}
+
+.event-grid__cta .reviews-carousel__more-text[hidden] {
+  /* Reserve the "Lees meer" row so short reviews don't shift the photo up */
+  display: block;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .event-grid__cta p {
