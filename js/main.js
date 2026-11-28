@@ -143,22 +143,56 @@
     const nav = header?.querySelector(".hero-header__nav");
     if (!header || !toggle || !nav) return;
 
+    function closeDropdowns() {
+      nav.querySelectorAll(".nav-dropdown.is-open").forEach((dropdown) => {
+        dropdown.classList.remove("is-open");
+        const btn = dropdown.querySelector(".nav-dropdown__toggle");
+        if (btn) btn.setAttribute("aria-expanded", "false");
+      });
+    }
+
     function closeNav() {
       header.classList.remove("is-nav-open");
       toggle.setAttribute("aria-expanded", "false");
+      closeDropdowns();
     }
 
     toggle.addEventListener("click", () => {
       const open = header.classList.toggle("is-nav-open");
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      if (!open) closeDropdowns();
+    });
+
+    nav.querySelectorAll(".nav-dropdown").forEach((dropdown) => {
+      const btn = dropdown.querySelector(".nav-dropdown__toggle");
+      if (!btn) return;
+
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const willOpen = !dropdown.classList.contains("is-open");
+        closeDropdowns();
+        dropdown.classList.toggle("is-open", willOpen);
+        btn.setAttribute("aria-expanded", willOpen ? "true" : "false");
+      });
     });
 
     nav.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", closeNav);
     });
 
+    document.addEventListener("click", (e) => {
+      if (!nav.contains(e.target)) closeDropdowns();
+    });
+
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeNav();
+      if (e.key === "Escape") {
+        if (nav.querySelector(".nav-dropdown.is-open")) {
+          closeDropdowns();
+          return;
+        }
+        closeNav();
+      }
     });
   }
 
@@ -182,6 +216,12 @@
       if (isActive) {
         link.classList.add("is-active");
         link.setAttribute("aria-current", "page");
+
+        const dropdown = link.closest(".nav-dropdown");
+        if (dropdown) {
+          dropdown.classList.add("is-active");
+          dropdown.querySelector(".nav-dropdown__toggle")?.classList.add("is-active");
+        }
       }
     });
   }
