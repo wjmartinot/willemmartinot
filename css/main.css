@@ -1101,6 +1101,11 @@ p {
   text-align: center;
 }
 
+/* LinkedIn intro: wider measure so body copy matches the showcase width better */
+body:has(.page-header--portrait-cta) .section.intro .container {
+  max-width: 1100px;
+}
+
 .section.intro p {
   margin-top: 0;
   margin-left: 0;
@@ -3512,6 +3517,30 @@ body:has(.hero-section--portrait-pair) .content-section h2 {
     grid-template-columns: 1fr;
   }
 }
+
+.about-services__grid--b2b {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 720px;
+}
+
+.about-services__cta {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem auto 0;
+  max-width: 720px;
+}
+
+.about-services__cta .btn-outline {
+  min-width: min(100%, 320px);
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .about-services__grid--b2b {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* --- Contact form --- */
 .contact-actions {
