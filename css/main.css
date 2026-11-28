@@ -1736,7 +1736,7 @@ body:has(.page-header--portrait-cta) .section.intro .container {
   text-align: center;
 }
 
-.content-section--prose.content-section--centered ul {
+.content-section--prose.content-section--centered ul:not(.event-capture-list) {
   list-style-position: inside;
   padding-left: 0;
 }
@@ -1914,6 +1914,8 @@ details[open] .faq__question {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(12px, 1.8vw, 16px);
   margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .content-section--event-panels .event-capture-list li,
@@ -1923,6 +1925,7 @@ details[open] .faq__question {
   border: 1px solid var(--color-border);
   background: var(--color-bg-section);
   font-size: clamp(0.9rem, 1.35vw, 0.98rem);
+  list-style: none;
 }
 
 .content-section--service-panels .event-panel > .event-panel__closing,
