@@ -1827,8 +1827,14 @@ details[open] .faq__question {
 .approach-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(20px, 3vw, 32px);
-  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  gap: clamp(14px, 2vw, 20px);
+  margin-top: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+.approach-grid__item {
+  padding: clamp(1rem, 2vw, 1.35rem) clamp(1rem, 2vw, 1.25rem);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
 }
 
 .approach-grid__item h3 {
@@ -1844,6 +1850,49 @@ details[open] .faq__question {
   font-size: 0.95rem;
   line-height: 1.55;
   color: var(--color-text-secondary);
+}
+
+.content-section--event-panels {
+  display: block;
+}
+
+.content-section--event-panels .container {
+  display: grid;
+  gap: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+.content-section--event-panels .event-panel {
+  padding: clamp(1.35rem, 3vw, 2rem) clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.content-section--event-panels .event-panel h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.content-section--event-panels .event-panel > p {
+  max-width: 46em;
+  margin-inline: auto;
+  margin-bottom: 1.25rem;
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+.content-section--event-panels .event-capture-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(12px, 1.8vw, 16px);
+  margin: 0;
+}
+
+.content-section--event-panels .event-capture-list li {
+  margin: 0;
+  padding: clamp(0.9rem, 1.8vw, 1.15rem) clamp(0.95rem, 1.8vw, 1.2rem);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-section);
+  font-size: clamp(0.9rem, 1.35vw, 0.98rem);
 }
 
 .service-item {
@@ -3655,6 +3704,10 @@ body:has(.hero-section--portrait-pair) .content-section h2 {
   }
 
   .approach-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .content-section--event-panels .event-capture-list {
     grid-template-columns: 1fr;
   }
 
