@@ -163,17 +163,34 @@
       if (!open) closeDropdowns();
     });
 
+    const canHover = window.matchMedia("(hover: hover) and (pointer: fine)");
+
     nav.querySelectorAll(".nav-dropdown").forEach((dropdown) => {
       const btn = dropdown.querySelector(".nav-dropdown__toggle");
       if (!btn) return;
+
+      function setOpen(open) {
+        dropdown.classList.toggle("is-open", open);
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+      }
 
       btn.addEventListener("click", (e) => {
         e.preventDefault();
         e.stopPropagation();
         const willOpen = !dropdown.classList.contains("is-open");
         closeDropdowns();
-        dropdown.classList.toggle("is-open", willOpen);
-        btn.setAttribute("aria-expanded", willOpen ? "true" : "false");
+        setOpen(willOpen);
+      });
+
+      // Desktop hover via JS (avoids Safari/Firefox :focus-within layout bugs)
+      dropdown.addEventListener("mouseenter", () => {
+        if (!canHover.matches) return;
+        closeDropdowns();
+        setOpen(true);
+      });
+      dropdown.addEventListener("mouseleave", () => {
+        if (!canHover.matches) return;
+        setOpen(false);
       });
     });
 
