@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /partials/
+Disallow: /bedankt/
+Disallow: /en/thank-you/
 
 Sitemap: https://www.willemmartinot.nl/sitemap.xml
