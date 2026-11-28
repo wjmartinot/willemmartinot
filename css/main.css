@@ -1607,8 +1607,8 @@ body:has(.page-header--portrait-cta) .section.intro .container {
   text-align: center;
 }
 
-.content-section--prose:has(.linkedin-inline-row) ul,
-.content-section--prose:has(.corporate-inline-row) ul {
+.content-section--prose:has(.linkedin-inline-row) ul:not(.event-capture-list),
+.content-section--prose:has(.corporate-inline-row) ul:not(.event-capture-list) {
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -1622,8 +1622,8 @@ body:has(.page-header--portrait-cta) .section.intro .container {
   text-align: center;
 }
 
-.content-section--prose:has(.linkedin-inline-row) li,
-.content-section--prose:has(.corporate-inline-row) li {
+.content-section--prose:has(.linkedin-inline-row) ul:not(.event-capture-list) > li,
+.content-section--prose:has(.corporate-inline-row) ul:not(.event-capture-list) > li {
   display: block;
   width: auto;
   max-width: 100%;
@@ -1637,15 +1637,15 @@ body:has(.page-header--portrait-cta) .section.intro .container {
 }
 
 @media (hover: hover) {
-  .content-section--prose:has(.linkedin-inline-row) li:hover,
-  .content-section--prose:has(.corporate-inline-row) li:hover {
+  .content-section--prose:has(.linkedin-inline-row) ul:not(.event-capture-list) > li:hover,
+  .content-section--prose:has(.corporate-inline-row) ul:not(.event-capture-list) > li:hover {
     background: #e8e8e5;
     border-color: #c4c4c0;
     color: var(--color-text);
   }
 
-  .content-section--prose:has(.linkedin-inline-row) li:hover strong,
-  .content-section--prose:has(.corporate-inline-row) li:hover strong {
+  .content-section--prose:has(.linkedin-inline-row) ul:not(.event-capture-list) > li:hover strong,
+  .content-section--prose:has(.corporate-inline-row) ul:not(.event-capture-list) > li:hover strong {
     color: var(--color-text);
   }
 }
@@ -1875,27 +1875,32 @@ details[open] .faq__question {
   color: var(--color-text-secondary);
 }
 
-.content-section--event-panels {
+.content-section--event-panels,
+.content-section--service-panels {
   display: block;
 }
 
-.content-section--event-panels .container {
+.content-section--event-panels .container,
+.content-section--service-panels .container {
   display: grid;
   gap: clamp(1.25rem, 2.5vw, 1.75rem);
 }
 
-.content-section--event-panels .event-panel {
+.content-section--event-panels .event-panel,
+.content-section--service-panels .event-panel {
   padding: clamp(1.35rem, 3vw, 2rem) clamp(1.25rem, 3vw, 2rem);
   border: 1px solid var(--color-border);
   background: var(--color-bg);
 }
 
-.content-section--event-panels .event-panel h2 {
+.content-section--event-panels .event-panel h2,
+.content-section--service-panels .event-panel h2 {
   margin-top: 0;
   margin-bottom: 0.75rem;
 }
 
-.content-section--event-panels .event-panel > p {
+.content-section--event-panels .event-panel > p,
+.content-section--service-panels .event-panel > p {
   max-width: 46em;
   margin-inline: auto;
   margin-bottom: 1.25rem;
@@ -1903,19 +1908,54 @@ details[open] .faq__question {
   color: var(--color-text-secondary);
 }
 
-.content-section--event-panels .event-capture-list {
+.content-section--event-panels .event-capture-list,
+.content-section--service-panels .event-capture-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(12px, 1.8vw, 16px);
   margin: 0;
 }
 
-.content-section--event-panels .event-capture-list li {
+.content-section--event-panels .event-capture-list li,
+.content-section--service-panels .event-capture-list li {
   margin: 0;
   padding: clamp(0.9rem, 1.8vw, 1.15rem) clamp(0.95rem, 1.8vw, 1.2rem);
   border: 1px solid var(--color-border);
   background: var(--color-bg-section);
   font-size: clamp(0.9rem, 1.35vw, 0.98rem);
+}
+
+.content-section--service-panels .event-panel > .event-panel__closing,
+.content-section--event-panels .event-panel > .event-panel__closing {
+  margin-top: 1.25rem;
+  margin-bottom: 0;
+  max-width: 46em;
+  margin-inline: auto;
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+.content-section--service-panels .linkedin-inline-row,
+.content-section--service-panels .corporate-inline-row {
+  width: 100%;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+}
+
+.content-section--service-panels .content-aside {
+  max-width: 46em;
+  margin: 0.5rem auto 0;
+  padding-top: clamp(1rem, 2vw, 1.5rem);
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+}
+
+.content-section--service-panels .approach-grid {
+  text-align: left;
 }
 
 .service-item {
@@ -3754,7 +3794,8 @@ body:has(.hero-section--portrait-pair) .content-section h2 {
     grid-template-columns: 1fr;
   }
 
-  .content-section--event-panels .event-capture-list {
+  .content-section--event-panels .event-capture-list,
+.content-section--service-panels .event-capture-list {
     grid-template-columns: 1fr;
   }
 
@@ -4391,4 +4432,68 @@ body:has(.hero-section--portrait-pair) .content-section h2 {
   .reveal--delay-4 { transition-delay: 0.32s; }
   .reveal--delay-5 { transition-delay: 0.4s; }
   .reveal--delay-6 { transition-delay: 0.48s; }
+}
+
+
+/* Event kader style reusable inside prose/service pages */
+.content-section--prose .event-panel {
+  max-width: 1100px;
+  margin: clamp(1.25rem, 3vw, 2rem) auto;
+  padding: clamp(1.35rem, 3vw, 2rem) clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  text-align: center;
+}
+
+.content-section--prose .event-panel h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.content-section--prose .event-panel > p {
+  max-width: 46em;
+  margin-inline: auto;
+  margin-bottom: 1.25rem;
+  color: var(--color-text-secondary);
+}
+
+.content-section--prose .event-capture-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(12px, 1.8vw, 16px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+  width: 100%;
+  max-width: none;
+}
+
+.content-section--prose .event-capture-list li {
+  margin: 0;
+  padding: clamp(0.9rem, 1.8vw, 1.15rem) clamp(0.95rem, 1.8vw, 1.2rem);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-section);
+  font-size: clamp(0.9rem, 1.35vw, 0.98rem);
+  text-align: left;
+  width: auto;
+  cursor: default;
+}
+
+.content-section--prose .event-panel .approach-grid {
+  text-align: left;
+}
+
+.content-section--prose .event-panel__closing {
+  margin-top: 1.25rem;
+  margin-bottom: 0;
+  max-width: 46em;
+  margin-inline: auto;
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 700px) {
+  .content-section--prose .event-capture-list {
+    grid-template-columns: 1fr;
+  }
 }
