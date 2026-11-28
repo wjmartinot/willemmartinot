@@ -1020,6 +1020,21 @@ p {
   margin-top: -0.85rem;
 }
 
+.intro__avatar {
+  width: 152px;
+  height: 152px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 24px;
+}
+
+.content-section__cta {
+  display: flex;
+  justify-content: center;
+  margin: 1.75rem 0 0;
+}
+
 .intro__subtitle {
   font-family: var(--font-heading);
   font-weight: 700;
@@ -1889,6 +1904,10 @@ details[open] .faq__question {
 }
 
 /* --- Google Reviews carousel --- */
+.section--alt:has(.reviews-carousel) > .container > .label {
+  text-align: center;
+}
+
 .section.reviews .container {
   display: flex;
   flex-wrap: wrap;
@@ -2669,9 +2688,11 @@ details[open] .faq__question {
 }
 
 .portrait-pair__item {
+  position: relative;
   margin: 0;
   overflow: hidden;
   background: var(--color-placeholder);
+  outline: none;
 }
 
 .portrait-pair img {
@@ -2680,6 +2701,13 @@ details[open] .faq__question {
   object-fit: cover;
   object-position: center 20%;
   display: block;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+.portrait-pair__item:hover img,
+.portrait-pair__item:focus-within img {
+  transform: scale(1.04);
 }
 
 .portrait-pair img[src*="1N8A2360-Editportret"] {
@@ -2731,7 +2759,9 @@ body:has(.hero-section--portrait-pair) .content-section h2 {
 }
 
 .portrait-grid__item {
+  position: relative;
   overflow: hidden;
+  outline: none;
 }
 
 .portrait-grid img,
@@ -2752,8 +2782,52 @@ body:has(.hero-section--portrait-pair) .content-section h2 {
   object-position: center 22%;
 }
 
-.portrait-grid__item:hover img {
+.portrait-grid__item:hover img,
+.portrait-grid__item:focus-within img,
+.portrait-grid__item.is-caption-visible img {
   transform: scale(1.04);
+}
+
+.portrait-grid__caption,
+.portrait-pair__caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  margin: 0;
+  padding: 14px 16px;
+  font-family: var(--font-jost);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: #f5f5f5;
+  background: none;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45), 0 0 10px rgba(0, 0, 0, 0.25);
+  box-shadow: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.portrait-grid__item:hover .portrait-grid__caption,
+.portrait-grid__item:focus-within .portrait-grid__caption,
+.portrait-grid__item.is-caption-visible .portrait-grid__caption,
+.portrait-pair__item:hover .portrait-pair__caption,
+.portrait-pair__item:focus-within .portrait-pair__caption,
+.portrait-pair__item.is-caption-visible .portrait-pair__caption {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portrait-grid__caption,
+  .portrait-pair__caption,
+  .portrait-pair img,
+  .portrait-grid img {
+    transition: none;
+  }
 }
 
 .portrait-showcase {

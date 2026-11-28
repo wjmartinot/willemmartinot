@@ -85,14 +85,6 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What does a portrait photoshoot in Amsterdam cost?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "An individual portrait shoot starts from €250. The exact price depends on duration, location, the number of people and how the images will be used. For teams and organisations I prepare a custom quote. See the rates for an indication or request a no-obligation quote."
-      }
-    },
-    {
-      "@type": "Question",
       "name": "How can I book a portrait shoot?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -210,6 +202,14 @@
         "@type": "Answer",
         "text": "You receive the images digitally as JPEG (high quality, suitable for web and print) via a download link. On request I also deliver TIFF or other formats. All images are professionally retouched and ready for immediate use."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "What does a portrait photoshoot in Amsterdam cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An individual portrait shoot starts from €250. The exact price depends on duration, location, the number of people and how the images will be used. For teams and organisations I prepare a custom quote. See the rates for an indication or request a no-obligation quote."
+      }
     }
   ]
 }
@@ -258,7 +258,7 @@
     </div>
 
     <div class="portrait-pair">
-      <figure class="portrait-pair__item">
+      <figure class="portrait-pair__item" tabindex="0">
         <img src="/images/en/1920/1N8A2360-Edit-portrait-photographer-amsterdam.jpg"
              srcset="/images/en/800/1N8A2360-Edit-portrait-photographer-amsterdam.jpg 800w,
                      /images/en/1200/1N8A2360-Edit-portrait-photographer-amsterdam.jpg 1200w,
@@ -269,8 +269,10 @@
              width="1600" height="2400"
              fetchpriority="high"
              decoding="async">
-      </figure>
-      <figure class="portrait-pair__item">
+          <!-- Caption: refine role/sector per photo if needed -->
+          <span class="portrait-pair__caption">Lawyer • Consultancy</span>
+        </figure>
+      <figure class="portrait-pair__item" tabindex="0">
         <img src="/images/en/1920/1N8A1715-corporate-portrait-photographer-amsterdam.jpg"
              srcset="/images/en/800/1N8A1715-corporate-portrait-photographer-amsterdam.jpg 800w,
                      /images/en/1200/1N8A1715-corporate-portrait-photographer-amsterdam.jpg 1200w,
@@ -281,24 +283,41 @@
              width="1600" height="2400"
              fetchpriority="high"
              decoding="async">
-      </figure>
+          <!-- Caption: refine role/sector per photo if needed -->
+          <span class="portrait-pair__caption">Health Coach • Co-Founder</span>
+        </figure>
     </div>
   </section>
 
   <main>
     <section class="section intro main-content">
       <div class="container">
-        <p class="intro__subtitle">Corporate portrait photography for executives, directors and professionals</p>
+                <img src="/images/site/willem-martinot-fotograaf-den-haag.jpg"
+             alt="Willem Martinot – portrait photographer The Hague"
+             width="152" height="152"
+             loading="eager"
+             decoding="async"
+             class="intro__avatar">
+<p class="intro__subtitle">Corporate portrait photography for executives, directors and professionals</p>
         <p>As a portrait photographer in Amsterdam I work with freelancers, scale-ups and international teams. I create corporate portraits with a clear, trustworthy look — suitable for websites, LinkedIn profiles and professional communications in a fast, international city.</p>
         <p>A good portrait is more than a nice photo. It shapes how clients, colleagues and stakeholders see you. Whether for LinkedIn, your website, presentations or publications — your portrait is often the first impression.</p>
         <p>From my base in The Hague I work on location in Amsterdam every week — on the Zuidas, in creative hubs and in studios across the Metropolitan Area. The images are clear, timeless and practical to use — without feeling forced or overstyled.</p>
-        
+</div>
+    </section>
+
+    <section class="clients clients--event-city" aria-labelledby="clients-heading">
+      <div class="container">
+        <p class="label clients__label" id="clients-heading">Clients</p>
+        <picture>
+          <source media="(max-width: 768px)" srcset="/images/site/clients-strip-mobile.png">
+          <img src="/images/site/clients-strip.png" alt="Clients: Ministry of Justice and Security, NN, Mojo, BTG, North Sea Jazz, FS-ISAC, Municipality of The Hague, TU Delft, Douwe Egberts, Hotelschool The Hague, AHK, Schippers Architecten" loading="lazy" width="1024" height="61">
+        </picture>
       </div>
     </section>
 
     <section class="portrait-pair-section" aria-label="Corporate portraits">
       <div class="portrait-pair">
-        <figure class="portrait-pair__item">
+        <figure class="portrait-pair__item" tabindex="0">
           <img src="/images/en/1920/1N8A1558-corporate-portrait-photographer-amsterdam.jpg"
                srcset="/images/en/800/1N8A1558-corporate-portrait-photographer-amsterdam.jpg 800w,
                        /images/en/1200/1N8A1558-corporate-portrait-photographer-amsterdam.jpg 1200w,
@@ -309,8 +328,10 @@
                width="1600" height="2400"
                loading="lazy"
                decoding="async">
+          <!-- Caption: refine role/sector per photo if needed -->
+          <span class="portrait-pair__caption">Psychiatrist • Healthcare Practice</span>
         </figure>
-        <figure class="portrait-pair__item">
+        <figure class="portrait-pair__item" tabindex="0">
           <img src="/images/en/1920/corporate-portrait-photographer-amsterdam-2.jpg"
                srcset="/images/en/800/corporate-portrait-photographer-amsterdam-2.jpg 800w,
                        /images/en/1200/corporate-portrait-photographer-amsterdam-2.jpg 1200w,
@@ -321,6 +342,8 @@
                width="1600" height="2400"
                loading="lazy"
                decoding="async">
+          <!-- Caption: refine role/sector per photo if needed -->
+          <span class="portrait-pair__caption">Consultant • Financial Industry</span>
         </figure>
       </div>
     </section>
@@ -334,7 +357,7 @@
           <article class="reviews-carousel__card">
             <div class="reviews-carousel__author">
               <div class="reviews-carousel__meta">
-                <span class="reviews-carousel__name">Luna</span>
+                <span class="reviews-carousel__name">Luna Pirovano</span>
                 <span class="reviews-carousel__from"><svg class="reviews-carousel__google-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/>
                 <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
@@ -351,7 +374,7 @@
             <button type="button" class="reviews-carousel__more-text" hidden aria-expanded="false">Read more…</button>
             <div class="reviews-carousel__media">
               <a href="/en/corporate-portrait-photographer-the-hague/" class="reviews-carousel__media-link">
-                <img src="/images/en/1200/1N8A2360-Edit-portrait-photographer-the-hague.jpg" alt="Corporate studio portrait Luna — portrait photographer The Hague" width="640" height="360" loading="lazy" decoding="async" style="object-position:center 22%">
+                <img src="/images/en/1200/1N8A2360-Edit-portrait-photographer-the-hague.jpg" alt="Corporate studio portrait Luna Pirovano — portrait photographer The Hague" width="640" height="360" loading="lazy" decoding="async" style="object-position:center 22%">
               </a>
             </div>
           </article>
@@ -519,7 +542,7 @@
             <button type="button" class="reviews-carousel__more-text" hidden aria-expanded="false">Read more…</button>
             <div class="reviews-carousel__media">
               <a href="/en/corporate-portrait-photographer-the-hague/" class="reviews-carousel__media-link">
-                <img src="/images/nl/1200/1N8A5824-Editportret-fotograaf-den-haag-2.jpg" alt="Corporate portrait — portrait photographer The Hague" width="640" height="360" loading="lazy" decoding="async" style="object-position:center 18%">
+                <img src="/images/nl/1200/1N8A5824-portretfotograaf-den-haag.jpg" alt="Corporate portrait — portrait photographer The Hague" width="640" height="360" loading="lazy" decoding="async" style="object-position:center 18%">
               </a>
             </div>
           </article>
@@ -565,7 +588,7 @@
     <section class="section section--alt" aria-label="More corporate portraits">
       <div class="container">
         <div class="portrait-grid">
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/en/1200/1N8A2319-Edit-portrait-photographer-amsterdam.jpg"
                  srcset="/images/en/800/1N8A2319-Edit-portrait-photographer-amsterdam.jpg 800w,
                          /images/en/1200/1N8A2319-Edit-portrait-photographer-amsterdam.jpg 1200w,
@@ -575,8 +598,10 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="1465">
+            <!-- Caption: refine role/sector per photo if needed -->
+            <span class="portrait-grid__caption">Lawyer • Consultancy</span>
           </div>
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/en/1200/5I2A5570-Edit-portrait-photographer-amsterdam.jpg"
                  srcset="/images/en/800/5I2A5570-Edit-portrait-photographer-amsterdam.jpg 800w,
                          /images/en/1200/5I2A5570-Edit-portrait-photographer-amsterdam.jpg 1200w,
@@ -586,8 +611,10 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="1570">
+            <!-- Caption: refine role/sector per photo if needed -->
+            <span class="portrait-grid__caption">CEO • Offshore Industry</span>
           </div>
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/en/1200/1N8A2490-portrait-photographer-amsterdam.jpg"
                  srcset="/images/en/800/1N8A2490-portrait-photographer-amsterdam.jpg 800w,
                          /images/en/1200/1N8A2490-portrait-photographer-amsterdam.jpg 1200w,
@@ -597,8 +624,10 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="869">
+            <!-- Caption: refine role/sector per photo if needed -->
+            <span class="portrait-grid__caption">Advisor • IT Consultancy</span>
           </div>
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/en/1200/Studio-Session-078-Edit-2-portrait-photographer-amsterdam.jpg"
                  srcset="/images/en/800/Studio-Session-078-Edit-2-portrait-photographer-amsterdam.jpg 800w,
                          /images/en/1200/Studio-Session-078-Edit-2-portrait-photographer-amsterdam.jpg 1200w,
@@ -608,8 +637,10 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="1862">
+            <!-- Caption: refine role/sector per photo if needed -->
+            <span class="portrait-grid__caption">Consultant • Real Estate</span>
           </div>
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/en/1200/IMG_8022-portrait-photographer-amsterdam-studio.jpg"
                  srcset="/images/en/800/IMG_8022-portrait-photographer-amsterdam-studio.jpg 800w,
                          /images/en/1200/IMG_8022-portrait-photographer-amsterdam-studio.jpg 1200w,
@@ -619,8 +650,10 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="1800">
+            <!-- Caption: refine role/sector per photo if needed -->
+            <span class="portrait-grid__caption">Communications Manager • Industrial Gas Industry</span>
           </div>
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/en/1200/1N8A1828-corporate-portrait-photographer-amsterdam.jpg"
                  srcset="/images/en/800/1N8A1828-corporate-portrait-photographer-amsterdam.jpg 800w,
                          /images/en/1200/1N8A1828-corporate-portrait-photographer-amsterdam.jpg 1200w,
@@ -630,8 +663,10 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="1799">
+            <!-- Caption: refine role/sector per photo if needed -->
+            <span class="portrait-grid__caption">University Lecturer • Academia</span>
           </div>
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/en/1200/5I2A7174-portrait-photographer-amsterdam.jpg"
                  srcset="/images/en/800/5I2A7174-portrait-photographer-amsterdam.jpg 800w,
                          /images/en/1200/5I2A7174-portrait-photographer-amsterdam.jpg 1200w,
@@ -641,8 +676,10 @@
                  loading="lazy"
                  decoding="async"
                  width="4480" height="6720">
+            <!-- Caption: refine role/sector per photo if needed -->
+            <span class="portrait-grid__caption">Financial Consultant • Gas Industry</span>
           </div>
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/en/1200/1N8A4391-corporate-portrait-photographer-amsterdam.jpg"
                  srcset="/images/en/800/1N8A4391-corporate-portrait-photographer-amsterdam.jpg 800w,
                          /images/en/1200/1N8A4391-corporate-portrait-photographer-amsterdam.jpg 1200w,
@@ -652,8 +689,10 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="1800">
+            <!-- Caption: refine role/sector per photo if needed -->
+            <span class="portrait-grid__caption">Financial Advisor • Real Estate</span>
           </div>
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/en/1200/1N8A3710-portrait-photographer-amsterdam.jpg"
                  srcset="/images/en/800/1N8A3710-portrait-photographer-amsterdam.jpg 800w,
                          /images/en/1200/1N8A3710-portrait-photographer-amsterdam.jpg 1200w,
@@ -663,6 +702,8 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="1849">
+            <!-- Caption: refine role/sector per photo if needed -->
+            <span class="portrait-grid__caption">AI Consultant • Managing Partner</span>
           </div>
         </div>
       </div>
@@ -696,14 +737,16 @@
         <p>Looking for corporate portraits with a consistent, professional look? Get in touch to discuss a business portrait in Amsterdam.</p>
         <p>Also see my work as a <a href="/en/commercial-photographer-amsterdam/">photographer in Amsterdam</a> and <a href="/en/event-photographer-amsterdam/">event photographer in Amsterdam</a>.</p>
         <p>Need a <a href="/en/linkedin-portrait-the-hague/">LinkedIn headshot</a> specifically? See my LinkedIn portrait photography.</p>
-        <a href="#offerte" class="btn-outline" style="display:block;width:fit-content;margin:1.5rem auto 0">Get in touch</a>
-      </div>
+        <p class="content-section__cta">
+          <a href="#offerte" class="btn-outline">Request a quote</a>
+        </p>
+</div>
     </section>
 
     <section class="section section--alt" aria-label="More portrait photography">
       <div class="container">
         <div class="portrait-grid">
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/en/1200/business-photography-amsterdam.jpg"
                  srcset="/images/en/800/business-photography-amsterdam.jpg 800w,
                          /images/en/1200/business-photography-amsterdam.jpg 1200w,
@@ -713,8 +756,10 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="1943">
+            <!-- Caption: refine role/sector per photo if needed -->
+            <span class="portrait-grid__caption">Consultant • Financial Industry</span>
           </div>
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/en/1200/5I2A3169-portrait-photographer-amsterdam-rai.jpg"
                  srcset="/images/en/800/5I2A3169-portrait-photographer-amsterdam-rai.jpg 800w,
                          /images/en/1200/5I2A3169-portrait-photographer-amsterdam-rai.jpg 1200w,
@@ -724,8 +769,10 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="1810">
+            <!-- Caption: refine role/sector per photo if needed -->
+            <span class="portrait-grid__caption">Consultant • IT Industry</span>
           </div>
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/en/1200/933A0426-portrait-photographer-amsterdam-beurs-van-berlage.jpg"
                  srcset="/images/en/800/933A0426-portrait-photographer-amsterdam-beurs-van-berlage.jpg 800w,
                          /images/en/1200/933A0426-portrait-photographer-amsterdam-beurs-van-berlage.jpg 1200w,
@@ -735,8 +782,10 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="1600">
+            <!-- Caption: refine role/sector per photo if needed -->
+            <span class="portrait-grid__caption">Marketing Director • NGO</span>
           </div>
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/en/1200/2C5A3049-portrait-photographer-amsterdam-studio.jpg"
                  srcset="/images/en/800/2C5A3049-portrait-photographer-amsterdam-studio.jpg 800w,
                          /images/en/1200/2C5A3049-portrait-photographer-amsterdam-studio.jpg 1200w,
@@ -746,8 +795,10 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="1800">
+            <!-- Caption: refine role/sector per photo if needed -->
+            <span class="portrait-grid__caption">Consultant • Financial Industry</span>
           </div>
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/en/1200/2C5A0207-portrait-photographer-amsterdam-canals.jpg"
                  srcset="/images/en/800/2C5A0207-portrait-photographer-amsterdam-canals.jpg 800w,
                          /images/en/1200/2C5A0207-portrait-photographer-amsterdam-canals.jpg 1200w,
@@ -757,8 +808,10 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="1920">
+            <!-- Caption: refine role/sector per photo if needed -->
+            <span class="portrait-grid__caption">CEO • Transport Industry</span>
           </div>
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/en/1200/5I2A9954-portrait-photographer-amsterdam-westergas.jpg"
                  srcset="/images/en/800/5I2A9954-portrait-photographer-amsterdam-westergas.jpg 800w,
                          /images/en/1200/5I2A9954-portrait-photographer-amsterdam-westergas.jpg 1200w,
@@ -768,8 +821,10 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="1800">
+            <!-- Caption: refine role/sector per photo if needed -->
+            <span class="portrait-grid__caption">Policy Advisor • Government</span>
           </div>
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/en/1200/1N8A0493-corporate-portrait-photographer-amsterdam.jpg"
                  srcset="/images/en/800/1N8A0493-corporate-portrait-photographer-amsterdam.jpg 800w,
                          /images/en/1200/1N8A0493-corporate-portrait-photographer-amsterdam.jpg 1200w,
@@ -779,8 +834,10 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="1840">
+            <!-- Caption: refine role/sector per photo if needed -->
+            <span class="portrait-grid__caption">Social Mediator • Government</span>
           </div>
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/en/1200/KA9A2438-portrait-photographer-amsterdam-studio.jpg"
                  srcset="/images/en/800/KA9A2438-portrait-photographer-amsterdam-studio.jpg 800w,
                          /images/en/1200/KA9A2438-portrait-photographer-amsterdam-studio.jpg 1200w,
@@ -790,6 +847,8 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="1800">
+            <!-- Caption: refine role/sector per photo if needed -->
+            <span class="portrait-grid__caption">Consultant • Semi-Government</span>
           </div>
         </div>
       </div>
@@ -799,19 +858,7 @@
       <div class="container">
         <h2 id="faq-heading" class="faq__title">Frequently asked questions</h2>
         <div class="faq__list">
-          <details class="faq__item" open>
-            <summary class="faq__question">
-              What does a portrait photoshoot in Amsterdam cost?
-              <span class="faq__icon">
-                <span class="faq__plus">+</span>
-                <span class="faq__minus">−</span>
-              </span>
-            </summary>
-            <div class="faq__answer">
-              <p>An individual portrait shoot starts from €250. The exact price depends on duration, location, the number of people and how the images will be used. For teams and organisations I prepare a custom quote. See the <a href="/en/rates/">rates</a> for an indication or request a no-obligation quote.</p>
-            </div>
-          </details>
-          <details class="faq__item">
+<details class="faq__item" open>
             <summary class="faq__question">
               How can I book a portrait shoot?
               <span class="faq__icon">
@@ -823,7 +870,7 @@
               <p>Get in touch via the <a href="#offerte">contact form</a> or by email. We briefly discuss your wishes, preferred location and planning. You then receive a confirmation with date, time and practical information.</p>
             </div>
           </details>
-          <details class="faq__item">
+<details class="faq__item">
             <summary class="faq__question">
               How soon can a shoot take place?
               <span class="faq__icon">
@@ -835,7 +882,7 @@
               <p>In many cases a portrait shoot can be scheduled within a few days to two weeks, depending on availability. For urgent requests I look at short-term options — feel free to get in touch.</p>
             </div>
           </details>
-          <details class="faq__item">
+<details class="faq__item">
             <summary class="faq__question">
               I do not like being in front of the camera — is that a problem?
               <span class="faq__icon">
@@ -847,7 +894,7 @@
               <p>No — that is exactly when it helps. Most people are not models and feel awkward in front of the lens. During the shoot I guide you calmly with clear directions on pose and gaze. The goal is a natural portrait that looks professional, without a stiff or forced look.</p>
             </div>
           </details>
-          <details class="faq__item">
+<details class="faq__item">
             <summary class="faq__question">
               How long does a portrait shoot take?
               <span class="faq__icon">
@@ -859,7 +906,7 @@
               <p>An individual shoot usually takes 30 to 60 minutes. For teams or multiple employees I allow 15 to 20 minutes per person, depending on the number of images and locations. We schedule enough time so nobody feels rushed.</p>
             </div>
           </details>
-          <details class="faq__item">
+<details class="faq__item">
             <summary class="faq__question">
               What should I wear during the shoot?
               <span class="faq__icon">
@@ -871,7 +918,7 @@
               <p>Choose clothing that fits your professional presence: calm colours, simple patterns and a well-fitting outfit. Avoid large logos or distracting prints. Bring a second option if you like. I am happy to advise beforehand on what works best for your sector and goal.</p>
             </div>
           </details>
-          <details class="faq__item">
+<details class="faq__item">
             <summary class="faq__question">
               Where does the portrait shoot take place in Amsterdam?
               <span class="faq__icon">
@@ -883,7 +930,7 @@
               <p>On location (for example your office in Amsterdam, outdoors in the city) or in a studio setting in the region. For teams I regularly come on site with a mobile studio setup. Together we choose what best fits the desired look.</p>
             </div>
           </details>
-          <details class="faq__item">
+<details class="faq__item">
             <summary class="faq__question">
               What is better: studio or location?
               <span class="faq__icon">
@@ -895,7 +942,7 @@
               <p>A studio gives a calm, consistent look with control over light and background — ideal for LinkedIn and team portraits. A location adds context and personality and can strengthen your organisation's story. Both options deliver professional results; the choice depends on the goal.</p>
             </div>
           </details>
-          <details class="faq__item">
+<details class="faq__item">
             <summary class="faq__question">
               What can I use the portrait photos for?
               <span class="faq__icon">
@@ -907,7 +954,7 @@
               <p>Portraits are used for LinkedIn, websites, presentations, press materials, annual reports and internal communications. Images are delivered in high resolution for print and optimised versions for web and social media.</p>
             </div>
           </details>
-          <details class="faq__item">
+<details class="faq__item">
             <summary class="faq__question">
               When will I receive the photos?
               <span class="faq__icon">
@@ -919,7 +966,7 @@
               <p>After the shoot I make a careful selection and professionally retouch the final images. You typically receive the photos within two to five working days via a secure download link. For larger series or teams we agree the delivery time in advance.</p>
             </div>
           </details>
-          <details class="faq__item">
+<details class="faq__item">
             <summary class="faq__question">
               May I use the photos freely?
               <span class="faq__icon">
@@ -931,7 +978,7 @@
               <p>Yes, for the agreed use (website, LinkedIn, publications, internal communications). Usage rights are set out in the quote in advance. Extra use — for example advertising or large-run print — can be extended by agreement.</p>
             </div>
           </details>
-          <details class="faq__item">
+<details class="faq__item">
             <summary class="faq__question">
               Can you also photograph multiple employees?
               <span class="faq__icon">
@@ -943,7 +990,7 @@
               <p>Yes, I regularly run portrait shoots for teams and organisations in Amsterdam and the surrounding area. That can be at the office with a mobile studio or at a central location. I plan the day efficiently so each employee gets enough time without disrupting work.</p>
             </div>
           </details>
-          <details class="faq__item">
+<details class="faq__item">
             <summary class="faq__question">
               Do you ensure a consistent look within a team?
               <span class="faq__icon">
@@ -955,7 +1002,7 @@
               <p>Yes. With consistent lighting, background and retouching, all portraits get a uniform, professional look. That matters for websites, LinkedIn pages and annual reports where employees appear side by side.</p>
             </div>
           </details>
-          <details class="faq__item">
+<details class="faq__item">
             <summary class="faq__question">
               What is the difference between a corporate portrait and a LinkedIn headshot?
               <span class="faq__icon">
@@ -967,7 +1014,7 @@
               <p>A corporate portrait is broader in use (website, press, presentations). A LinkedIn headshot is specifically optimised for the LinkedIn format: a sharp presence, neutral background and a composition that works well in a small profile circle. I offer both; often we make images in one session that suit both purposes.</p>
             </div>
           </details>
-          <details class="faq__item">
+<details class="faq__item">
             <summary class="faq__question">
               Can a portrait shoot take place at my office in Amsterdam?
               <span class="faq__icon">
@@ -979,7 +1026,7 @@
               <p>Yes — that is common. I come on location with compact equipment and, if needed, set up a mobile studio in a meeting room or office. Staff do not need to travel and the shoot fits into the working day. Also see my work as a <a href="/en/commercial-photographer-amsterdam/">photographer in Amsterdam</a> and <a href="/en/business-photographer-amsterdam/">business photographer in Amsterdam</a>.</p>
             </div>
           </details>
-          <details class="faq__item">
+<details class="faq__item">
             <summary class="faq__question">
               Which file formats do you deliver?
               <span class="faq__icon">
@@ -991,9 +1038,19 @@
               <p>You receive the images digitally as JPEG (high quality, suitable for web and print) via a download link. On request I also deliver TIFF or other formats. All images are professionally retouched and ready for immediate use.</p>
             </div>
           </details>
+<details class="faq__item">
+            <summary class="faq__question">
+              What does a portrait photoshoot in Amsterdam cost?
+              <span class="faq__icon">
+                <span class="faq__plus">+</span>
+                <span class="faq__minus">−</span>
+              </span>
+            </summary>
+            <div class="faq__answer">
+              <p>An individual portrait shoot starts from €250. The exact price depends on duration, location, the number of people and how the images will be used. For teams and organisations I prepare a custom quote. See the <a href="/en/rates/">rates</a> for an indication or request a no-obligation quote.</p>
+            </div>
+          </details>
         </div>
-        <a href="#offerte" class="btn-outline" style="display:block;width:fit-content;margin:1.5rem auto 0">Get in touch</a>
-      </div>
     </section>
   
     <section class="section section--alt" id="offerte" aria-label="Request a quote">

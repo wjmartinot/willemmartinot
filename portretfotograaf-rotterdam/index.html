@@ -85,14 +85,6 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Wat kost een portret fotoshoot in Rotterdam?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Een individuele portretshoot start vanaf €250. De exacte prijs hangt af van de duur, locatie, het aantal personen en het gebruik van de beelden. Voor teams en organisaties maak ik een maatwerkofferte. Bekijk de tarieven voor een indicatie of vraag vrijblijvend een offerte aan."
-      }
-    },
-    {
-      "@type": "Question",
       "name": "Hoe kan ik een portretshoot boeken?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -210,6 +202,14 @@
         "@type": "Answer",
         "text": "U ontvangt de beelden digitaal in JPEG (hoogwaardig, geschikt voor web en print) via een downloadlink. Op verzoek lever ik ook TIFF of andere formaten. Alle beelden zijn professioneel nabewerkt en klaar voor direct gebruik."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat kost een portret fotoshoot in Rotterdam?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Een individuele portretshoot start vanaf €250. De exacte prijs hangt af van de duur, locatie, het aantal personen en het gebruik van de beelden. Voor teams en organisaties maak ik een maatwerkofferte. Bekijk de tarieven voor een indicatie of vraag vrijblijvend een offerte aan."
+      }
     }
   ]
 }
@@ -258,7 +258,7 @@
     </div>
 
     <div class="portrait-pair">
-      <figure class="portrait-pair__item">
+      <figure class="portrait-pair__item" tabindex="0">
         <img src="/images/nl/1920/1N8A2360-Editportret-fotograaf-rotterdam.jpg"
              srcset="/images/nl/800/1N8A2360-Editportret-fotograaf-rotterdam.jpg 800w,
                      /images/nl/1200/1N8A2360-Editportret-fotograaf-rotterdam.jpg 1200w,
@@ -269,8 +269,10 @@
              width="1600" height="2400"
              fetchpriority="high"
              decoding="async">
-      </figure>
-      <figure class="portrait-pair__item">
+          <!-- Caption: pas functie/sector aan per foto indien gewenst -->
+          <span class="portrait-pair__caption">Juriste • Consultancy</span>
+        </figure>
+      <figure class="portrait-pair__item" tabindex="0">
         <img src="/images/nl/1920/1N8A1715-zakelijk-portret-fotograaf-rotterdam.jpg"
              srcset="/images/nl/800/1N8A1715-zakelijk-portret-fotograaf-rotterdam.jpg 800w,
                      /images/nl/1200/1N8A1715-zakelijk-portret-fotograaf-rotterdam.jpg 1200w,
@@ -281,24 +283,41 @@
              width="1600" height="2400"
              fetchpriority="high"
              decoding="async">
-      </figure>
+          <!-- Caption: pas functie/sector aan per foto indien gewenst -->
+          <span class="portrait-pair__caption">Health Coach • Co-Founder</span>
+        </figure>
     </div>
   </section>
 
   <main>
     <section class="section intro main-content">
       <div class="container">
-        <p class="intro__subtitle">Zakelijke portretfotografie voor directie, executives en professionals</p>
+                <img src="/images/site/willem-martinot-fotograaf-den-haag.jpg"
+             alt="Willem Martinot – portretfotograaf Den Haag"
+             width="152" height="152"
+             loading="eager"
+             decoding="async"
+             class="intro__avatar">
+<p class="intro__subtitle">Zakelijke portretfotografie voor directie, executives en professionals</p>
         <p>Als portretfotograaf Rotterdam werk ik voor professionals, haven- en techbedrijven en teams die een directe, no-nonsense uitstraling willen. Ik maak zakelijke portretten met een heldere, betrouwbare look — geschikt voor websites, LinkedIn-profielen en professionele communicatie.</p>
         <p>Een goed portret is meer dan een mooie foto. Het bepaalt hoe u wordt gezien door klanten, collega's en opdrachtgevers. Of het nu gaat om LinkedIn, uw website, presentaties of publicaties: vaak is uw portret de eerste kennismaking.</p>
         <p>Vanuit mijn basis in Den Haag werk ik wekelijks op locatie in Rotterdam — op de Kop van Zuid, in kantoren langs de Maas en in studio's in de Rijnmond. De beelden zijn helder, tijdloos en praktisch inzetbaar, zonder dat ze geforceerd of gestileerd aanvoelen.</p>
-        
+</div>
+    </section>
+
+    <section class="clients clients--event-city" aria-labelledby="clients-heading">
+      <div class="container">
+        <p class="label clients__label" id="clients-heading">Klanten</p>
+        <picture>
+          <source media="(max-width: 768px)" srcset="/images/site/clients-strip-mobile.png">
+          <img src="/images/site/clients-strip.png" alt="Klanten: Ministerie van Justitie en Veiligheid, NN, Mojo, BTG, North Sea Jazz, FS-ISAC, Gemeente Den Haag, TU Delft, Douwe Egberts, Hotelschool The Hague, AHK, Schippers Architecten" loading="lazy" width="1024" height="61">
+        </picture>
       </div>
     </section>
 
     <section class="portrait-pair-section" aria-label="Zakelijke portretten">
       <div class="portrait-pair">
-        <figure class="portrait-pair__item">
+        <figure class="portrait-pair__item" tabindex="0">
           <img src="/images/nl/1920/1N8A1558-zakelijk-portretfotograaf-rotterdam.jpg"
                srcset="/images/nl/800/1N8A1558-zakelijk-portretfotograaf-rotterdam.jpg 800w,
                        /images/nl/1200/1N8A1558-zakelijk-portretfotograaf-rotterdam.jpg 1200w,
@@ -309,8 +328,10 @@
                width="1600" height="2400"
                loading="lazy"
                decoding="async">
+          <!-- Caption: pas functie/sector aan per foto indien gewenst -->
+          <span class="portrait-pair__caption">Psychiater • Zorg En Praktijk</span>
         </figure>
-        <figure class="portrait-pair__item">
+        <figure class="portrait-pair__item" tabindex="0">
           <img src="/images/nl/1920/zakelijk-portretfotograaf-rotterdam-2.jpg"
                srcset="/images/nl/800/zakelijk-portretfotograaf-rotterdam-2.jpg 800w,
                        /images/nl/1200/zakelijk-portretfotograaf-rotterdam-2.jpg 1200w,
@@ -321,6 +342,8 @@
                width="1600" height="2400"
                loading="lazy"
                decoding="async">
+          <!-- Caption: pas functie/sector aan per foto indien gewenst -->
+          <span class="portrait-pair__caption">Consultant • Financiële Sector</span>
         </figure>
       </div>
     </section>
@@ -334,7 +357,7 @@
           <article class="reviews-carousel__card">
             <div class="reviews-carousel__author">
               <div class="reviews-carousel__meta">
-                <span class="reviews-carousel__name">Luna</span>
+                <span class="reviews-carousel__name">Luna Pirovano</span>
                 <span class="reviews-carousel__from"><svg class="reviews-carousel__google-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/>
                 <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
@@ -351,7 +374,7 @@
             <button type="button" class="reviews-carousel__more-text" hidden aria-expanded="false">Lees meer…</button>
             <div class="reviews-carousel__media">
               <a href="/portretfotograaf-den-haag/" class="reviews-carousel__media-link">
-                <img src="/images/nl/1200/1N8A2360-Editportret-fotograaf-den-haag.jpg" alt="Zakelijk studio-portret Luna — portretfotograaf Den Haag" width="640" height="360" loading="lazy" decoding="async" style="object-position:center 22%">
+                <img src="/images/nl/1200/1N8A2360-Editportret-fotograaf-den-haag.jpg" alt="Zakelijk studio-portret Luna Pirovano — portretfotograaf Den Haag" width="640" height="360" loading="lazy" decoding="async" style="object-position:center 22%">
               </a>
             </div>
           </article>
@@ -519,7 +542,7 @@
             <button type="button" class="reviews-carousel__more-text" hidden aria-expanded="false">Lees meer…</button>
             <div class="reviews-carousel__media">
               <a href="/portretfotograaf-den-haag/" class="reviews-carousel__media-link">
-                <img src="/images/nl/1200/1N8A5824-Editportret-fotograaf-den-haag-2.jpg" alt="Zakelijk portret — portretfotograaf Den Haag" width="640" height="360" loading="lazy" decoding="async" style="object-position:center 18%">
+                <img src="/images/nl/1200/1N8A5824-portretfotograaf-den-haag.jpg" alt="Zakelijk portret — portretfotograaf Den Haag" width="640" height="360" loading="lazy" decoding="async" style="object-position:center 18%">
               </a>
             </div>
           </article>
@@ -565,7 +588,7 @@
     <section class="section section--alt" aria-label="Meer zakelijke portretten">
       <div class="container">
         <div class="portrait-grid">
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/nl/1200/1N8A2319-Edit-Editportret-fotograaf-rotterdam.jpg"
                  srcset="/images/nl/800/1N8A2319-Edit-Editportret-fotograaf-rotterdam.jpg 800w,
                          /images/nl/1200/1N8A2319-Edit-Editportret-fotograaf-rotterdam.jpg 1200w,
@@ -575,8 +598,10 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="1465">
+            <!-- Caption: pas functie/sector aan per foto indien gewenst -->
+            <span class="portrait-grid__caption">Juriste • Consultancy</span>
           </div>
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/nl/1200/5I2A5570-Editportret-fotograaf-rotterdam.jpg"
                  srcset="/images/nl/800/5I2A5570-Editportret-fotograaf-rotterdam.jpg 800w,
                          /images/nl/1200/5I2A5570-Editportret-fotograaf-rotterdam.jpg 1200w,
@@ -586,8 +611,10 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="1570">
+            <!-- Caption: pas functie/sector aan per foto indien gewenst -->
+            <span class="portrait-grid__caption">CEO • Offshore-Industrie</span>
           </div>
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/nl/1200/1N8A2490-portretfotograaf-rotterdam.jpg"
                  srcset="/images/nl/800/1N8A2490-portretfotograaf-rotterdam.jpg 800w,
                          /images/nl/1200/1N8A2490-portretfotograaf-rotterdam.jpg 1200w,
@@ -597,8 +624,10 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="869">
+            <!-- Caption: pas functie/sector aan per foto indien gewenst -->
+            <span class="portrait-grid__caption">Adviseuse • IT-Consultancy</span>
           </div>
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/nl/1200/Studio-Session-078-Edit-2-portretfotograaf-rotterdam.jpg"
                  srcset="/images/nl/800/Studio-Session-078-Edit-2-portretfotograaf-rotterdam.jpg 800w,
                          /images/nl/1200/Studio-Session-078-Edit-2-portretfotograaf-rotterdam.jpg 1200w,
@@ -608,8 +637,10 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="1862">
+            <!-- Caption: pas functie/sector aan per foto indien gewenst -->
+            <span class="portrait-grid__caption">Consultant • Vastgoed</span>
           </div>
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/nl/1200/IMG_8022-portretfotograaf-rotterdam-studio.jpg"
                  srcset="/images/nl/800/IMG_8022-portretfotograaf-rotterdam-studio.jpg 800w,
                          /images/nl/1200/IMG_8022-portretfotograaf-rotterdam-studio.jpg 1200w,
@@ -619,8 +650,10 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="1800">
+            <!-- Caption: pas functie/sector aan per foto indien gewenst -->
+            <span class="portrait-grid__caption">Communications Manager • Industriële Gassector</span>
           </div>
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/nl/1200/1N8A1828-zakelijk-portret-fotograaf-rotterdam.jpg"
                  srcset="/images/nl/800/1N8A1828-zakelijk-portret-fotograaf-rotterdam.jpg 800w,
                          /images/nl/1200/1N8A1828-zakelijk-portret-fotograaf-rotterdam.jpg 1200w,
@@ -630,8 +663,10 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="1799">
+            <!-- Caption: pas functie/sector aan per foto indien gewenst -->
+            <span class="portrait-grid__caption">Universitair Docent • Wetenschap</span>
           </div>
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/nl/1200/5I2A7174-portretfotograaf-rotterdam.jpg"
                  srcset="/images/nl/800/5I2A7174-portretfotograaf-rotterdam.jpg 800w,
                          /images/nl/1200/5I2A7174-portretfotograaf-rotterdam.jpg 1200w,
@@ -641,8 +676,10 @@
                  loading="lazy"
                  decoding="async"
                  width="4480" height="6720">
+            <!-- Caption: pas functie/sector aan per foto indien gewenst -->
+            <span class="portrait-grid__caption">Financieel Consultant • Gassector</span>
           </div>
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/nl/1200/1N8A4391-zakelijk-portret-fotograaf-rotterdam.jpg"
                  srcset="/images/nl/800/1N8A4391-zakelijk-portret-fotograaf-rotterdam.jpg 800w,
                          /images/nl/1200/1N8A4391-zakelijk-portret-fotograaf-rotterdam.jpg 1200w,
@@ -652,8 +689,10 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="1800">
+            <!-- Caption: pas functie/sector aan per foto indien gewenst -->
+            <span class="portrait-grid__caption">Financieel Adviseur • Vastgoed</span>
           </div>
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/nl/1200/1N8A3710portret-fotograaf-rotterdam.jpg"
                  srcset="/images/nl/800/1N8A3710portret-fotograaf-rotterdam.jpg 800w,
                          /images/nl/1200/1N8A3710portret-fotograaf-rotterdam.jpg 1200w,
@@ -663,6 +702,8 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="1849">
+            <!-- Caption: pas functie/sector aan per foto indien gewenst -->
+            <span class="portrait-grid__caption">AI-Consultant • Managing Partner</span>
           </div>
         </div>
       </div>
@@ -696,14 +737,16 @@
         <p>Op zoek naar zakelijke portretten met een consistente en professionele uitstraling? Neem gerust contact op om een zakelijk portret in Rotterdam te bespreken.</p>
         <p>Bekijk ook mijn werk als <a href="/fotograaf-rotterdam/">fotograaf in Rotterdam</a> en <a href="/eventfotograaf-rotterdam/">eventfotograaf in Rotterdam</a>.</p>
         <p>Specifiek een <a href="/linkedin-profielfoto-den-haag/">LinkedIn-profielfoto</a> laten maken? Bekijk mijn LinkedIn portretfotografie.</p>
-        <a href="#offerte" class="btn-outline" style="display:block;width:fit-content;margin:1.5rem auto 0">Neem contact op</a>
-      </div>
+        <p class="content-section__cta">
+          <a href="#offerte" class="btn-outline">Vraag offerte aan</a>
+        </p>
+</div>
     </section>
 
     <section class="section section--alt" aria-label="Meer portretfotografie">
       <div class="container">
         <div class="portrait-grid">
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/nl/1200/bedrijfsfotografie-rotterdam.jpg"
                  srcset="/images/nl/800/bedrijfsfotografie-rotterdam.jpg 800w,
                          /images/nl/1200/bedrijfsfotografie-rotterdam.jpg 1200w,
@@ -713,8 +756,10 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="1943">
+            <!-- Caption: pas functie/sector aan per foto indien gewenst -->
+            <span class="portrait-grid__caption">Consultant • Financiële Sector</span>
           </div>
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/nl/1200/5I2A3169-portretfotograaf-rotterdam-ahoy.jpg"
                  srcset="/images/nl/800/5I2A3169-portretfotograaf-rotterdam-ahoy.jpg 800w,
                          /images/nl/1200/5I2A3169-portretfotograaf-rotterdam-ahoy.jpg 1200w,
@@ -724,8 +769,10 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="1810">
+            <!-- Caption: pas functie/sector aan per foto indien gewenst -->
+            <span class="portrait-grid__caption">Consultant • IT-Sector</span>
           </div>
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/nl/1200/933A0426-portretfotograaf-rotterdam-hotel-new-york.jpg"
                  srcset="/images/nl/800/933A0426-portretfotograaf-rotterdam-hotel-new-york.jpg 800w,
                          /images/nl/1200/933A0426-portretfotograaf-rotterdam-hotel-new-york.jpg 1200w,
@@ -735,8 +782,10 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="1600">
+            <!-- Caption: pas functie/sector aan per foto indien gewenst -->
+            <span class="portrait-grid__caption">Marketingdirecteur • NGO</span>
           </div>
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/nl/1200/2C5A3049-portretfotograaf-rotterdam-studio.jpg"
                  srcset="/images/nl/800/2C5A3049-portretfotograaf-rotterdam-studio.jpg 800w,
                          /images/nl/1200/2C5A3049-portretfotograaf-rotterdam-studio.jpg 1200w,
@@ -746,8 +795,10 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="1800">
+            <!-- Caption: pas functie/sector aan per foto indien gewenst -->
+            <span class="portrait-grid__caption">Consultant • Financiële Sector</span>
           </div>
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/nl/1200/2C5A0207-portretfotograaf-rotterdam-kop-van-zuid.jpg"
                  srcset="/images/nl/800/2C5A0207-portretfotograaf-rotterdam-kop-van-zuid.jpg 800w,
                          /images/nl/1200/2C5A0207-portretfotograaf-rotterdam-kop-van-zuid.jpg 1200w,
@@ -757,8 +808,10 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="1920">
+            <!-- Caption: pas functie/sector aan per foto indien gewenst -->
+            <span class="portrait-grid__caption">CEO • Transportsector</span>
           </div>
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/nl/1200/5I2A9954-portretfotograaf-rotterdam-de-doelen.jpg"
                  srcset="/images/nl/800/5I2A9954-portretfotograaf-rotterdam-de-doelen.jpg 800w,
                          /images/nl/1200/5I2A9954-portretfotograaf-rotterdam-de-doelen.jpg 1200w,
@@ -768,8 +821,10 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="1800">
+            <!-- Caption: pas functie/sector aan per foto indien gewenst -->
+            <span class="portrait-grid__caption">Beleidsadviseur • Overheid</span>
           </div>
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/nl/1200/1N8A0493-zakelijk-portret-fotograaf-rotterdam.jpg"
                  srcset="/images/nl/800/1N8A0493-zakelijk-portret-fotograaf-rotterdam.jpg 800w,
                          /images/nl/1200/1N8A0493-zakelijk-portret-fotograaf-rotterdam.jpg 1200w,
@@ -779,8 +834,10 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="1840">
+            <!-- Caption: pas functie/sector aan per foto indien gewenst -->
+            <span class="portrait-grid__caption">Sociaal Mediator • Overheid</span>
           </div>
-          <div class="portrait-grid__item">
+          <div class="portrait-grid__item" tabindex="0">
             <img src="/images/nl/1200/KA9A2438-portretfotograaf-rotterdam-studio.jpg"
                  srcset="/images/nl/800/KA9A2438-portretfotograaf-rotterdam-studio.jpg 800w,
                          /images/nl/1200/KA9A2438-portretfotograaf-rotterdam-studio.jpg 1200w,
@@ -790,6 +847,8 @@
                  loading="lazy"
                  decoding="async"
                  width="1200" height="1800">
+            <!-- Caption: pas functie/sector aan per foto indien gewenst -->
+            <span class="portrait-grid__caption">Consultant • Semi-Overheid</span>
           </div>
         </div>
       </div>
@@ -799,19 +858,7 @@
       <div class="container">
         <h2 id="faq-heading" class="faq__title">Veelgestelde vragen</h2>
         <div class="faq__list">
-          <details class="faq__item" open>
-            <summary class="faq__question">
-              Wat kost een portret fotoshoot in Rotterdam?
-              <span class="faq__icon">
-                <span class="faq__plus">+</span>
-                <span class="faq__minus">−</span>
-              </span>
-            </summary>
-            <div class="faq__answer">
-              <p>Een individuele portretshoot start vanaf €250. De exacte prijs hangt af van de duur, locatie, het aantal personen en het gebruik van de beelden. Voor teams en organisaties maak ik een maatwerkofferte. Bekijk de <a href="/tarieven/">tarieven</a> voor een indicatie of vraag vrijblijvend een offerte aan.</p>
-            </div>
-          </details>
-          <details class="faq__item">
+<details class="faq__item" open>
             <summary class="faq__question">
               Hoe kan ik een portretshoot boeken?
               <span class="faq__icon">
@@ -823,7 +870,7 @@
               <p>Neem contact op via het <a href="#offerte">contactformulier</a> of per e-mail. We bespreken kort uw wensen, de gewenste locatie en planning. Daarna ontvangt u een bevestiging met datum, tijd en praktische informatie.</p>
             </div>
           </details>
-          <details class="faq__item">
+<details class="faq__item">
             <summary class="faq__question">
               Hoe snel kan een shoot plaatsvinden?
               <span class="faq__icon">
@@ -835,7 +882,7 @@
               <p>In veel gevallen kan een portretshoot binnen enkele dagen tot twee weken worden ingepland, afhankelijk van beschikbaarheid. Voor spoedopdrachten kijk ik naar mogelijkheden op korte termijn — neem gerust contact op.</p>
             </div>
           </details>
-          <details class="faq__item">
+<details class="faq__item">
             <summary class="faq__question">
               Ik sta niet graag voor de camera, is dat een probleem?
               <span class="faq__icon">
@@ -847,7 +894,7 @@
               <p>Nee, juist dan. De meeste mensen zijn geen model en voelen zich ongemakkelijk voor de lens. Tijdens de shoot begeleid ik u rustig met duidelijke aanwijzingen over houding en blik. Het doel is een natuurlijk portret dat professioneel oogt, zonder stijve of geforceerde uitstraling.</p>
             </div>
           </details>
-          <details class="faq__item">
+<details class="faq__item">
             <summary class="faq__question">
               Hoe lang duurt een portretshoot?
               <span class="faq__icon">
@@ -859,7 +906,7 @@
               <p>Een individuele shoot duurt meestal 30 tot 60 minuten. Voor teams of meerdere medewerkers reken ik 15 tot 20 minuten per persoon, afhankelijk van het aantal beelden en locaties. We plannen voldoende tijd in zodat niemand zich gehaast voelt.</p>
             </div>
           </details>
-          <details class="faq__item">
+<details class="faq__item">
             <summary class="faq__question">
               Wat moet ik dragen tijdens de shoot?
               <span class="faq__icon">
@@ -871,7 +918,7 @@
               <p>Kies kleding die past bij uw professionele uitstraling: rustige kleuren, eenvoudige patronen en een goed zittende outfit. Vermijd grote logo's of afleidende prints. Neem eventueel een tweede set mee. Ik denk graag mee vooraf over wat het beste werkt voor uw sector en doel.</p>
             </div>
           </details>
-          <details class="faq__item">
+<details class="faq__item">
             <summary class="faq__question">
               Waar vindt de portretshoot plaats in Rotterdam?
               <span class="faq__icon">
@@ -883,7 +930,7 @@
               <p>Op locatie (bijvoorbeeld uw kantoor in Rotterdam, buiten in de stad) of in een studio-omgeving in de regio. Voor teams kom ik regelmatig op locatie met een mobiele studio-setup. Samen kiezen we wat het beste past bij de gewenste uitstraling.</p>
             </div>
           </details>
-          <details class="faq__item">
+<details class="faq__item">
             <summary class="faq__question">
               Wat is beter: studio of locatie?
               <span class="faq__icon">
@@ -895,7 +942,7 @@
               <p>Een studio geeft een rustige, consistente uitstraling met controle over licht en achtergrond — ideaal voor LinkedIn en teamportretten. Een locatie voegt context en persoonlijkheid toe en kan het verhaal van uw organisatie versterken. Beide opties leveren professionele resultaten; de keuze hangt af van het doel.</p>
             </div>
           </details>
-          <details class="faq__item">
+<details class="faq__item">
             <summary class="faq__question">
               Waar kan ik de portretfoto's voor gebruiken?
               <span class="faq__icon">
@@ -907,7 +954,7 @@
               <p>Portretten worden ingezet voor LinkedIn, websites, presentaties, persmateriaal, jaarverslagen en interne communicatie. De beelden worden geleverd in hoge resolutie voor print en geoptimaliseerde versies voor web en social media.</p>
             </div>
           </details>
-          <details class="faq__item">
+<details class="faq__item">
             <summary class="faq__question">
               Wanneer ontvang ik de foto's?
               <span class="faq__icon">
@@ -919,7 +966,7 @@
               <p>Na de shoot maak ik een zorgvuldige selectie en bewerk ik de definitieve beelden professioneel. U ontvangt de foto's doorgaans binnen twee tot vijf werkdagen via een beveiligde downloadlink. Bij grotere series of teams stemmen we de levertijd vooraf af.</p>
             </div>
           </details>
-          <details class="faq__item">
+<details class="faq__item">
             <summary class="faq__question">
               Mag ik de foto's vrij gebruiken?
               <span class="faq__icon">
@@ -931,7 +978,7 @@
               <p>Ja, voor het afgesproken gebruik (website, LinkedIn, publicaties, interne communicatie). Het gebruiksrecht wordt vooraf vastgelegd in de offerte. Extra gebruik — bijvoorbeeld voor advertenties of drukwerk in grote oplage — kan in overleg worden uitgebreid.</p>
             </div>
           </details>
-          <details class="faq__item">
+<details class="faq__item">
             <summary class="faq__question">
               Kun je ook meerdere medewerkers fotograferen?
               <span class="faq__icon">
@@ -943,7 +990,7 @@
               <p>Ja, ik verzorg regelmatig portretshoots voor teams en organisaties in Rotterdam en omgeving. Dat kan op kantoor met een mobiele studio of op een centrale locatie. Ik plan de dag efficiënt zodat elke medewerker voldoende tijd krijgt zonder het werk te verstoren.</p>
             </div>
           </details>
-          <details class="faq__item">
+<details class="faq__item">
             <summary class="faq__question">
               Zorg je voor een consistente uitstraling binnen een team?
               <span class="faq__icon">
@@ -955,7 +1002,7 @@
               <p>Ja. Door vaste belichting, achtergrond en nabewerking krijgen alle portretten een uniforme, professionele look. Dat is belangrijk voor websites, LinkedIn-pagina's en jaarverslagen waar medewerkers naast elkaar staan.</p>
             </div>
           </details>
-          <details class="faq__item">
+<details class="faq__item">
             <summary class="faq__question">
               Wat is het verschil tussen een zakelijk portret en een LinkedIn-profielfoto?
               <span class="faq__icon">
@@ -967,7 +1014,7 @@
               <p>Een zakelijk portret is breder inzetbaar (website, pers, presentaties). Een LinkedIn-profielfoto is specifiek geoptimaliseerd voor het LinkedIn-formaat: scherpe uitstraling, neutrale achtergrond en een compositie die goed werkt in een klein profielrondje. Ik bied beide aan; vaak maken we in één sessie beelden die voor beide doelen geschikt zijn.</p>
             </div>
           </details>
-          <details class="faq__item">
+<details class="faq__item">
             <summary class="faq__question">
               Kan een portretshoot op mijn kantoor in Rotterdam?
               <span class="faq__icon">
@@ -979,7 +1026,7 @@
               <p>Ja, dat is juist gebruikelijk. Ik kom op locatie met compacte apparatuur en zet indien nodig een mobiele studio op in een vergaderruimte of kantoor. Zo hoeven medewerkers niet te reizen en past de shoot in de werkdag. Bekijk ook mijn werk als <a href="/fotograaf-rotterdam/">fotograaf in Rotterdam</a> en <a href="/bedrijfsfotograaf-rotterdam/">bedrijfsfotograaf in Rotterdam</a>.</p>
             </div>
           </details>
-          <details class="faq__item">
+<details class="faq__item">
             <summary class="faq__question">
               Welke bestandsformaten lever je?
               <span class="faq__icon">
@@ -991,9 +1038,19 @@
               <p>U ontvangt de beelden digitaal in JPEG (hoogwaardig, geschikt voor web en print) via een downloadlink. Op verzoek lever ik ook TIFF of andere formaten. Alle beelden zijn professioneel nabewerkt en klaar voor direct gebruik.</p>
             </div>
           </details>
+<details class="faq__item">
+            <summary class="faq__question">
+              Wat kost een portret fotoshoot in Rotterdam?
+              <span class="faq__icon">
+                <span class="faq__plus">+</span>
+                <span class="faq__minus">−</span>
+              </span>
+            </summary>
+            <div class="faq__answer">
+              <p>Een individuele portretshoot start vanaf €250. De exacte prijs hangt af van de duur, locatie, het aantal personen en het gebruik van de beelden. Voor teams en organisaties maak ik een maatwerkofferte. Bekijk de <a href="/tarieven/">tarieven</a> voor een indicatie of vraag vrijblijvend een offerte aan.</p>
+            </div>
+          </details>
         </div>
-        <a href="#offerte" class="btn-outline" style="display:block;width:fit-content;margin:1.5rem auto 0">Neem contact op</a>
-      </div>
     </section>
   
     <section class="section section--alt" id="offerte" aria-label="Offerte aanvragen">

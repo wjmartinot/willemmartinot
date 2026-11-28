@@ -516,6 +516,7 @@
   initReviewsCarousel();
   initStaticReviewCollapse();
   initStaticReviewTextToggles();
+  initPortraitCaptions();
   initScrollReveal();
   initCloudflareAnalytics();
 
@@ -939,6 +940,41 @@
       .catch(() => {});
   }
 
+  function initPortraitCaptions() {
+    const items = document.querySelectorAll(".portrait-grid__item, .portrait-pair__item");
+    if (!items.length) return;
+    const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+
+    items.forEach((item) => {
+      if (item.dataset.captionBound) return;
+      item.dataset.captionBound = "true";
+      if (!item.hasAttribute("tabindex")) item.setAttribute("tabindex", "0");
+
+      item.addEventListener("click", (event) => {
+        if (finePointer.matches) return;
+        // First tap: show caption only. Second tap: allow lightbox.
+        if (!item.classList.contains("is-caption-visible")) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          items.forEach((other) => {
+            if (other !== item) other.classList.remove("is-caption-visible");
+          });
+          item.classList.add("is-caption-visible");
+          item.focus({ preventScroll: true });
+        }
+      }, true);
+
+      item.addEventListener("blur", () => {
+        item.classList.remove("is-caption-visible");
+      });
+    });
+
+    document.addEventListener("pointerdown", (event) => {
+      if (event.target.closest(".portrait-grid__item, .portrait-pair__item")) return;
+      items.forEach((item) => item.classList.remove("is-caption-visible"));
+    });
+  }
+
   function initStaticReviewCollapse() {
     document.querySelectorAll(".reviews-carousel[data-static='true'][data-collapse-after]").forEach((carousel) => {
       const extra = carousel.querySelector(".reviews-carousel__extra");
@@ -1042,7 +1078,7 @@
   const lightbox = document.getElementById("lightbox");
   if (lightbox) {
     const lightboxImg = lightbox.querySelector("img");
-    const items = document.querySelectorAll(".event-grid__item img, .portrait-grid__item img, .corporate-grid__item img, .fashion-masonry__item img");
+    const items = document.querySelectorAll(".event-grid__item img, .portrait-grid__item img, .portrait-pair__item img, .corporate-grid__item img, .fashion-masonry__item img");
     let current = 0;
 
     function getLightboxSrc(img) {
