@@ -4115,14 +4115,14 @@ body:has(.hero-section--portrait-pair) .content-section h2 {
 .rates-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 48px;
+  gap: clamp(20px, 3vw, 28px);
   max-width: 1100px;
   margin: 0 auto;
 }
 
 @media (min-width: 900px) {
   .rates-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -4130,21 +4130,24 @@ body:has(.hero-section--portrait-pair) .content-section h2 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: transparent;
-  border: none;
+  align-items: center;
+  text-align: center;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
   box-shadow: none;
-  padding: 0;
+  padding: clamp(1.5rem, 3vw, 2.25rem) clamp(1.25rem, 3vw, 2rem);
 }
 
 .content-section--rates .rates-card__title {
   margin: 0;
-  min-height: calc(1.4em * 2);
+  min-height: 0;
   font-family: var(--font-body);
   font-size: 0.85rem;
   font-weight: 400;
   letter-spacing: 0.12em;
   line-height: 1.4;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .content-section--rates .rates-card__title a {
@@ -4158,6 +4161,13 @@ body:has(.hero-section--portrait-pair) .content-section h2 {
   border-bottom-color: var(--color-text);
 }
 
+.rates-card__body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .rates-card__price {
   font-family: var(--font-jost);
   font-size: 2rem;
@@ -4165,25 +4175,33 @@ body:has(.hero-section--portrait-pair) .content-section h2 {
   line-height: 1.2;
   margin: 12px 0 20px;
   color: var(--color-text);
+  text-align: center;
 }
 
 .rates-card__specs {
   border-top: 1px solid #e5e5e5;
   padding-top: 20px;
+  width: 100%;
+  max-width: 28em;
+  margin-inline: auto;
   color: #444;
   line-height: 1.7;
+  text-align: center;
 }
 
 .rates-card__specs p {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0;
   line-height: 1.7;
   color: #444;
+  text-align: center;
 }
 
 .rates-card__specs ul {
   list-style: disc;
   padding-left: 1.25rem;
   margin: 0 0 0.75rem;
+  text-align: left;
+  display: inline-block;
 }
 
 .rates-card__specs li {
@@ -4195,7 +4213,9 @@ body:has(.hero-section--portrait-pair) .content-section h2 {
 .rates-card__cta {
   display: block;
   width: 100%;
+  max-width: 18rem;
   margin-top: 28px;
+  margin-inline: auto;
   padding: 14px 20px;
   background: #1a1a1a;
   color: #ffffff;
